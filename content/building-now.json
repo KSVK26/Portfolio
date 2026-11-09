@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "title": "Creative Entrepreneurs Society",
+      "role": "President",
+      "category": "Community",
+      "period": "2026 / 27",
+      "description": "Building a student-led society focused on creative entrepreneurship and peer mentorship."
+    },
+    {
+      "title": "Synetra Health",
+      "role": "Co-founder",
+      "category": "Venture",
+      "period": "Early concept",
+      "description": "Early-stage health-tech concept exploring accessible diagnostics for underserved communities."
+    },
+    {
+      "title": "Quorum",
+      "role": "Designer / Builder",
+      "category": "Experiment",
+      "period": "Ongoing",
+      "description": "A meeting-time experiment exploring how groups make decisions together."
+    },
+    {
+      "title": "Prismatic",
+      "role": "Co-founder / Operator",
+      "category": "Venture",
+      "period": "Ongoing",
+      "description": "A design-led venture studio building products at the intersection of craft and technology."
+    }
+  ]
+}

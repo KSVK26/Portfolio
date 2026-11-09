@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header injected via components/header.html -->
+  <div data-include="components/header.html"></div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="page-section" id="hero">
+      <div class="hero-content">
+        <h1 class="section-title" style="font-size: 3.5rem;">
+          Portfolio Website
+        </h1>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">
+          A personal, editorial portfolio built with clean HTML, CSS, and JavaScript —
+          powered by a free Git-backed CMS so content stays fresh without touching code.
+        </p>
+        <div class="hero-cta">
+          <a href="work.html" class="btn-primary">See the work</a>
+          <a href="about.html" class="btn-secondary">Read the long version</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 00 — Proof Grid -->
+    <section class="page-section" id="stats">
+      <span class="section-tag">00 — Proof</span>
+      <h2 class="section-title">By the numbers</h2>
+      <div class="stats-grid" id="stats-grid">
+        <!-- Populated by js/home.js -->
+      </div>
+    </section>
+
+    <!-- 02 — Building Now -->
+    <section class="page-section" id="building-now">
+      <span class="section-tag">02 — Building Now</span>
+      <h2 class="section-title">Live as of today</h2>
+      <div class="cards-grid" id="building-now-grid">
+        <!-- Populated by js/home.js -->
+      </div>
+    </section>
+
+    <!-- 03 — Field Notes -->
+    <section class="page-section" id="writing">
+      <span class="section-tag">03 — Field Notes</span>
+      <h2 class="section-title">Latest writing</h2>
+      <div class="cards-grid" id="writing-grid">
+        <!-- Populated by js/home.js -->
+      </div>
+    </section>
+
+    <!-- 04 — Worlds / Portfolio Hubs -->
+    <section class="page-section" id="worlds">
+      <span class="section-tag">04 — Worlds</span>
+      <h2 class="section-title">Portfolio hubs</h2>
+      <div class="cards-grid" id="worlds-grid">
+        <!-- Populated by js/home.js -->
+      </div>
+    </section>
+
+    <!-- Life / Work Timeline -->
+    <section class="page-section" id="timeline">
+      <span class="section-tag">Timeline</span>
+      <h2 class="section-title">Life &amp; work</h2>
+      <div class="timeline-container">
+        <div class="timeline-stream" id="timeline-stream">
+          <!-- Populated by js/home.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="page-section" id="contact">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title">You made it this far.</h2>
+      <p class="section-subtitle">We should probably talk.</p>
+      <div class="contact-options" id="contact-options">
+        <!-- Populated by js/home.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer injected via components/footer.html -->
+  <div data-include="components/footer.html"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

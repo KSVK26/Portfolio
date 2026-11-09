@@ -1,0 +1,24 @@
+{
+  "stats": [
+    {
+      "number": "120+",
+      "label": "Events hosted",
+      "description": "Community gatherings, workshops, and talks across cities"
+    },
+    {
+      "number": "70+",
+      "label": "Sidequests embarked on",
+      "description": "Independent experiments, prototypes, and personal builds"
+    },
+    {
+      "number": "7,500+",
+      "label": "Students impacted",
+      "description": "Through teaching, mentorship, and open course material"
+    },
+    {
+      "number": "4",
+      "label": "Countries worked or studied in",
+      "description": "India, UK, USA, Portugal"
+    }
+  ]
+}

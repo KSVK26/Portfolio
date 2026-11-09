@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "title": "Prismatic — Design-Led Venture Studio",
+      "category": "Venture",
+      "tags": ["venture", "design", "studio"],
+      "description": "Co-founding and operating a venture studio building products at the intersection of craft and technology.",
+      "year": "2024",
+      "readTime": "3 min"
+    },
+    {
+      "title": "Synetra Health — Accessible Diagnostics",
+      "category": "Experiment",
+      "tags": ["health", "prototype", "social"],
+      "description": "Early-stage health-tech concept exploring accessible diagnostics for underserved communities.",
+      "year": "2025",
+      "readTime": "5 min"
+    },
+    {
+      "title": "Quorum — Group Decision Experiment",
+      "category": "Experiment",
+      "tags": ["collaboration", "experiment"],
+      "description": "A meeting-time experiment exploring how groups make decisions together.",
+      "year": "2025",
+      "readTime": "2 min"
+    },
+    {
+      "title": "Creative Entrepreneurs Society",
+      "category": "Community",
+      "tags": ["community", "teaching"],
+      "description": "Building a student-led society focused on creative entrepreneurship and peer mentorship.",
+      "year": "2026",
+      "readTime": "4 min"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "On the Shape of Good Ventures",
+      "format": "Essay",
+      "topic": "venture",
+      "date": "2026-09-12",
+      "readTime": "6 min",
+      "excerpt": "Notes on what makes a venture worth starting — and what doesn't."
+    },
+    {
+      "title": "A Week of Building in Public",
+      "format": "Build Log",
+      "topic": "process",
+      "date": "2026-08-30",
+      "readTime": "4 min",
+      "excerpt": "A day-by-day account of shipping something small every day for a week."
+    },
+    {
+      "title": "Reflections on Teaching Design",
+      "format": "Reflection",
+      "topic": "teaching",
+      "date": "2026-08-10",
+      "readTime": "3 min",
+      "excerpt": "What I learned about design from being on the other side of the classroom."
+    }
+  ]
+}
