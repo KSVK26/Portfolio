@@ -6,10 +6,6 @@ backend:
   identity:
     url: https://identity.netlify.com/v1/identity
 
-media_library:
-  name: default
-  media_folder: images
-
 collections:
   - name: stats
     label: Stats
