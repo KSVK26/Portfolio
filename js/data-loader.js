@@ -28,8 +28,8 @@
       return data && data.stats ? data.stats : [];
     },
 
-    async getBuildingNow() {
-      const data = await fetchJSON("content/building-now.json");
+    async getNow() {
+      const data = await fetchJSON("content/now.json");
       return data && data.items ? data.items : [];
     },
 

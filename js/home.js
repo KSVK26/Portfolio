@@ -158,7 +158,7 @@
   function getFallbackData() {
     return {
       stats: { stats: [{ number: "—", label: "Loading…", description: "" }] },
-      buildingNow: { items: [] },
+      now: { items: [] },
       writing: { items: [] },
       timeline: { items: [] },
     };
@@ -177,15 +177,15 @@
 
   async function init() {
     const fallback = getFallbackData();
-    const [stats, buildingNow, writing, timeline] = await Promise.all([
+    const [stats, now, writing, timeline] = await Promise.all([
       loadJSON("content/stats.json"),
-      loadJSON("content/building-now.json"),
+      loadJSON("content/now.json"),
       loadJSON("content/writing.json"),
       loadJSON("content/timeline.json"),
     ]);
 
     renderStats(document.getElementById("stats-grid"), stats || fallback.stats);
-    renderBuildingNow(document.getElementById("building-now-grid"), buildingNow || fallback.buildingNow);
+    renderBuildingNow(document.getElementById("building-now-grid"), now || fallback.now);
     renderWriting(document.getElementById("writing-grid"), writing || fallback.writing);
     renderWorlds(document.getElementById("worlds-grid"));
     renderTimeline(document.getElementById("timeline-stream"), timeline || fallback.timeline);

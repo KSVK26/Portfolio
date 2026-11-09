@@ -20,11 +20,11 @@
   }
 
   async function buildIndex() {
-    const [projects, writing, timeline, buildingNow] = await Promise.all([
+    const [projects, writing, timeline, now] = await Promise.all([
       DataLoader.getProjects(),
       DataLoader.getWriting(),
       DataLoader.getTimeline(),
-      DataLoader.getBuildingNow(),
+      DataLoader.getNow(),
     ]);
 
     searchIndex = [
@@ -49,7 +49,7 @@
         tags: [t.year],
         url: "cv.html",
       })),
-      ...buildingNow.map((b) => ({
+      ...now.map((b) => ({
         type: "Building Now",
         title: b.title,
         desc: b.role + " — " + b.description,

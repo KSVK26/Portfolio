@@ -43,7 +43,7 @@
   }
 
   async function init() {
-    const items = await DataLoader.getBuildingNow();
+    const items = await DataLoader.getNow();
     renderCards(items);
   }
 
