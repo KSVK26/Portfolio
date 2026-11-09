@@ -615,6 +615,136 @@ img {
   color: var(--muted-gray);
 }
 
+/* Work Detail Page */
+.detail-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  margin-bottom: 3rem;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.detail-image-placeholder {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, var(--muted-gray) 0%, var(--border-color) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+.detail-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  background-color: rgba(47, 95, 214, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.detail-byline {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted-gray);
+  margin-bottom: 1.5rem;
+}
+
+.detail-readtime {
+  color: var(--text-secondary);
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-tag-item {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.detail-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.detail-body h1,
+.detail-body h2,
+.detail-body h3 {
+  color: var(--text-primary);
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+}
+
+.detail-body h1 { font-size: 2rem; }
+.detail-body h2 { font-size: 1.5rem; }
+.detail-body h3 { font-size: 1.25rem; }
+
+.detail-body p {
+  margin-bottom: 1rem;
+}
+
+.detail-body ul {
+  margin: 1rem 0 1rem 1.5rem;
+  list-style: disc;
+}
+
+.detail-body li {
+  margin-bottom: 0.5rem;
+}
+
+.detail-body code {
+  background: var(--border-color);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.detail-body strong { font-weight: 700; }
+.detail-body em { font-style: italic; }
+
+.detail-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 868px) {
   .nav-links,

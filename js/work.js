@@ -29,9 +29,9 @@
     grid.innerHTML = projects
       .map(
         (p) => `
-        <div class="card" data-tags="${(p.tags || []).join(",")}" data-category="${p.category || ""}">
+        <a href="work-detail.html?id=${escapeHtml(p.slug || "")}" class="card" data-tags="${(p.tags || []).join(",")}" data-category="${p.category || ""}" style="text-decoration:none;color:inherit;">
           <div class="card-media">
-            <div class="card-media-placeholder">${escapeHtml(p.category || "")}</div>
+            ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(p.category || "")}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${escapeHtml(p.category || "")}</span>
@@ -42,7 +42,7 @@
             <span>${escapeHtml(p.year || "")}</span>
             <span>${escapeHtml(p.readTime || "")}</span>
           </div>
-        </div>`
+        </a>`
       )
       .join("");
   }

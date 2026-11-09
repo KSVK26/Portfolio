@@ -68,29 +68,19 @@ collections:
             label: Items
             type: array
             fields:
-              - name: title
-                label: Title
-                type: string
-              - name: category
-                label: Category
-                type: string
+              - { name: title, label: Title, type: string }
+              - { name: slug, label: Slug (url-friendly-id), type: string }
+              - { name: category, label: Category, type: string }
+              - { name: image, label: Featured Image, type: image, required: false }
               - name: tags
                 label: Tags
                 type: array
                 fields:
-                  - name: tag
-                    label: Tag
-                    type: string
-              - name: description
-                label: Description
-                type: string
-                multiline: true
-              - name: year
-                label: Year
-                type: string
-              - name: readTime
-                label: Read Time
-                type: string
+                  - { name: tag, label: Tag, type: string }
+              - { name: description, label: Short Description (card), type: string, multiline: true }
+              - { name: body, label: Full Content (Markdown), type: markdown, required: false }
+              - { name: year, label: Year, type: string }
+              - { name: readTime, label: Read Time, type: string }
 
   - name: writing
     label: Writing
