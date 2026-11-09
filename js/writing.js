@@ -28,7 +28,7 @@
     grid.innerHTML = posts
       .map(
         (p) => `
-        <div class="card" data-format="${(p.format || "").toLowerCase().replace(" ", "-")}">
+        <a href="writing-detail.html?id=${escapeHtml(p.slug || '')}" class="card" data-format="${(p.format || '').toLowerCase().replace(' ', '-')}" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(p.format || "")}</div>`}
           </div>
@@ -41,7 +41,7 @@
             <span>${escapeHtml(p.date || "")}</span>
             <span>${escapeHtml(p.readTime || "")}</span>
           </div>
-        </div>`
+        </a>`
       )
       .join("");
   }
