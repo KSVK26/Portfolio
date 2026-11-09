@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Generator — Content Manager</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .admin-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .admin-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .admin-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .admin-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+    .tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+    .tab-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #fff;
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    .form-section {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-row.single {
+      grid-template-columns: 1fr;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.75rem 1rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(99, 145, 255, 0.15);
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-group small {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--accent-blue-hover);
+    }
+    .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+    .output-section {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+    .output-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .output-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .output-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .output-textarea {
+      width: 100%;
+      min-height: 300px;
+      padding: 1rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      resize: vertical;
+    }
+    .output-textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+    .tag-input {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0.5rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+    }
+    .tag-input:focus-within {
+      border-color: var(--accent-blue);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--accent-blue);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .tag button {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1;
+      opacity: 0.8;
+    }
+    .tag button:hover {
+      opacity: 1;
+    }
+    .tag-input input {
+      flex: 1;
+      min-width: 120px;
+      padding: 0.35rem 0.5rem;
+      border: none;
+      background: transparent;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+    .tag-input input:focus {
+      outline: none;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .help-text {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-top: 0.25rem;
+    }
+    .json-note {
+      background: rgba(99, 145, 255, 0.1);
+      border: 1px solid rgba(99, 145, 255, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .json-note code {
+      background: var(--bg-primary);
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .admin-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" data-include="components/header.html"></header>
+
+  <main class="admin-container">
+    <div class="admin-header">
+      <h1>JSON Content Generator</h1>
+      <p>Fill out the forms below to generate JSON snippets for your content files. Copy the output and paste into the respective <code>content/*.json</code> files.</p>
+    </div>
+
+    <div class="json-note">
+      <strong>How it works:</strong> Each tab corresponds to a content file in <code>content/</code>. Fill the form, click "Generate JSON", then copy the output and replace the <code>items</code> array (or <code>stats</code> array for stats) in the target file. Commit and push to deploy.
+    </div>
+
+    <nav class="tab-nav" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="stats">Stats</button>
+      <button class="tab-btn" role="tab" data-tab="building-now">Building Now / Projects</button>
+      <button class="tab-btn" role="tab" data-tab="writing">Writing</button>
+      <button class="tab-btn" role="tab" data-tab="timeline">Timeline</button>
+    </nav>
+
+    <!-- STATS TAB -->
+    <div class="tab-panel active" role="tabpanel" data-panel="stats">
+      <div class="form-section">
+        <h2>Site Statistics</h2>
+        <p class="help-text">These appear in the hero stats grid on the home page.</p>
+        <div id="stats-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Number <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="number" placeholder="e.g., 15+" required>
+            </div>
+            <div class="form-group">
+              <label>Label <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="label" placeholder="e.g., Esports Tournaments" required>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Description</label>
+              <textarea name="description" placeholder="Brief description for the stat card"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addStatRow()">+ Add Another Stat</button>
+          <button class="btn btn-secondary" onclick="generateStatsJSON()">Generate JSON</button>
+        </div>
+      </div>
+
+      <div class="output-section">
+        <div class="output-header">
+          <h3>Output — Paste into <code>content/stats.json</code></h3>
+          <div class="output-actions">
+            <button class="btn btn-secondary" onclick="copyOutput('stats-output')">Copy</button>
+            <button class="btn btn-secondary" onclick="clearOutput('stats-output')">Clear</button>
+          </div>
+        </div>
+        <textarea class="output-textarea" id="stats-output" readonly placeholder="Generated JSON will appear here..."></textarea>
+      </div>
+    </div>
+
+    <!-- BUILDING NOW / PROJECTS TAB -->
+    <div class="tab-panel" role="tabpanel" data-panel="building-now">
+      <div class="form-section">
+        <h2>Building Now / Projects</h2>
+        <p class="help-text">These appear on the home page (top 3) and work.html (all). Used for both "Building Now" section and Projects archive.</p>
+        <div id="projects-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Title <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="title" placeholder="e.g., Ascend Cup — Ascension Esports" required>
+            </div>
+            <div class="form-group">
+              <label>Slug <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="slug" placeholder="e.g., ascend-cup" required>
+              <small>URL-friendly ID for detail page linking (lowercase, hyphens only)</small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Category <span style="color:var(--accent-red);">*</span></label>
+              <select name="category" required>
+                <option value="">Select category</option>
+                <option value="Esports">Esports</option>
+                <option value="Web">Web Development</option>
+                <option value="Design">Design Strategy</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Role</label>
+              <input type="text" name="role" placeholder="e.g., Tournament Admin, Lead Admin">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Period / Year</label>
+              <input type="text" name="period" placeholder="e.g., May 2024, Jan–Mar 2024">
+            </div>
+            <div class="form-group">
+              <label>Image URL (optional)</label>
+              <input type="url" name="image" placeholder="https://example.com/image.jpg">
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Tags</label>
+              <div class="tag-input" id="tags-input-projects">
+                <input type="text" name="tag-input" placeholder="Type tag, press Enter">
+              </div>
+              <small>Press Enter to add tags (esports, operations, admin, etc.)</small>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Description (card summary)</label>
+              <textarea name="description" placeholder="Short description shown on cards"></textarea>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Body (markdown for detail page)</label>
+              <textarea name="body" placeholder="Full markdown content for work-detail.html"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addProjectRow()">+ Add Another Project</button>
+          <button class="btn btn-secondary" onclick="generateProjectsJSON()">Generate JSON</button>
+        </div>
+      </div>
+
+      <div class="output-section">
+        <div class="output-header">
+          <h3>Output — Paste into <code>content/projects.json</code> (or <code>content/building-now.json</code>)</h3>
+          <div class="output-actions">
+            <button class="btn btn-secondary" onclick="copyOutput('projects-output')">Copy</button>
+            <button class="btn btn-secondary" onclick="clearOutput('projects-output')">Clear</button>
+          </div>
+        </div>
+        <textarea class="output-textarea" id="projects-output" readonly placeholder="Generated JSON will appear here..."></textarea>
+      </div>
+    </div>
+
+    <!-- WRITING TAB -->
+    <div class="tab-panel" role="tabpanel" data-panel="writing">
+      <div class="form-section">
+        <h2>Writing / Field Notes</h2>
+        <p class="help-text">These appear on the home page (top 3, clickable) and writing.html (all with filters).</p>
+        <div id="writing-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Title <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="title" placeholder="e.g., Designing Rulebooks for Competitive Esports" required>
+            </div>
+            <div class="form-group">
+              <label>Slug <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="slug" placeholder="e.g., designing-rulebooks-esports" required>
+              <small>URL-friendly ID for detail page linking</small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Format <span style="color:var(--accent-red);">*</span></label>
+              <select name="format" required>
+                <option value="">Select format</option>
+                <option value="Essay">Essay</option>
+                <option value="Build Log">Build Log</option>
+                <option value="Reflection">Reflection</option>
+                <option value="Case Study">Case Study</option>
+                <option value="Note">Note</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Topic (for filtering)</label>
+              <select name="topic">
+                <option value="">Select topic</option>
+                <option value="esports">Esports</option>
+                <option value="operations">Operations</option>
+                <option value="reflections">Reflections</option>
+                <option value="web">Web Development</option>
+                <option value="design">Design</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date <span style="color:var(--accent-red);">*</span></label>
+              <input type="date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label>Read Time</label>
+              <input type="text" name="readTime" placeholder="e.g., 5 min, 8 min">
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Excerpt (card summary)</label>
+              <textarea name="excerpt" placeholder="Short excerpt shown on cards"></textarea>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Body (markdown for detail page)</label>
+              <textarea name="body" placeholder="Full markdown content for writing-detail.html"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addWritingRow()">+ Add Another Post</button>
+          <button class="btn btn-secondary" onclick="generateWritingJSON()">Generate JSON</button>
+        </div>
+      </div>
+
+      <div class="output-section">
+        <div class="output-header">
+          <h3>Output — Paste into <code>content/writing.json</code></h3>
+          <div class="output-actions">
+            <button class="btn btn-secondary" onclick="copyOutput('writing-output')">Copy</button>
+            <button class="btn btn-secondary" onclick="clearOutput('writing-output')">Clear</button>
+          </div>
+        </div>
+        <textarea class="output-textarea" id="writing-output" readonly placeholder="Generated JSON will appear here..."></textarea>
+      </div>
+    </div>
+
+    <!-- TIMELINE TAB -->
+    <div class="tab-panel" role="tabpanel" data-panel="timeline">
+      <div class="form-section">
+        <h2>Timeline</h2>
+        <p class="help-text">Horizontal timeline on the home page showing career milestones.</p>
+        <div id="timeline-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Year <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="year" placeholder="e.g., 2024, 2020–2021" required>
+            </div>
+            <div class="form-group">
+              <label>Title <span style="color:var(--accent-red);">*</span></label>
+              <input type="text" name="title" placeholder="e.g., Zenith CoDM League — Regional Director" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Subtitle / Organization</label>
+              <input type="text" name="subtitle" placeholder="e.g., Zenith Esports">
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
+              <label>Description</label>
+              <textarea name="description" placeholder="Brief description of the role/achievement"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="addTimelineRow()">+ Add Another Entry</button>
+          <button class="btn btn-secondary" onclick="generateTimelineJSON()">Generate JSON</button>
+        </div>
+      </div>
+
+      <div class="output-section">
+        <div class="output-header">
+          <h3>Output — Paste into <code>content/timeline.json</code></h3>
+          <div class="output-actions">
+            <button class="btn btn-secondary" onclick="copyOutput('timeline-output')">Copy</button>
+            <button class="btn btn-secondary" onclick="clearOutput('timeline-output')">Clear</button>
+          </div>
+        </div>
+        <textarea class="output-textarea" id="timeline-output" readonly placeholder="Generated JSON will appear here..."></textarea>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-include="components/footer.html"></footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ==========================================================================
+    // Admin Form — JSON Generator Logic
+    // ==========================================================================
+    (function() {
+      "use strict";
+
+      // Tab switching
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tab = this.dataset.tab;
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          document.querySelector(`[data-panel="${tab}"]`).classList.add('active');
+        });
+      });
+
+      // Tag input handling
+      function setupTagInput(containerId, hiddenInputName) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const tags = [];
+        const input = container.querySelector('input[name="tag-input"]');
+        const hiddenInput = container.querySelector(`input[name="${hiddenInputName}"]`) || createHiddenInput(hiddenInputName);
+        container.appendChild(hiddenInput);
+
+        function renderTags() {
+          const existingTags = container.querySelectorAll('.tag');
+          existingTags.forEach(t => t.remove());
+          tags.forEach((tag, idx) => {
+            const el = document.createElement('span');
+            el.className = 'tag';
+            el.innerHTML = `${escapeHtml(tag)} <button type="button" data-idx="${idx}">×</button>`;
+            container.insertBefore(el, input);
+          });
+          hiddenInput.value = JSON.stringify(tags);
+        }
+
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            e.preventDefault();
+            tags.push(this.value.trim());
+            this.value = '';
+            renderTags();
+          }
+        });
+
+        container.addEventListener('click', function(e) {
+          if (e.target.matches('.tag button')) {
+            const idx = parseInt(e.target.dataset.idx, 10);
+            tags.splice(idx, 1);
+            renderTags();
+          }
+        });
+
+        renderTags();
+      }
+
+      function createHiddenInput(name) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        return input;
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&')
+          .replace(/</g, '<')
+          .replace(/>/g, '>')
+          .replace(/"/g, '"');
+      }
+
+      // Initialize tag inputs
+      setupTagInput('tags-input-projects', 'tags');
+
+      // Form data collectors
+      function collectStatsForms() {
+        const forms = document.querySelectorAll('#stats-form .form-row:not(.single)');
+        const items = [];
+        forms.forEach(form => {
+          const number = form.querySelector('input[name="number"]')?.value;
+          const label = form.querySelector('input[name="label"]')?.value;
+          const description = form.querySelector('textarea[name="description"]')?.value || '';
+          if (number && label) {
+            items.push({ number, label, description });
+          }
+        });
+        return { stats: items };
+      }
+
+      function collectProjectForms() {
+        const forms = document.querySelectorAll('#projects-form');
+        const items = [];
+        forms.forEach(form => {
+          const title = form.querySelector('input[name="title"]')?.value;
+          const slug = form.querySelector('input[name="slug"]')?.value;
+          const category = form.querySelector('select[name="category"]')?.value;
+          const role = form.querySelector('input[name="role"]')?.value || '';
+          const period = form.querySelector('input[name="period"]')?.value || '';
+          const image = form.querySelector('input[name="image"]')?.value || '';
+          const description = form.querySelector('textarea[name="description"]')?.value || '';
+          const body = form.querySelector('textarea[name="body"]')?.value || '';
+          const tagsInput = form.querySelector('input[name="tags"]');
+          const tags = tagsInput?.value ? JSON.parse(tagsInput.value) : [];
+          if (title && slug && category) {
+            items.push({ title, slug, category, role, period, image, tags, description, body, year: period.split(' ').pop() || '' });
+          }
+        });
+        return { items };
+      }
+
+      function collectWritingForms() {
+        const forms = document.querySelectorAll('#writing-form');
+        const items = [];
+        forms.forEach(form => {
+          const title = form.querySelector('input[name="title"]')?.value;
+          const slug = form.querySelector('input[name="slug"]')?.value;
+          const format = form.querySelector('select[name="format"]')?.value;
+          const topic = form.querySelector('select[name="topic"]')?.value || '';
+          const date = form.querySelector('input[name="date"]')?.value;
+          const readTime = form.querySelector('input[name="readTime"]')?.value || '';
+          const excerpt = form.querySelector('textarea[name="excerpt"]')?.value || '';
+          const body = form.querySelector('textarea[name="body"]')?.value || '';
+          if (title && slug && format && date) {
+            items.push({ title, slug, format, topic, date, readTime, excerpt, body });
+          }
+        });
+        return { items };
+      }
+
+      function collectTimelineForms() {
+        const forms = document.querySelectorAll('#timeline-form');
+        const items = [];
+        forms.forEach(form => {
+          const year = form.querySelector('input[name="year"]')?.value;
+          const title = form.querySelector('input[name="title"]')?.value;
+          const subtitle = form.querySelector('input[name="subtitle"]')?.value || '';
+          const description = form.querySelector('textarea[name="description"]')?.value || '';
+          if (year && title) {
+            items.push({ year, title, subtitle, description });
+          }
+        });
+        return { items };
+      }
+
+      // Add new form rows
+      function cloneForm(templateId, containerId, clearValues = true) {
+        const template = document.getElementById(templateId);
+        if (!template) return;
+        const container = document.getElementById(containerId);
+        const clone = template.cloneNode(true);
+        clone.removeAttribute('id');
+        if (clearValues) {
+          clone.querySelectorAll('input, textarea, select').forEach(el => {
+            if (el.type !== 'hidden') el.value = '';
+          });
+          // Clear tags
+          const tagContainer = clone.querySelector('.tag-input');
+          if (tagContainer) {
+            tagContainer.querySelectorAll('.tag').forEach(t => t.remove());
+            const hidden = tagContainer.querySelector('input[type="hidden"]');
+            if (hidden) hidden.value = '[]';
+          }
+        }
+        container.appendChild(clone);
+        // Re-setup tag input for new clone
+        const newTagContainer = clone.querySelector('.tag-input');
+        if (newTagContainer) {
+          const newId = 'tags-input-' + Date.now();
+          newTagContainer.id = newId;
+          setupTagInput(newId, 'tags');
+        }
+      }
+
+      window.addStatRow = function() {
+        const container = document.getElementById('stats-form');
+        const row = document.createElement('div');
+        row.className = 'form-row';
+        row.innerHTML = `
+          <div class="form-group">
+            <label>Number <span style="color:var(--accent-red);">*</span></label>
+            <input type="text" name="number" placeholder="e.g., 15+" required>
+          </div>
+          <div class="form-group">
+            <label>Label <span style="color:var(--accent-red);">*</span></label>
+            <input type="text" name="label" placeholder="e.g., Esports Tournaments" required>
+          </div>
+        `;
+        const descRow = document.createElement('div');
+        descRow.className = 'form-row single';
+        descRow.innerHTML = `
+          <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" placeholder="Brief description for the stat card"></textarea>
+          </div>
+        `;
+        container.appendChild(row);
+        container.appendChild(descRow);
+      };
+
+      window.addProjectRow = function() {
+        const template = document.getElementById('projects-form');
+        const container = template.parentElement;
+        const clone = template.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.querySelectorAll('input, textarea, select').forEach(el => {
+          if (el.type !== 'hidden') el.value = '';
+        });
+        clone.querySelectorAll('.tag').forEach(t => t.remove());
+        const hidden = clone.querySelector('input[name="tags"]');
+        if (hidden) hidden.value = '[]';
+        container.insertBefore(clone, document.querySelector('.btn-row'));
+        const newTagContainer = clone.querySelector('.tag-input');
+        if (newTagContainer) {
+          const newId = 'tags-input-' + Date.now();
+          newTagContainer.id = newId;
+          setupTagInput(newId, 'tags');
+        }
+      };
+
+      window.addWritingRow = function() {
+        const template = document.getElementById('writing-form');
+        const container = template.parentElement;
+        const clone = template.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.querySelectorAll('input, textarea, select').forEach(el => {
+          if (el.type !== 'hidden') el.value = '';
+        });
+        container.insertBefore(clone, document.querySelector('.btn-row'));
+      };
+
+      window.addTimelineRow = function() {
+        const template = document.getElementById('timeline-form');
+        const container = template.parentElement;
+        const clone = template.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.querySelectorAll('input, textarea, select').forEach(el => {
+          if (el.type !== 'hidden') el.value = '';
+        });
+        container.insertBefore(clone, document.querySelector('.btn-row'));
+      };
+
+      // JSON generation
+      function formatJSON(obj) {
+        return JSON.stringify(obj, null, 2);
+      }
+
+      window.generateStatsJSON = function() {
+        const data = collectStatsForms();
+        document.getElementById('stats-output').value = formatJSON(data);
+      };
+
+      window.generateProjectsJSON = function() {
+        const data = collectProjectForms();
+        document.getElementById('projects-output').value = formatJSON(data);
+      };
+
+      window.generateWritingJSON = function() {
+        const data = collectWritingForms();
+        document.getElementById('writing-output').value = formatJSON(data);
+      };
+
+      window.generateTimelineJSON = function() {
+        const data = collectTimelineForms();
+        document.getElementById('timeline-output').value = formatJSON(data);
+      };
+
+      // Copy/clear output
+      window.copyOutput = function(textareaId) {
+        const textarea = document.getElementById(textareaId);
+        textarea.select();
+        document.execCommand('copy');
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = original, 1500);
+      };
+
+      window.clearOutput = function(textareaId) {
+        document.getElementById(textareaId).value = '';
+      };
+    })();
+  </script>
+</body>
+</html>

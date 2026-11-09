@@ -26,7 +26,7 @@
     container.innerHTML = items
       .map(
         (item) => `
-        <a href="work-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card">
           <div class="card-media">
             <div class="card-media-placeholder">${item.category}</div>
           </div>
@@ -39,7 +39,7 @@
             <span>${item.role}</span>
             <span>${item.period}</span>
           </div>
-        </a>`
+        </div>`
       )
       .join("");
     if (data.items.length > 3) {
