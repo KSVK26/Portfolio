@@ -327,12 +327,15 @@ img {
   border-top: 1px solid var(--border-color);
 }
 
-/* Card with media: let card-media/card-body handle their own padding */
-.card:has(.card-media) {
-  padding: 0;
-}
-.card > .card-media {
-  padding: 1.5rem;
+/* Enhanced Card with Media */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
 }
 
 .card:hover {
@@ -409,18 +412,8 @@ img {
   align-items: center;
   font-size: 0.8rem;
   color: var(--muted-gray);
-  padding: 1rem 1.5rem 1.5rem;
-  border-top: none;
-  position: relative;
-}
-.card-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 1.5rem;
-  right: 1.5rem;
-  height: 1px;
-  background: var(--border-color);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
 }
 
 /* View All Link */
