@@ -327,16 +327,12 @@ img {
   border-top: 1px solid var(--border-color);
 }
 
-/* Enhanced Card with Media */
-.card {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-color);
+/* Card with media: let card-media/card-body handle their own padding */
+.card:has(.card-media) {
   padding: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: var(--transition);
+}
+.card > .card-media {
+  padding: 1.5rem;
 }
 
 .card:hover {
