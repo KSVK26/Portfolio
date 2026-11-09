@@ -22,11 +22,15 @@
 
   function renderBuildingNow(container, data) {
     if (!container || !data) return;
-    container.innerHTML = data.items
+    const items = data.items.slice(0, 3);
+    container.innerHTML = items
       .map(
         (item) => `
         <div class="card">
-          <div>
+          <div class="card-media">
+            <div class="card-media-placeholder">${item.category}</div>
+          </div>
+          <div class="card-body">
             <span class="card-tag">${item.category}</span>
             <h3 class="card-title">${item.title}</h3>
             <p class="card-desc">${item.description}</p>
@@ -38,6 +42,13 @@
         </div>`
       )
       .join("");
+    if (data.items.length > 3) {
+      const viewAll = document.createElement("a");
+      viewAll.href = "work.html";
+      viewAll.className = "view-all-link";
+      viewAll.textContent = `View all ${data.items.length} projects →`;
+      container.parentElement.appendChild(viewAll);
+    }
   }
 
   function renderWriting(container, data) {
@@ -47,7 +58,10 @@
       .map(
         (item) => `
         <div class="card">
-          <div>
+          <div class="card-media">
+            <div class="card-media-placeholder">${item.format}</div>
+          </div>
+          <div class="card-body">
             <span class="card-tag">${item.format}</span>
             <h3 class="card-title">${item.title}</h3>
             <p class="card-desc">${item.excerpt}</p>
@@ -59,6 +73,13 @@
         </div>`
       )
       .join("");
+    if (data.items.length > 3) {
+      const viewAll = document.createElement("a");
+      viewAll.href = "writing.html";
+      viewAll.className = "view-all-link";
+      viewAll.textContent = `View all ${data.items.length} posts →`;
+      container.parentElement.appendChild(viewAll);
+    }
   }
 
   function renderWorlds(container) {
@@ -71,21 +92,32 @@
       { title: "Web Development", link: "work.html", tag: "web" },
       { title: "Design Strategy", link: "work.html", tag: "design" },
     ];
-    container.innerHTML = worlds
+    const shown = worlds.slice(0, 3);
+    container.innerHTML = shown
       .map(
         (w) => `
         <div class="card">
-          <div>
+          <div class="card-media">
+            <div class="card-media-placeholder">${w.tag}</div>
+          </div>
+          <div class="card-body">
             <span class="card-tag">${w.tag}</span>
             <h3 class="card-title">${w.title}</h3>
             <p class="card-desc">A dedicated world keeping its own archive and stories.</p>
           </div>
           <div class="card-footer">
-            <a href="${w.link}">Explore →</a>
+            <a href="${w.link}" style="color:var(--accent-blue);font-weight:600;">Explore →</a>
           </div>
         </div>`
       )
       .join("");
+    if (worlds.length > 3) {
+      const viewAll = document.createElement("a");
+      viewAll.href = "portfolio.html";
+      viewAll.className = "view-all-link";
+      viewAll.textContent = `View all ${worlds.length} worlds →`;
+      container.parentElement.appendChild(viewAll);
+    }
   }
 
   function renderTimeline(container, data) {

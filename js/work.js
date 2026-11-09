@@ -30,7 +30,10 @@
       .map(
         (p) => `
         <div class="card" data-tags="${(p.tags || []).join(",")}" data-category="${p.category || ""}">
-          <div>
+          <div class="card-media">
+            <div class="card-media-placeholder">${escapeHtml(p.category || "")}</div>
+          </div>
+          <div class="card-body">
             <span class="card-tag">${escapeHtml(p.category || "")}</span>
             <h3 class="card-title">${escapeHtml(p.title)}</h3>
             <p class="card-desc">${escapeHtml(p.description)}</p>
