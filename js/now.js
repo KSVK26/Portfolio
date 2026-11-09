@@ -25,7 +25,10 @@
       .map(
         (p) => `
         <div class="card">
-          <div>
+          <div class="card-media">
+            ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(p.category || "")}</div>`}
+          </div>
+          <div class="card-body">
             <span class="card-tag">${escapeHtml(p.category || "")}</span>
             <h3 class="card-title">${escapeHtml(p.title)}</h3>
             <p class="card-desc">${escapeHtml(p.description)}</p>

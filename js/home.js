@@ -28,7 +28,7 @@
         (item) => `
         <div class="card">
           <div class="card-media">
-            <div class="card-media-placeholder">${item.category}</div>
+            ${item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="card-media-placeholder">${item.category}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${item.category}</span>
@@ -59,7 +59,7 @@
         (item) => `
         <a href="writing-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
           <div class="card-media">
-            <div class="card-media-placeholder">${item.format}</div>
+            ${item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="card-media-placeholder">${item.format}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${item.format}</span>
@@ -98,7 +98,7 @@
         (w) => `
         <div class="card">
           <div class="card-media">
-            <div class="card-media-placeholder">${w.tag}</div>
+            ${w.image ? `<img src="${w.image}" alt="${w.title}" />` : `<div class="card-media-placeholder">${w.tag}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${w.tag}</span>

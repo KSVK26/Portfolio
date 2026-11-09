@@ -463,6 +463,12 @@
           </div>
           <div class="form-row single">
             <div class="form-group">
+              <label>Image URL (optional)</label>
+              <input type="url" name="image" placeholder="https://example.com/image.jpg">
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="form-group">
               <label>Excerpt (card summary)</label>
               <textarea name="excerpt" placeholder="Short excerpt shown on cards"></textarea>
             </div>
@@ -666,10 +672,12 @@
           const topic = form.querySelector('select[name="topic"]')?.value || '';
           const date = form.querySelector('input[name="date"]')?.value;
           const readTime = form.querySelector('input[name="readTime"]')?.value || '';
+          const image = form.querySelector('input[name="image"]')?.value || '';
           const excerpt = form.querySelector('textarea[name="excerpt"]')?.value || '';
           const body = form.querySelector('textarea[name="body"]')?.value || '';
           if (title && slug && format && date) {
-            items.push({ title, slug, format, topic, date, readTime, excerpt, body });
+            items.push({ title, slug, format, topic, date, readTime, image, excerpt, body });
+          }
           }
         });
         return { items };

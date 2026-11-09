@@ -79,7 +79,10 @@
       .map(
         (item) => `
         <div class="card">
-          <div>
+          <div class="card-media">
+            <div class="card-media-placeholder">${escapeHtml(item.type)}</div>
+          </div>
+          <div class="card-body">
             <span class="card-tag">${escapeHtml(item.type)}</span>
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <p class="card-desc">${escapeHtml(item.desc)}</p>

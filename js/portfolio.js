@@ -21,7 +21,10 @@
     .map(
       (w) => `
       <div class="card">
-        <div>
+        <div class="card-media">
+          ${w.image ? `<img src="${w.image}" alt="${w.title}" />` : `<div class="card-media-placeholder">${w.tag}</div>`}
+        </div>
+        <div class="card-body">
           <span class="card-tag">${w.tag}</span>
           <h3 class="card-title">${w.title}</h3>
           <p class="card-desc">${w.desc}</p>

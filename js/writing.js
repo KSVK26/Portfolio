@@ -30,7 +30,7 @@
         (p) => `
         <div class="card" data-format="${(p.format || "").toLowerCase().replace(" ", "-")}">
           <div class="card-media">
-            <div class="card-media-placeholder">${escapeHtml(p.format || "")}</div>
+            ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(p.format || "")}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${escapeHtml(p.format || "")}</span>
