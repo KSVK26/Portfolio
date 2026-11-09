@@ -26,7 +26,7 @@
     container.innerHTML = items
       .map(
         (item) => `
-        <a href="work-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
+        <a href="work-detail.html?id=${item.slug || ''}" class="card card-horizontal" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             <div class="card-media-placeholder">${item.category}</div>
           </div>
@@ -57,7 +57,7 @@
     container.innerHTML = items
       .map(
         (item) => `
-        <a href="writing-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
+        <a href="writing-detail.html?id=${item.slug || ''}" class="card card-horizontal" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             <div class="card-media-placeholder">${item.format}</div>
           </div>
@@ -96,7 +96,7 @@
     container.innerHTML = shown
       .map(
         (w) => `
-        <div class="card">
+        <a href="${w.link}" class="card card-horizontal" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             <div class="card-media-placeholder">${w.tag}</div>
           </div>
@@ -106,9 +106,10 @@
             <p class="card-desc">A dedicated world keeping its own archive and stories.</p>
           </div>
           <div class="card-footer">
-            <a href="${w.link}" style="color:var(--accent-blue);font-weight:600;">Explore →</a>
+            <span>${w.tag}</span>
+            <span>Explore</span>
           </div>
-        </div>`
+        </a>`
       )
       .join("");
     if (worlds.length > 3) {

@@ -7,8 +7,6 @@ backend:
     url: https://identity.netlify.com/v1/identity
 
 media_folder: images
-media_library:
-  name: default
 
 collections:
   - name: stats

@@ -9,5 +9,17 @@
 <body>
   <script src="https://identity.netlify.com/v1/identity.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS.registerMediaLibrary({
+      name: "default",
+      label: "Default",
+      allowArbitrary: true,
+    });
+    window.CMS.registerMediaLibrary({
+      name: "image",
+      label: "Images",
+      allowArbitrary: true,
+    });
+  </script>
 </body>
 </html>
