@@ -1,11 +1,10 @@
 backend:
   name: github
-  repo: <your-username>/<your-repo-name>
+  repo: KSVK26/Portfolio
   branch: main
-  base_url: https://www.netlify.com/sites/<your-site-slug>/
+  base_url: https://www.netlify.com/sites/ksvk/
   identity:
     url: https://identity.netlify.com/v1/identity
-    # Optional: open_authoring: true
 
 media_library:
   name: default
@@ -22,12 +21,17 @@ collections:
           - name: stats
             label: Stats
             type: array
-            field:
-              type: object
-              fields:
-                - { name: number, label: Number, type: string }
-                - { name: label, label: Label, type: string }
-                - { name: description, label: Description, type: string, multiline: true }
+            fields:
+              - name: number
+                label: Number
+                type: string
+              - name: label
+                label: Label
+                type: string
+              - name: description
+                label: Description
+                type: string
+                multiline: true
 
   - name: building-now
     label: Building Now
@@ -39,14 +43,23 @@ collections:
           - name: items
             label: Items
             type: array
-            field:
-              type: object
-              fields:
-                - { name: title, label: Title, type: string }
-                - { name: role, label: Role, type: string }
-                - { name: category, label: Category, type: string }
-                - { name: period, label: Period, type: string }
-                - { name: description, label: Description, type: string, multiline: true }
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: role
+                label: Role
+                type: string
+              - name: category
+                label: Category
+                type: string
+              - name: period
+                label: Period
+                type: string
+              - name: description
+                label: Description
+                type: string
+                multiline: true
 
   - name: projects
     label: Projects
@@ -58,15 +71,30 @@ collections:
           - name: items
             label: Items
             type: array
-            field:
-              type: object
-              fields:
-                - { name: title, label: Title, type: string }
-                - { name: category, label: Category, type: string }
-                - { name: tags, label: Tags, type: array, field: { type: string } }
-                - { name: description, label: Description, type: string, multiline: true }
-                - { name: year, label: Year, type: string }
-                - { name: readTime, label: Read Time, type: string }
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: category
+                label: Category
+                type: string
+              - name: tags
+                label: Tags
+                type: array
+                fields:
+                  - name: tag
+                    label: Tag
+                    type: string
+              - name: description
+                label: Description
+                type: string
+                multiline: true
+              - name: year
+                label: Year
+                type: string
+              - name: readTime
+                label: Read Time
+                type: string
 
   - name: writing
     label: Writing
@@ -78,15 +106,26 @@ collections:
           - name: items
             label: Items
             type: array
-            field:
-              type: object
-              fields:
-                - { name: title, label: Title, type: string }
-                - { name: format, label: Format, type: string }
-                - { name: topic, label: Topic, type: string }
-                - { name: date, label: Date, type: date }
-                - { name: readTime, label: Read Time, type: string }
-                - { name: excerpt, label: Excerpt, type: string, multiline: true }
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: format
+                label: Format
+                type: string
+              - name: topic
+                label: Topic
+                type: string
+              - name: date
+                label: Date
+                type: date
+              - name: readTime
+                label: Read Time
+                type: string
+              - name: excerpt
+                label: Excerpt
+                type: string
+                multiline: true
 
   - name: timeline
     label: Timeline
@@ -98,10 +137,17 @@ collections:
           - name: items
             label: Items
             type: array
-            field:
-              type: object
-              fields:
-                - { name: year, label: Year, type: string }
-                - { name: title, label: Title, type: string }
-                - { name: subtitle, label: Subtitle, type: string }
-                - { name: description, label: Description, type: string, multiline: true }
+            fields:
+              - name: year
+                label: Year
+                type: string
+              - name: title
+                label: Title
+                type: string
+              - name: subtitle
+                label: Subtitle
+                type: string
+              - name: description
+                label: Description
+                type: string
+                multiline: true
