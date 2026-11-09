@@ -28,7 +28,7 @@
     grid.innerHTML = posts
       .map(
         (p) => `
-        <div class="card card-horizontal" data-format="${(p.format || "").toLowerCase().replace(" ", "-")}">
+        <div class="card" data-format="${(p.format || "").toLowerCase().replace(" ", "-")}">
           <div class="card-media">
             <div class="card-media-placeholder">${escapeHtml(p.format || "")}</div>
           </div>

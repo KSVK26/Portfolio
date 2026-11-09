@@ -29,7 +29,7 @@
     grid.innerHTML = projects
       .map(
         (p) => `
-        <a href="work-detail.html?id=${escapeHtml(p.slug || "")}" class="card card-horizontal" data-tags="${(p.tags || []).join(",")}" data-category="${p.category || ""}" style="text-decoration:none;color:inherit;">
+        <a href="work-detail.html?id=${escapeHtml(p.slug || "")}" class="card" data-tags="${(p.tags || []).join(",")}" data-category="${p.category || ""}" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(p.category || "")}</div>`}
           </div>
