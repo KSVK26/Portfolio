@@ -414,7 +414,17 @@ img {
   font-size: 0.8rem;
   color: var(--muted-gray);
   padding: 1rem 1.5rem 1.5rem;
-  border-top: 1px solid var(--border-color);
+  border-top: none;
+  position: relative;
+}
+.card-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  right: -1.5rem;
+  height: 1px;
+  background: var(--border-color);
 }
 
 /* View All Link */
