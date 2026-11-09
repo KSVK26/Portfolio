@@ -2,7 +2,6 @@ backend:
   name: github
   repo: KSVK26/Portfolio
   branch: main
-  base_url: https://app.netlify.com
 
 media_folder: images
 
