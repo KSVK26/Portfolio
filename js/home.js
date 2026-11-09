@@ -26,7 +26,7 @@
     container.innerHTML = items
       .map(
         (item) => `
-        <div class="card">
+        <a href="work-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             <div class="card-media-placeholder">${item.category}</div>
           </div>
@@ -39,7 +39,7 @@
             <span>${item.role}</span>
             <span>${item.period}</span>
           </div>
-        </div>`
+        </a>`
       )
       .join("");
     if (data.items.length > 3) {
@@ -57,7 +57,7 @@
     container.innerHTML = items
       .map(
         (item) => `
-        <div class="card">
+        <a href="writing-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
           <div class="card-media">
             <div class="card-media-placeholder">${item.format}</div>
           </div>
@@ -70,7 +70,7 @@
             <span>${item.date}</span>
             <span>${item.readTime}</span>
           </div>
-        </div>`
+        </a>`
       )
       .join("");
     if (data.items.length > 3) {

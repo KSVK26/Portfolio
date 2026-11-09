@@ -2,27 +2,33 @@
   "items": [
     {
       "title": "Designing Rulebooks for Competitive Esports",
+      "slug": "designing-rulebooks-esports",
       "format": "Essay",
       "topic": "esports",
       "date": "2026-02-15",
       "readTime": "5 min",
-      "excerpt": "Key principles for writing clear, unambiguous tournament rules that prevent player disputes."
+      "excerpt": "Key principles for writing clear, unambiguous tournament rules that prevent player disputes.",
+      "body": "# Designing Rulebooks for Competitive Esports\n\nWriting tournament rules is one of the most underappreciated aspects of esports operations. A well-crafted rulebook doesn't just prevent disputes—it creates the foundation for fair competition and builds trust between organizers and players.\n\n## Core Principles\n\n**Clarity over completeness.** A rulebook that tries to cover every edge case becomes unreadable. Focus on the 90% of scenarios that actually occur.\n\n**Unambiguous language.** Avoid terms like \"reasonable,\" \"fair,\" or \"appropriate.\" Use specific criteria: \"within 5 minutes of match start\" not \"promptly.\"\n\n**Enforceability.** Every rule must have a clear penalty. If you can't enforce it, don't write it.\n\n## Structure That Works\n\n1. **Tournament Overview** — Format, schedule, prize pool\n2. **Eligibility** — Regions, ranks, age, accounts\n3. **Match Rules** — Maps, settings, side selection\n4. **Conduct** — Sportsmanship, cheating, exploits\n5. **Admin Authority** — Discretion, appeals, final say\n6. **Penalties** — Warning → Forfeit → Ban escalation\n\n## The Hidden Rule\n\nThe most important rule is never written: *Admins reserve the right to make judgment calls in unprecedented situations.* This covers the 10% you couldn't predict.\n\n---\n\n*Originally published February 2026. Based on 15+ tournaments and 10,000+ players managed across 6+ major organizers."
     },
     {
       "title": "Managing 1,000+ Player Lobbies Without Chaos",
+      "slug": "managing-large-lobbies",
       "format": "Build Log",
       "topic": "operations",
       "date": "2025-11-20",
       "readTime": "4 min",
-      "excerpt": "A deep dive into Discord server structure, bot automation, and admin workflows for large leagues."
+      "excerpt": "A deep dive into Discord server structure, bot automation, and admin workflows for large leagues.",
+      "body": "# Managing 1,000+ Player Lobbies Without Chaos\n\nWhen CODM India Clash hit 10,000 registrations, our Discord became a firehose. Here's how we structured it to stay manageable.\n\n## Server Architecture\n\n**Tiered channels** — Public announcements → Registration → Team channels → Match lobbies → Admin only\n\n**Role hierarchy** — Player → Team Captain → Match Mod → Tournament Admin → Head Admin\n\n**Bot automation** — Custom bot handled:\n- Registration verification (linked game accounts)\n- Bracket generation and match notifications\n- Result reporting with screenshot validation\n- Automatic role assignment on check-in\n\n## Admin Workflows\n\n**Shift system** — 4 admins, 6-hour rotations, shared Notion dashboard for handoffs\n\n**Escalation ladder** — Match Mod handles lobby issues → Tournament Admin handles disputes → Head Admin handles bans/appeals\n\n**Documentation** — Every ruling logged with timestamp, players involved, evidence, and reasoning. Creates precedent.\n\n## What Broke\n\n- Voice channel limits (solved: stage channels for announcements)\n- Notification fatigue (solved: opt-in match ping roles)\n- Timezone coordination (solved: UTC-only scheduling, auto-convert bot)\n\n## Key Takeaway\n\nAutomation handles volume. Human judgment handles edge cases. Design for both.\n\n---\n\n*Build log from CODM India Clash Season 1 operations. 10,000+ players, 2,500+ teams, 6 weeks."
     },
     {
       "title": "Lessons from 5 Years in Tournament Administration",
+      "slug": "lessons-tournament-admin",
       "format": "Reflection",
       "topic": "reflections",
       "date": "2025-08-10",
       "readTime": "4 min",
-      "excerpt": "What tournament operations taught me about leadership, stress management, and clear communication."
+      "excerpt": "What tournament operations taught me about leadership, stress management, and clear communication.",
+      "body": "# Lessons from 5 Years in Tournament Administration\n\nFifteen tournaments. Six major organizers. Ten thousand players. Here's what stuck.\n\n## 1. Communication Is the Product\n\nPlayers don't see the bracket logic. They see: \"When do I play?\" \"Where do I report?\" \"Who do I ask?\" If those answers aren't instant, the tournament feels broken.\n\n**Invest in:** FAQ docs, automated match notifications, dedicated support channels, multilingual basics.\n\n## 2. Stress Is Contagious\n\nWhen admins panic, players panic. When admins are calm, players trust the process.\n\n**Practice:** Pre-tournament dry runs. Written escalation procedures. \"What's the worst that happens?\" drill before every major event.\n\n## 3. Rules Are Useless Without Culture\n\nA rulebook sits in a PDF. Culture lives in every admin interaction.\n\n**Build culture by:** Publicly praising good sportsmanship. Consistent enforcement regardless of team size. Transparent reasoning for every ruling.\n\n## 4. The Best Tool Is the One People Use\n\nWe tried custom dashboards, Notion, Airtable, Google Sheets. The winner? Discord + a simple bot. Because that's where players already are.\n\n## 5. Burnout Is Real\n\nTournament weekends are 16-hour days. Three weekends in a row and decision quality drops.\n\n**Mitigate:** Mandatory off-days. Admin rotation. Document everything so anyone can step in.\n\n## What I'm Still Learning\n\nHow to scale the *human* side of operations. Bots scale infinitely. People don't.\n\n---\n\n*Reflection after 5 years across Ascension Esports, Esports XO, Nicecactus, Loco, Zenith League, CaliGaming."
     }
   ]
 }

@@ -2,6 +2,7 @@
   "items": [
     {
       "title": "Ascend Cup — Ascension Esports",
+      "slug": "ascend-cup",
       "role": "Tournament Admin",
       "category": "Esports",
       "period": "May 2024",
@@ -9,6 +10,7 @@
     },
     {
       "title": "CODM India Clash Season 1",
+      "slug": "codm-india-clash-s1",
       "role": "Lead Admin",
       "category": "Esports",
       "period": "Jan 2024",
@@ -16,6 +18,7 @@
     },
     {
       "title": "XO Champions League (Season 1 & 2)",
+      "slug": "xo-champions-league-s2",
       "role": "Event Manager",
       "category": "Esports",
       "period": "May–July 2021",
@@ -23,6 +26,7 @@
     },
     {
       "title": "Web Programming Portfolio",
+      "slug": "web-programming-portfolio",
       "role": "Developer / Student",
       "category": "Web",
       "period": "Ongoing (2026)",

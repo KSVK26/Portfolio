@@ -100,6 +100,9 @@ collections:
               - name: title
                 label: Title
                 type: string
+              - name: slug
+                label: Slug (url-friendly-id)
+                type: string
               - name: format
                 label: Format
                 type: string
@@ -116,6 +119,10 @@ collections:
                 label: Excerpt
                 type: string
                 multiline: true
+              - name: body
+                label: Full Content (Markdown)
+                type: markdown
+                required: false
 
   - name: timeline
     label: Timeline
