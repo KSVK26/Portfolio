@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work & Projects — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main class="container">
+    <section class="page-section">
+      <span class="section-tag">01 — Work</span>
+      <h1 class="section-title">Work &amp; Projects</h1>
+      <p class="section-subtitle">
+        A filterable archive of ventures, experiments, community work, and sidequests.
+        Click a tag or type to narrow the list.
+      </p>
+
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="venture">Venture</button>
+        <button class="filter-btn" data-filter="experiment">Experiment</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+
+      <div class="search-input-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search projects by title, tag, or description…" />
+      </div>
+
+      <div class="cards-grid" id="projects-grid">
+        <!-- Populated by js/work.js -->
+      </div>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/work.js"></script>
+</body>
+</html>

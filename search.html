@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main class="container">
+    <section class="page-section">
+      <span class="section-tag">Search</span>
+      <h1 class="section-title">Search across the site</h1>
+      <p class="section-subtitle">Find projects, essays, timeline events, and pages.</p>
+
+      <div class="search-input-wrapper">
+        <input type="text" class="search-input" id="global-search-input" placeholder="Type to search everything…" autofocus />
+      </div>
+
+      <div id="search-status" style="margin-bottom:1.5rem;color:var(--text-secondary);font-size:0.95rem;"></div>
+      <div class="cards-grid" id="search-results-grid"></div>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

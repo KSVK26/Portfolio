@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs & Notes — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main class="container">
+    <section class="page-section">
+      <span class="section-tag">03 — Field Notes</span>
+      <h1 class="section-title">Blogs &amp; Notes</h1>
+      <p class="section-subtitle">
+        Essays, build logs, and reflections. Filter by topic or format to find what you need.
+      </p>
+
+      <div class="filter-bar" id="writing-filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="essay">Essay</button>
+        <button class="filter-btn" data-filter="reflection">Reflection</button>
+        <button class="filter-btn" data-filter="build-log">Build Log</button>
+      </div>
+
+      <div class="cards-grid" id="writing-grid">
+        <!-- Populated by js/writing.js -->
+      </div>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/writing.js"></script>
+</body>
+</html>
