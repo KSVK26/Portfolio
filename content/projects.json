@@ -1,36 +1,52 @@
 {
   "items": [
     {
-      "title": "Prismatic — Design-Led Venture Studio",
-      "category": "Venture",
-      "tags": ["venture", "design", "studio"],
-      "description": "Co-founding and operating a venture studio building products at the intersection of craft and technology.",
+      "title": "Ascend Cup — Ascension Esports",
+      "category": "Esports",
+      "tags": ["esports", "operations", "admin"],
+      "description": "Complete event operations, bracket management, and lobby administration for Ascension Esports.",
       "year": "2024",
-      "readTime": "3 min"
+      "readTime": "May 2024"
     },
     {
-      "title": "Synetra Health — Accessible Diagnostics",
-      "category": "Experiment",
-      "tags": ["health", "prototype", "social"],
-      "description": "Early-stage health-tech concept exploring accessible diagnostics for underserved communities.",
-      "year": "2025",
-      "readTime": "5 min"
+      "title": "CODM India Clash Season 1",
+      "category": "Esports",
+      "tags": ["esports", "codm", "operations"],
+      "description": "Co-organized with CaliGaming. Handled end-to-end tournament operations, schedules, and rulings.",
+      "year": "2024",
+      "readTime": "Jan 2024"
     },
     {
-      "title": "Quorum — Group Decision Experiment",
-      "category": "Experiment",
-      "tags": ["collaboration", "experiment"],
-      "description": "A meeting-time experiment exploring how groups make decisions together.",
-      "year": "2025",
-      "readTime": "2 min"
+      "title": "XO Champions League Season 2",
+      "category": "Esports",
+      "tags": ["esports", "esports-xo", "management"],
+      "description": "Event management and match orchestration for Esports XO across major competitive rosters.",
+      "year": "2021",
+      "readTime": "July 2021"
     },
     {
-      "title": "Creative Entrepreneurs Society",
-      "category": "Community",
-      "tags": ["community", "teaching"],
-      "description": "Building a student-led society focused on creative entrepreneurship and peer mentorship.",
-      "year": "2026",
-      "readTime": "4 min"
+      "title": "Asian League Season 2",
+      "category": "Esports",
+      "tags": ["esports", "asian-league", "nicecactus"],
+      "description": "Executive league operations for regional Asian CODM competition in partnership with Nicecactus.",
+      "year": "2021",
+      "readTime": "June 2021"
+    },
+    {
+      "title": "Loco India Cup",
+      "category": "Esports",
+      "tags": ["esports", "loco", "moderation"],
+      "description": "Match moderation, room setup, and anti-cheat enforcement for Loco's marquee tournament.",
+      "year": "2021",
+      "readTime": "Feb 2021"
+    },
+    {
+      "title": "Zenith CoDM League — Asia",
+      "category": "Esports",
+      "tags": ["esports", "director", "asia"],
+      "description": "Served as Regional Director overseeing Asian operations, rulebooks, and team disputes.",
+      "year": "2020",
+      "readTime": "Nov 2020"
     }
   ]
 }

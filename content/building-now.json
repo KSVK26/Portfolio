@@ -1,32 +1,32 @@
 {
   "items": [
     {
-      "title": "Creative Entrepreneurs Society",
-      "role": "President",
-      "category": "Community",
-      "period": "2026 / 27",
-      "description": "Building a student-led society focused on creative entrepreneurship and peer mentorship."
+      "title": "Ascend Cup — Ascension Esports",
+      "role": "Tournament Admin",
+      "category": "Esports",
+      "period": "May 2024",
+      "description": "Complete event operations, bracket management, and team communication for Ascend Cup."
     },
     {
-      "title": "Synetra Health",
-      "role": "Co-founder",
-      "category": "Venture",
-      "period": "Early concept",
-      "description": "Early-stage health-tech concept exploring accessible diagnostics for underserved communities."
+      "title": "CODM India Clash Season 1",
+      "role": "Lead Admin",
+      "category": "Esports",
+      "period": "Jan 2024",
+      "description": "Full tournament execution co-organized with CaliGaming for competitive CODM teams in India."
     },
     {
-      "title": "Quorum",
-      "role": "Designer / Builder",
-      "category": "Experiment",
-      "period": "Ongoing",
-      "description": "A meeting-time experiment exploring how groups make decisions together."
+      "title": "XO Champions League (Season 1 & 2)",
+      "role": "Event Manager",
+      "category": "Esports",
+      "period": "May–July 2021",
+      "description": "Managed overall match schedules, lobby moderation, and rule enforcement for Esports XO."
     },
     {
-      "title": "Prismatic",
-      "role": "Co-founder / Operator",
-      "category": "Venture",
-      "period": "Ongoing",
-      "description": "A design-led venture studio building products at the intersection of craft and technology."
+      "title": "Web Programming Portfolio",
+      "role": "Developer / Student",
+      "category": "Web",
+      "period": "Ongoing (2026)",
+      "description": "Designing and building a high-performance, editorial multi-page web portfolio with Git-backed CMS."
     }
   ]
 }

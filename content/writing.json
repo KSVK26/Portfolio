@@ -1,28 +1,28 @@
 {
   "items": [
     {
-      "title": "On the Shape of Good Ventures",
+      "title": "Designing Rulebooks for Competitive Esports",
       "format": "Essay",
-      "topic": "venture",
-      "date": "2026-09-12",
-      "readTime": "6 min",
-      "excerpt": "Notes on what makes a venture worth starting — and what doesn't."
+      "topic": "esports",
+      "date": "2026-02-15",
+      "readTime": "5 min",
+      "excerpt": "Key principles for writing clear, unambiguous tournament rules that prevent player disputes."
     },
     {
-      "title": "A Week of Building in Public",
+      "title": "Managing 1,000+ Player Lobbies Without Chaos",
       "format": "Build Log",
-      "topic": "process",
-      "date": "2026-08-30",
+      "topic": "operations",
+      "date": "2025-11-20",
       "readTime": "4 min",
-      "excerpt": "A day-by-day account of shipping something small every day for a week."
+      "excerpt": "A deep dive into Discord server structure, bot automation, and admin workflows for large leagues."
     },
     {
-      "title": "Reflections on Teaching Design",
+      "title": "Lessons from 5 Years in Tournament Administration",
       "format": "Reflection",
-      "topic": "teaching",
-      "date": "2026-08-10",
-      "readTime": "3 min",
-      "excerpt": "What I learned about design from being on the other side of the classroom."
+      "topic": "reflections",
+      "date": "2025-08-10",
+      "readTime": "4 min",
+      "excerpt": "What tournament operations taught me about leadership, stress management, and clear communication."
     }
   ]
 }

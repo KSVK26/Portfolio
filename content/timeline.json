@@ -1,52 +1,46 @@
 {
   "items": [
     {
-      "year": "2018",
-      "title": "KLING eSports Founder",
-      "subtitle": "Founder",
-      "description": "Started an esports initiative at university, building community around competitive gaming."
-    },
-    {
-      "year": "2019",
-      "title": "BA (Hons) Design Management",
-      "subtitle": "University of the Arts London — LCC",
-      "description": "Studied design management, blending creative practice with business strategy."
+      "year": "2020",
+      "title": "Zenith CoDM League — Regional Director",
+      "subtitle": "Zenith Esports",
+      "description": "Directed regional Asian operations, rulebook drafting, and competitive operations for Call of Duty Mobile."
     },
     {
       "year": "2020",
-      "title": "Parsons Product & Industrial Design Intensive",
-      "subtitle": "New York",
-      "description": "Summer intensive exploring product and industrial design thinking at Parsons."
+      "title": "Claxon Competitive League Director",
+      "subtitle": "Claxon League",
+      "description": "Led complete event operations and bracket flow for independent competitive CODM leagues."
     },
     {
       "year": "2021",
-      "title": "London Fashion Week Model",
-      "subtitle": "Runway",
-      "description": "Participated in London Fashion Week, an unexpected intersection of culture and craft."
+      "title": "Loco India Cup Moderator",
+      "subtitle": "Loco",
+      "description": "Match moderation and live lobby coordination for major India streaming platform tournament."
     },
     {
-      "year": "2022",
-      "title": "Philips Design Placement",
-      "subtitle": "Designer",
-      "description": "Worked within Philips Design, learning how large organizations approach design at scale."
+      "year": "2021",
+      "title": "Asian League Season 2 Executive",
+      "subtitle": "Asian League & Nicecactus",
+      "description": "Executive league operations for international pan-Asian tournament rosters."
     },
     {
-      "year": "2023",
-      "title": "European Innovation Academy",
-      "subtitle": "Portugal",
-      "description": "Attended an intensive entrepreneurship program in Portugal, shaping the venture mindset."
+      "year": "2021",
+      "title": "XO Champions League Event Manager",
+      "subtitle": "Esports XO",
+      "description": "Managed match schedules, team communications, and rulings across Season 1 & 2."
     },
     {
       "year": "2024",
-      "title": "Berkeley Leadership Week",
-      "subtitle": "USA",
-      "description": "Explored leadership practices at Berkeley, refining how I work with teams."
+      "title": "CODM India Clash & Ascend Cup Lead Admin",
+      "subtitle": "Ascension Esports & CaliGaming",
+      "description": "Head tournament administrator executing complete event operations for high-stakes cups."
     },
     {
-      "year": "2025",
-      "title": "Prismatic — Co-founder",
-      "subtitle": "Venture Studio",
-      "description": "Co-founded and now operates a design-led venture studio."
+      "year": "2026",
+      "title": "Web Programming & Portfolio Systems",
+      "subtitle": "College Project",
+      "description": "Building modern web applications, static site architectures, and decoupled CMS engines."
     }
   ]
 }
