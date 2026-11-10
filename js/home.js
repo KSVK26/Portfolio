@@ -28,7 +28,7 @@
         (item) => `
         <div class="card">
           <div class="card-media">
-            ${item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="card-media-placeholder">${item.category}</div>`}
+            ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy" />` : `<div class="card-media-placeholder">${item.category}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${item.category}</span>
@@ -59,7 +59,7 @@
         (item) => `
         <a href="writing-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
           <div class="card-media">
-            ${item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="card-media-placeholder">${item.format}</div>`}
+            ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy" />` : `<div class="card-media-placeholder">${item.format}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${item.format}</span>
@@ -148,7 +148,7 @@
         <div class="card" style="max-width:320px;">
           <h3 class="card-title">${o.title}</h3>
           <p class="card-desc">${o.desc}</p>
-          <a href="mailto:hello@example.com" class="card-footer" style="color:var(--accent-blue);">hello@example.com</a>
+          <a href="mailto:ksvk26@gmail.com" class="card-footer" style="color:var(--accent-blue);">ksvk26@gmail.com</a>
         </div>`
       )
       .join("");

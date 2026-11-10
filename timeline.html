@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A record of the experiences, responsibilities and projects that have shaped K S Vasanth Karthik's work." />
+  <meta property="og:title" content="Timeline — K S Vasanth Karthik" />
+  <meta property="og:description" content="A work in progress — experiences, responsibilities and projects across esports, technology and creative work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ksvk.netlify.app/timeline.html" />
+  <meta property="og:image" content="https://ksvk.netlify.app/images/ksvk-black.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://ksvk.netlify.app/timeline.html" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <title>Timeline — K S Vasanth Karthik</title>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main class="container">
+    <section class="page-section">
+      <span class="section-tag">00 — Timeline</span>
+      <h1 class="section-title">The Timeline</h1>
+      <p class="section-subtitle">
+        A work in progress. A record of the experiences, responsibilities and
+        projects that have shaped what I do today.
+      </p>
+
+      <div class="timeline-container">
+        <div class="timeline-stream" id="timeline-stream">
+          <!-- Populated by js/timeline.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/timeline.js"></script>
+</body>
+</html>
