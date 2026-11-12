@@ -39,8 +39,8 @@
             <p class="card-desc">${escapeHtml(p.description)}</p>
           </div>
           <div class="card-footer">
+            <span>${escapeHtml(p.org || p.year || "")}</span>
             <span>${escapeHtml(p.year || "")}</span>
-            <span>${escapeHtml(p.readTime || "")}</span>
           </div>
         </div>`
       )
@@ -59,6 +59,8 @@
         p.title,
         p.description,
         p.category,
+        p.role,
+        p.org,
         ...(p.tags || []),
       ]
         .join(" ")

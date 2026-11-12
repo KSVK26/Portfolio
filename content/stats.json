@@ -1,24 +1,24 @@
 {
   "stats": [
     {
-      "number": "15+",
-      "label": "Esports Tournaments",
-      "description": "Complete league operations, match moderation, and tournament admin"
+      "number": "Tournaments, Leagues & Cups",
+      "label": "",
+      "description": "Complete league operations, match moderation, and tournament administration across competitive Call of Duty Mobile and regional Asian leagues."
     },
     {
-      "number": "10,000+",
-      "label": "Players & Teams Managed",
-      "description": "Across competitive Call of Duty Mobile and regional Asian leagues"
+      "number": "Players & Teams",
+      "label": "",
+      "description": "Coordinated competitive communities, lobbies and teams across multiple independent and major organizers."
     },
     {
-      "number": "6+",
-      "label": "Major Organizers",
-      "description": "Loco, Esports XO, Ascension Esports, CaliGaming, Asian League, Zenith"
+      "number": "Organizers",
+      "label": "",
+      "description": "Worked with Loco, Esports XO, Ascension Esports, CaliGaming, Asian League and Zenith."
     },
     {
-      "number": "5+",
-      "label": "Years in Esports Ops",
-      "description": "From regional director to league operations and tournament lead (2020–Present)"
+      "number": "2020–Present",
+      "label": "",
+      "description": "From regional director to league operations and tournament lead across esports operations."
     }
   ]
 }

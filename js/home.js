@@ -1,35 +1,31 @@
 /* ==========================================================================
-   Home Page — Dynamic rendering of stats, building-now, writing, worlds,
-   timeline, and contact sections from JSON data.
+   Home Page — Dynamic rendering of Proof, Areas of Work, Selected Work,
+   and Contact sections.
    ========================================================================== */
 
 (function () {
   "use strict";
 
   function renderStats(container, data) {
-    if (!container || !data) return;
+    if (!container || !data || !data.stats) return;
     container.innerHTML = data.stats
       .map(
         (s) => `
         <div class="stat-card">
-          <div class="stat-number">${s.number}</div>
-          <div class="stat-label">${s.label}</div>
-          <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.4rem;">${s.description}</p>
+          <div class="stat-number" style="font-size:1.4rem;font-weight:700;line-height:1.3;margin-bottom:0.4rem;">${s.number}</div>
+          ${s.label ? `<div class="stat-label" style="font-weight:600;color:var(--text-primary);">${s.label}</div>` : ""}
+          <p style="font-size:0.88rem;color:var(--text-secondary);margin-top:0.4rem;line-height:1.5;">${s.description}</p>
         </div>`
       )
       .join("");
   }
 
-  function renderBuildingNow(container, data) {
-    if (!container || !data) return;
-    const items = data.items.slice(0, 3);
-    container.innerHTML = items
+  function renderAreasOfWork(container, data) {
+    if (!container || !data || !data.items) return;
+    container.innerHTML = data.items
       .map(
         (item) => `
         <div class="card">
-          <div class="card-media">
-            ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy" />` : `<div class="card-media-placeholder">${item.category}</div>`}
-          </div>
           <div class="card-body">
             <span class="card-tag">${item.category}</span>
             <h3 class="card-title">${item.title}</h3>
@@ -42,126 +38,74 @@
         </div>`
       )
       .join("");
-    if (data.items.length > 3) {
-      const viewAll = document.createElement("a");
-      viewAll.href = "work.html";
-      viewAll.className = "view-all-link";
-      viewAll.textContent = `View all ${data.items.length} projects →`;
-      container.parentElement.appendChild(viewAll);
-    }
   }
 
-  function renderWriting(container, data) {
-    if (!container || !data) return;
-    const items = data.items.slice(0, 3);
+  function renderSelectedWork(container, data) {
+    if (!container || !data || !data.items) return;
+    const items = data.items.slice(0, 5);
     container.innerHTML = items
       .map(
         (item) => `
-        <a href="writing-detail.html?id=${item.slug || ''}" class="card" style="text-decoration:none;color:inherit;">
-          <div class="card-media">
-            ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy" />` : `<div class="card-media-placeholder">${item.format}</div>`}
-          </div>
-          <div class="card-body">
-            <span class="card-tag">${item.format}</span>
-            <h3 class="card-title">${item.title}</h3>
-            <p class="card-desc">${item.excerpt}</p>
-          </div>
-          <div class="card-footer">
-            <span>${item.date}</span>
-            <span>${item.readTime}</span>
-          </div>
-        </a>`
-      )
-      .join("");
-    if (data.items.length > 3) {
-      const viewAll = document.createElement("a");
-      viewAll.href = "writing.html";
-      viewAll.className = "view-all-link";
-      viewAll.textContent = `View all ${data.items.length} posts →`;
-      container.parentElement.appendChild(viewAll);
-    }
-  }
-
-  function renderWorlds(container) {
-    if (!container) return;
-    const worlds = [
-      { title: "Gaming & Esports", link: "portfolio.html", tag: "arcade" },
-      { title: "Modelling", link: "portfolio.html", tag: "model" },
-      { title: "Photography", link: "portfolio.html", tag: "photo" },
-      { title: "Film & TV", link: "portfolio.html", tag: "film" },
-      { title: "Web Development", link: "work.html", tag: "web" },
-      { title: "Design Strategy", link: "work.html", tag: "design" },
-    ];
-    const shown = worlds.slice(0, 3);
-    container.innerHTML = shown
-      .map(
-        (w) => `
         <div class="card">
-          <div class="card-media">
-            ${w.image ? `<img src="${w.image}" alt="${w.title}" />` : `<div class="card-media-placeholder">${w.tag}</div>`}
-          </div>
           <div class="card-body">
-            <span class="card-tag">${w.tag}</span>
-            <h3 class="card-title">${w.title}</h3>
-            <p class="card-desc">A dedicated world keeping its own archive and stories.</p>
+            <span class="card-tag">${item.category}</span>
+            <h3 class="card-title">${item.title}</h3>
+            <p class="card-desc">${item.description}</p>
           </div>
           <div class="card-footer">
-            <a href="${w.link}" style="color:var(--accent-blue);font-weight:600;">Explore →</a>
+            <span>${item.year}</span>
+            <span>${item.readTime || ''}</span>
           </div>
         </div>`
       )
       .join("");
-    if (worlds.length > 3) {
+
+    if (data.items.length > 4) {
       const viewAll = document.createElement("a");
-      viewAll.href = "portfolio.html";
+      viewAll.href = "work.html";
       viewAll.className = "view-all-link";
-      viewAll.textContent = `View all ${worlds.length} worlds →`;
+      viewAll.textContent = `Explore all selected work →`;
       container.parentElement.appendChild(viewAll);
     }
-  }
-
-  function renderTimeline(container, data) {
-    if (!container || !data) return;
-    container.innerHTML = data.items
-      .map(
-        (item) => `
-        <div class="timeline-node">
-          <div class="timeline-date">${item.year}</div>
-          <div class="timeline-title">${item.title}</div>
-          <div class="timeline-subtitle">${item.subtitle}</div>
-          <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.4rem;">${item.description}</p>
-        </div>`
-      )
-      .join("");
   }
 
   function renderContact(container) {
     if (!container) return;
-    const options = [
-      { title: "Build or collaborate", desc: "Starting something new together." },
-      { title: "Speaking or workshops", desc: "I run talks and hands-on sessions." },
-      { title: "Design or strategy work", desc: "From research to positioning." },
+    const channels = [
+      {
+        title: "Email",
+        desc: "Direct inquiry & collaboration",
+        link: "mailto:ksvk26@gmail.com",
+        label: "ksvk26@gmail.com"
+      },
+      {
+        title: "LinkedIn",
+        desc: "Professional background & networking",
+        link: "https://www.linkedin.com/in/k-s-vasanth-karthik-7264842b0/",
+        label: "K S Vasanth Karthik"
+      },
+      {
+        title: "Instagram",
+        desc: "Event updates & creative work",
+        link: "https://www.instagram.com/ksvk_26",
+        label: "@ksvk_26"
+      }
     ];
-    container.innerHTML = options
+
+    container.innerHTML = channels
       .map(
-        (o) => `
+        (c) => `
         <div class="card" style="max-width:320px;">
-          <h3 class="card-title">${o.title}</h3>
-          <p class="card-desc">${o.desc}</p>
-          <a href="mailto:ksvk26@gmail.com" class="card-footer" style="color:var(--accent-blue);">ksvk26@gmail.com</a>
+          <div class="card-body">
+            <h3 class="card-title">${c.title}</h3>
+            <p class="card-desc">${c.desc}</p>
+          </div>
+          <div class="card-footer">
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue);font-weight:600;">${c.label} →</a>
+          </div>
         </div>`
       )
       .join("");
-  }
-
-  /* Fallback content when JSON files are missing */
-  function getFallbackData() {
-    return {
-      stats: { stats: [{ number: "—", label: "Loading…", description: "" }] },
-      now: { items: [] },
-      writing: { items: [] },
-      timeline: { items: [] },
-    };
   }
 
   async function loadJSON(path) {
@@ -170,25 +114,21 @@
       if (!res.ok) throw new Error("HTTP " + res.status);
       return await res.json();
     } catch (err) {
-      console.warn("Failed to load " + path + ", using fallback.", err);
+      console.warn("Failed to load " + path, err);
       return null;
     }
   }
 
   async function init() {
-    const fallback = getFallbackData();
-    const [stats, now, writing, timeline] = await Promise.all([
+    const [stats, now, projects] = await Promise.all([
       loadJSON("content/stats.json"),
       loadJSON("content/now.json"),
-      loadJSON("content/writing.json"),
-      loadJSON("content/timeline.json"),
+      loadJSON("content/projects.json")
     ]);
 
-    renderStats(document.getElementById("stats-grid"), stats || fallback.stats);
-    renderBuildingNow(document.getElementById("building-now-grid"), now || fallback.now);
-    renderWriting(document.getElementById("writing-grid"), writing || fallback.writing);
-    renderWorlds(document.getElementById("worlds-grid"));
-    renderTimeline(document.getElementById("timeline-stream"), timeline || fallback.timeline);
+    renderStats(document.getElementById("stats-grid"), stats);
+    renderAreasOfWork(document.getElementById("areas-grid"), now);
+    renderSelectedWork(document.getElementById("selected-work-grid"), projects);
     renderContact(document.getElementById("contact-options"));
   }
 

@@ -18,6 +18,15 @@
   --header-height: 70px;
   --radius: 8px;
   --transition: all 0.2s ease-in-out;
+
+  /* Typography tokens (§8) */
+  --type-body-size: 1.0625rem;
+  --type-body-line: 1.7;
+  --type-subtitle-size: 1.125rem;
+  --type-subtitle-line: 1.6;
+  --type-meta-size: 0.8rem;
+  --type-meta-line: 1.4;
+  --type-text-max: 720px;
 }
 
 /* Reset & Base Styles */
@@ -40,7 +49,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  line-height: 1.6;
+  line-height: var(--type-body-line);
+  font-size: var(--type-body-size);
 }
 
 a {
@@ -223,9 +233,10 @@ img {
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: var(--type-subtitle-size);
+  line-height: var(--type-subtitle-line);
   color: var(--text-secondary);
-  max-width: 650px;
+  max-width: var(--type-text-max);
   margin-bottom: 2.5rem;
 }
 
@@ -399,9 +410,9 @@ img {
 }
 
 .card-desc {
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.55;
   flex-grow: 1;
   margin-bottom: 1rem;
 }
