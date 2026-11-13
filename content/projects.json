@@ -1,124 +1,109 @@
 {
   "items": [
     {
-      "title": "CODM India Clash Season 1",
+      "title": "Janata Curfew League - Season 1",
       "category": "Esports",
-      "org": "CaliGaming",
+      "org": "Asian League & Doctor Battles",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "admin"
+      ],
+      "description": "Match Moderation for Streamed Matches.",
+      "body": "Moderator. Match Moderation for Streamed Matches. Worked with Asian League & Doctor Battles.",
+      "year": "2020",
+      "readTime": "Jul 2020"
+    },
+    {
+      "title": "Claxon Competitive League",
+      "category": "Esports",
+      "org": "Claxon Tournaments & Doctor Battles",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "director"
+      ],
+      "description": "Complete Event Operations.",
+      "body": "Director. Complete Event Operations. Worked with Claxon Tournaments & Doctor Battles.",
+      "year": "2020",
+      "readTime": "Sep 2020"
+    },
+    {
+      "title": "Global Esports Call of Duty Mobile League 2020",
+      "category": "Esports",
+      "org": "Global Esports & Asian League",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "admin"
+      ],
+      "description": "Match Moderation.",
+      "body": "Moderator. Match Moderation. Worked with Global Esports & Asian League.",
+      "year": "2020",
+      "readTime": "Sep 2020"
+    },
+    {
+      "title": "Zenith CoDM League - Asia",
+      "category": "Esports",
+      "org": "Zenith League & Doctor Battles",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "director"
+      ],
+      "description": "Complete Event Operations.",
+      "body": "Regional Director. Complete Event Operations. Worked with Zenith League & Doctor Battles.",
+      "year": "2020",
+      "readTime": "Nov 2020"
+    },
+    {
+      "title": "Ecstasy Cup",
+      "category": "Esports",
+      "org": "Modelling CopS & Battlemania Esports",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "admin"
+      ],
+      "description": "Match Moderation.",
+      "body": "Moderator. Match Moderation. Worked with Modelling CopS & Battlemania Esports.",
+      "year": "2020",
+      "readTime": "Nov 2020"
+    },
+    {
+      "title": "Revenant Esports Duel Arena",
+      "category": "Esports",
+      "org": "Revenant Esports",
       "image": "",
       "tags": [
         "esports",
         "codm",
         "operations"
       ],
-      "description": "Co-organized with CaliGaming. Handled end-to-end tournament operations, schedules, and rulings.",
-      "body": "Co-organized with CaliGaming. Handled end-to-end tournament operations, schedules, and rulings for competitive CODM teams in India. This was a major India-wide cup with 10,000+ participants.",
-      "year": "2024",
-      "readTime": "Jan 2024"
+      "description": "Complete Event Operations.",
+      "body": "League Operations. Complete Event Operations. Worked with Revenant Esports.",
+      "year": "2020",
+      "readTime": "Nov 2020"
     },
     {
-      "title": "Claxon Competitive League",
+      "title": "League 1.0",
       "category": "Esports",
-      "org": "Claxon",
+      "org": "Crust Esports & The World of Battle",
       "image": "",
       "tags": [
         "esports",
         "codm",
-        "league-director"
-      ],
-      "description": "Led complete event operations and bracket flow for independent competitive CODM leagues.",
-      "body": "Led complete event operations and bracket flow for independent competitive CODM leagues under the Claxon banner. Directed scheduling, lobby administration, and rule enforcement across a full league season.",
-      "year": "2020",
-      "readTime": "2020"
-    },
-    {
-      "title": "SJ60 hololive Special Day",
-      "category": "Operations",
-      "org": "Hololive Production",
-      "image": "",
-      "tags": [
-        "events",
-        "hololive",
-        "production"
-      ],
-      "description": "Special fan event coordination, venue management, and execution support for Hololive Production.",
-      "body": "Special fan event coordination, venue management, and execution support for the SJ60 hololive production Special Day. Handled on-the-ground logistics, timing, and volunteer coordination for a live fan experience.",
-      "year": "2024",
-      "readTime": "2024"
-    },
-    {
-      "title": "Code Carnage 2.0",
-      "category": "Operations",
-      "org": "Campus Event",
-      "image": "",
-      "tags": [
-        "events",
-        "campus",
-        "coordination"
-      ],
-      "description": "Campus event management, participant registration, rule enforcement, and live event coordination.",
-      "body": "Campus event management, participant registration, rule enforcement, and live event coordination for Code Carnage 2.0. Ran registration flow, on-site scheduling, and dispute handling during the event day.",
-      "year": "2024",
-      "readTime": "2024"
-    },
-    {
-      "title": "GLXY Awards",
-      "category": "Creative",
-      "org": "Community",
-      "image": "",
-      "tags": [
-        "creative",
-        "branding",
-        "community"
-      ],
-      "description": "Visual identity, nomination graphics, ceremony design, and community campaign management.",
-      "body": "Creative lead for the GLXY Awards. Designed the visual identity, nomination graphics and ceremony assets, and ran the community campaign that drove nominations and voting.",
-      "year": "2023",
-      "readTime": "2023"
-    },
-    {
-      "title": "Ascend Cup — Ascension Esports",
-      "category": "Esports",
-      "org": "Ascension Esports",
-      "image": "",
-      "tags": [
-        "esports",
-        "operations",
         "admin"
       ],
-      "description": "Complete event operations, bracket management, and lobby administration for Ascension Esports.",
-      "body": "Complete event operations, bracket management, and lobby administration for Ascension Esports. This tournament required extensive coordination across multiple time zones and teams.",
-      "year": "2024",
-      "readTime": "May 2024"
-    },
-    {
-      "title": "XO Champions League Season 2",
-      "category": "Esports",
-      "org": "Esports XO",
-      "image": "",
-      "tags": [
-        "esports",
-        "esports-xo",
-        "management"
-      ],
-      "description": "Event management and match orchestration for Esports XO across major competitive rosters.",
-      "body": "Event management and match orchestration for Esports XO across major competitive rosters. Managed overall match schedules, lobby moderation, and rule enforcement.",
+      "description": "Complete Event Operations.",
+      "body": "Admin. Complete Event Operations. Worked with Crust Esports & The World of Battle.",
       "year": "2021",
-      "readTime": "July 2021"
-    },
-    {
-      "title": "Asian League Season 2",
-      "category": "Esports",
-      "org": "Nicecactus",
-      "image": "",
-      "tags": [
-        "esports",
-        "asian-league",
-        "nicecactus"
-      ],
-      "description": "Executive league operations for regional Asian CODM competition in partnership with Nicecactus.",
-      "body": "Executive league operations for regional Asian CODM competition in partnership with Nicecactus. Handled regional director duties including rule enforcement and team communication.",
-      "year": "2021",
-      "readTime": "June 2021"
+      "readTime": "Feb 2021"
     },
     {
       "title": "Loco India Cup",
@@ -127,28 +112,118 @@
       "image": "",
       "tags": [
         "esports",
-        "loco",
-        "moderation"
+        "codm",
+        "admin"
       ],
-      "description": "Match moderation, room setup, and anti-cheat enforcement for Loco's marquee tournament.",
-      "body": "Match moderation, room setup, and anti-cheat enforcement for Loco's marquee tournament. Coordinated live lobby management and dispute resolution.",
+      "description": "Match Moderation.",
+      "body": "Moderator. Match Moderation. Worked with Loco.",
       "year": "2021",
       "readTime": "Feb 2021"
     },
     {
-      "title": "Zenith CoDM League — Asia",
+      "title": "East Open League",
       "category": "Esports",
-      "org": "Zenith Esports",
+      "org": "Staxx GameHouse & Revenant Esports",
       "image": "",
       "tags": [
         "esports",
-        "director",
-        "asia"
+        "codm",
+        "operations"
       ],
-      "description": "Served as Regional Director overseeing Asian operations, rulebooks, and team disputes.",
-      "body": "Served as Regional Director overseeing Asian operations, rulebooks, and team disputes. Managed operations across multiple Asian countries for the Zenith CoDM League.",
-      "year": "2020",
-      "readTime": "Nov 2020"
+      "description": "Complete Event Operations.",
+      "body": "League Operations. Complete Event Operations. Worked with Staxx GameHouse & Revenant Esports.",
+      "year": "2021",
+      "readTime": "Feb 2021"
+    },
+    {
+      "title": "FRONTIER League - Asia Season 1",
+      "category": "Esports",
+      "org": "Staxx GameHouse & Revenant Esports (Frontier League)",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "operations"
+      ],
+      "description": "Complete Event Operations.",
+      "body": "League Operations. Complete Event Operations. Worked with Staxx GameHouse & Revenant Esports (Frontier League).",
+      "year": "2021",
+      "readTime": "Mar 2021"
+    },
+    {
+      "title": "XO Champions League Season 1",
+      "category": "Esports",
+      "org": "Esports XO",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "management"
+      ],
+      "description": "Managing all the matches\nRoom Moderation for Streamed Matches.",
+      "body": "Event Manager. Managing all the matches\nRoom Moderation for Streamed Matches. Worked with Esports XO.",
+      "year": "2021",
+      "readTime": "May 2021"
+    },
+    {
+      "title": "Asian League Season 2",
+      "category": "Esports",
+      "org": "Asian League & Nicecactus",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "executive"
+      ],
+      "description": "Complete Event Operations.",
+      "body": "Executive. Complete Event Operations. Worked with Asian League & Nicecactus.",
+      "year": "2021",
+      "readTime": "Jun 2021"
+    },
+    {
+      "title": "XO Champions League Season 2",
+      "category": "Esports",
+      "org": "Esports XO",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "management"
+      ],
+      "description": "Managing all the matches.",
+      "body": "Event Manager. Managing all the matches. Worked with Esports XO.",
+      "year": "2021",
+      "readTime": "Jul 2021"
+    },
+    {
+      "title": "CODM India Clash Season 1",
+      "category": "Esports",
+      "org": "CODM Clash & CaliGaming",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "admin"
+      ],
+      "description": "Complete Event Operations.",
+      "body": "Admin. Complete Event Operations. Worked with CODM Clash & CaliGaming.",
+      "year": "2024",
+      "readTime": "Jan 2024"
+    },
+    {
+      "title": "Ascend Cup",
+      "category": "Esports",
+      "org": "Ascension Esports",
+      "image": "",
+      "tags": [
+        "esports",
+        "codm",
+        "admin"
+      ],
+      "description": "Complete Event Operations.",
+      "body": "Admin. Complete Event Operations. Worked with Ascension Esports.",
+      "year": "2024",
+      "readTime": "May 2024"
     }
   ]
 }
