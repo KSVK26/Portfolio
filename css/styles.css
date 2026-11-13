@@ -18,15 +18,6 @@
   --header-height: 70px;
   --radius: 8px;
   --transition: all 0.2s ease-in-out;
-
-  /* Typography tokens (§8) */
-  --type-body-size: 1.0625rem;
-  --type-body-line: 1.7;
-  --type-subtitle-size: 1.125rem;
-  --type-subtitle-line: 1.6;
-  --type-meta-size: 0.8rem;
-  --type-meta-line: 1.4;
-  --type-text-max: 720px;
 }
 
 /* Reset & Base Styles */
@@ -49,8 +40,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  line-height: var(--type-body-line);
-  font-size: var(--type-body-size);
+  line-height: 1.6;
 }
 
 a {
@@ -233,10 +223,9 @@ img {
 }
 
 .section-subtitle {
-  font-size: var(--type-subtitle-size);
-  line-height: var(--type-subtitle-line);
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: var(--type-text-max);
+  max-width: 650px;
   margin-bottom: 2.5rem;
 }
 
@@ -410,9 +399,9 @@ img {
 }
 
 .card-desc {
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
   flex-grow: 1;
   margin-bottom: 1rem;
 }
@@ -502,6 +491,37 @@ img {
 .timeline-subtitle {
   font-size: 0.85rem;
   color: var(--text-secondary);
+}
+
+/* Vertical timeline on small screens */
+@media (max-width: 600px) {
+  .timeline-container {
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .timeline-stream {
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+    padding-top: 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--border-color);
+  }
+
+  .timeline-stream::before {
+    display: none;
+  }
+
+  .timeline-node {
+    width: auto;
+    padding-left: 1.25rem;
+  }
+
+  .timeline-node::before {
+    top: 0.15rem;
+    left: 0;
+  }
 }
 
 /* Filters Component */

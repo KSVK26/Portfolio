@@ -12,8 +12,8 @@
       .map(
         (s) => `
         <div class="stat-card">
-          <div class="stat-number" style="font-size:1.4rem;font-weight:700;line-height:1.3;margin-bottom:0.4rem;">${s.number}</div>
-          ${s.label ? `<div class="stat-label" style="font-weight:600;color:var(--text-primary);">${s.label}</div>` : ""}
+          <div class="stat-number">${s.number}</div>
+          ${s.label ? `<div class="stat-label">${s.label}</div>` : ""}
           <p style="font-size:0.88rem;color:var(--text-secondary);margin-top:0.4rem;line-height:1.5;">${s.description}</p>
         </div>`
       )
