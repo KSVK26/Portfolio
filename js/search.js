@@ -47,7 +47,7 @@
         title: t.title,
         desc: t.subtitle + " — " + t.description,
         tags: [t.year],
-        url: "cv.html",
+        url: "about.html",
       })),
       ...now.map((b) => ({
         type: "Building Now",

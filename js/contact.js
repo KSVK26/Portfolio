@@ -25,7 +25,7 @@
       },
     ];
     const elsewhere = [
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/k-s-vasanth-karthik-7264842b0/", desc: "Professional updates and experience." },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/k-s-vasanth-karthik-a2825b234/", desc: "Professional updates and experience." },
       { name: "GitHub", url: "https://github.com/KSVK26", desc: "Projects, experiments and code." },
       { name: "Instagram", url: "https://www.instagram.com/ksvk_26/", desc: "Personal and creative work." },
       { name: "Email", url: "mailto:ksvk26@gmail.com", desc: "For professional enquiries and collaborations." },

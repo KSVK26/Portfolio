@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JSON Generator — build ready-to-paste content entries for the portfolio." />
+  <meta property="og:title" content="Generator — K S Vasanth Karthik" />
+  <meta property="og:description" content="Build JSON entries for projects, timeline and writing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ksvk.netlify.app/generate.html" />
+  <meta property="og:image" content="https://ksvk.netlify.app/images/ksvk-black.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://ksvk.netlify.app/generate.html" />
+  <title>Generator — K S Vasanth Karthik</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main class="container">
+    <section class="page-section">
+      <span class="section-tag">04 — Tools</span>
+      <h1 class="section-title">Content Generator</h1>
+      <p class="section-subtitle">
+        Fill in the blanks, copy the JSON that appears below, and paste it
+        into the matching <code>content/*.json</code> file. Nothing is saved
+        anywhere — this page only builds text for you to copy.
+      </p>
+    </section>
+
+    <section class="page-section">
+      <div class="gen-layout">
+        <div class="gen-form">
+          <div class="gen-field">
+            <label for="gen-type">Type</label>
+            <select id="gen-type">
+              <option value="project">Project</option>
+              <option value="timeline">Timeline</option>
+              <option value="writing">Writing</option>
+            </select>
+          </div>
+
+          <div id="gen-fields"></div>
+
+          <div class="gen-actions">
+            <button class="btn-primary" id="gen-copy">Copy JSON</button>
+            <button class="btn-secondary" id="gen-reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="gen-preview">
+          <div class="gen-preview-header">
+            <span>Paste this into</span>
+            <code id="gen-target-file">content/projects.json</code>
+          </div>
+          <pre id="gen-output" class="gen-output"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/generate.js"></script>
+</body>
+</html>
