@@ -38,11 +38,6 @@
       return data && data.items ? data.items : [];
     },
 
-    async getWriting() {
-      const data = await fetchJSON("content/writing.json");
-      return data && data.items ? data.items : [];
-    },
-
     async getTimeline() {
       const data = await fetchJSON("content/timeline.json");
       return data && data.items ? data.items : [];
