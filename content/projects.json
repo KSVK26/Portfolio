@@ -4,7 +4,7 @@
       "title": "Ascend Cup",
       "category": "Esports",
       "org": "Ascension Esports",
-      "image": "images/ASIANLEAGUE.png",
+      "image": "images/AC.png",
       "tags": [
         "esports",
         "codm",
@@ -27,6 +27,51 @@
       "description": "Co-organized tournament operations, bracket logistics, schedules, and rule enforcement for competitive CODM teams across India.",
       "year": "2024",
       "readTime": "Jan 2024"
+    },
+    {
+      "title": "Rise of Champions",
+      "category": "Esports",
+      "org": "CODM India",
+      "image": "images/ROC.png",
+      "tags": [
+        "esports",
+        "codm",
+        "admin",
+        "graphics"
+      ],
+      "description": "Lead administrator for Rise of Champions, handling full event operations, graphics production, and social media promotion for CODM India.",
+      "year": "2024",
+      "readTime": "2024"
+    },
+    {
+      "title": "Tussle Thrive Season 1",
+      "category": "Esports",
+      "org": "CODM India",
+      "image": "images/TTS1.png",
+      "tags": [
+        "esports",
+        "codm",
+        "admin",
+        "graphics"
+      ],
+      "description": "Lead administrator for Tussle Thrive Season 1, overseeing complete event operations, graphics creation, and social media promotion for CODM India.",
+      "year": "2024",
+      "readTime": "2024"
+    },
+    {
+      "title": "Tussle Thrive Season 2",
+      "category": "Esports",
+      "org": "CODM India",
+      "image": "images/TTS2.png",
+      "tags": [
+        "esports",
+        "codm",
+        "admin",
+        "graphics"
+      ],
+      "description": "Lead administrator for Tussle Thrive Season 2, overseeing complete event operations, graphics creation, and social media promotion for CODM India.",
+      "year": "2024",
+      "readTime": "2024"
     },
     {
       "title": "XO Champions League Season 2",
