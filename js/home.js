@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Home Page — Dynamic rendering of Proof, Areas of Work, Selected Work,
+   Home Page — Dynamic rendering of Proof, Areas of Work, Featured Work,
    and Contact sections.
    ========================================================================== */
 
