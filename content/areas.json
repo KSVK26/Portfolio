@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Esports Operations",
+      "category": "Esports",
+      "description": "Tournament administration, league operations, and match moderation across competitive Call of Duty Mobile — from regional director to lead admin, running events end to end."
+    },
+    {
+      "title": "Event Management",
+      "category": "Events",
+      "description": "Coordinating live tournament delivery: scheduling, bracket flow, lobby setup, rule enforcement, and on-event issue resolution across independent and major organizers."
+    },
+    {
+      "title": "Creative Work",
+      "category": "Creative",
+      "description": "Producing match graphics, stats feeds, and on-stream visuals, plus driving social media promotion and community engagement for the events I run."
+    },
+    {
+      "title": "Community & Campaigns",
+      "category": "Community",
+      "description": "Building and activating communities — campus developer groups, gaming networks, and brand ambassador campaigns — bringing people together around shared interests."
+    }
+  ]
+}

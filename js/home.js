@@ -6,6 +6,14 @@
 (function () {
   "use strict";
 
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   function renderStats(container, data) {
     if (!container || !data || !data.stats) return;
     container.innerHTML = data.stats
@@ -24,18 +32,23 @@
     if (!container || !data || !data.items) return;
     container.innerHTML = data.items
       .map(
-        (item) => `
+        (item) => {
+          const footer = (item.role || item.period)
+            ? `<div class="card-footer">
+            <span>${escapeHtml(item.role || "")}</span>
+            <span>${escapeHtml(item.period || "")}</span>
+          </div>`
+            : "";
+          return `
         <div class="card">
           <div class="card-body">
-            <span class="card-tag">${item.category}</span>
-            <h3 class="card-title">${item.title}</h3>
-            <p class="card-desc">${item.description}</p>
+            <span class="card-tag">${escapeHtml(item.category || "")}</span>
+            <h3 class="card-title">${escapeHtml(item.title)}</h3>
+            <p class="card-desc">${escapeHtml(item.description)}</p>
           </div>
-          <div class="card-footer">
-            <span>${item.role}</span>
-            <span>${item.period}</span>
-          </div>
-        </div>`
+          ${footer}
+        </div>`;
+        }
       )
       .join("");
   }
@@ -61,14 +74,17 @@
       .map(
         (item) => `
         <div class="card">
+          <div class="card-media">
+            ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(item.category || "")}</div>`}
+          </div>
           <div class="card-body">
-            <span class="card-tag">${item.category}</span>
-            <h3 class="card-title">${item.title}</h3>
-            <p class="card-desc">${item.description}</p>
+            <span class="card-tag">${escapeHtml(item.category || "")}</span>
+            <h3 class="card-title">${escapeHtml(item.title)}</h3>
+            <p class="card-desc">${escapeHtml(item.description)}</p>
           </div>
           <div class="card-footer">
-            <span>${item.year}</span>
-            <span>${item.readTime || ''}</span>
+            <span>${escapeHtml(item.org || item.year || "")}</span>
+            <span>${escapeHtml(item.year || "")}</span>
           </div>
         </div>`
       )
@@ -134,14 +150,14 @@
   }
 
   async function init() {
-    const [stats, now, projects] = await Promise.all([
+    const [stats, areas, projects] = await Promise.all([
       loadJSON("content/stats.json"),
-      loadJSON("content/now.json"),
+      loadJSON("content/areas.json"),
       loadJSON("content/projects.json")
     ]);
 
     renderStats(document.getElementById("stats-grid"), stats);
-    renderAreasOfWork(document.getElementById("areas-grid"), now);
+    renderAreasOfWork(document.getElementById("areas-grid"), areas);
     renderSelectedWork(document.getElementById("selected-work-grid"), projects);
     renderContact(document.getElementById("contact-options"));
   }
