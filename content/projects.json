@@ -4,7 +4,7 @@
       "title": "Ascend Cup",
       "category": "Esports",
       "org": "Ascension Esports",
-      "image": "",
+      "image": "https://pbs.twimg.com/media/GLYHuwzXQAA2p6e?format=jpg&name=medium",
       "tags": [
         "esports",
         "codm",
@@ -18,7 +18,7 @@
       "title": "CODM India Clash Season 1",
       "category": "Esports",
       "org": "CODM Clash & CaliGaming",
-      "image": "",
+      "image": "images/CODMIndiaClashS1.png",
       "tags": [
         "esports",
         "codm",
@@ -32,7 +32,7 @@
       "title": "XO Champions League Season 2",
       "category": "Esports",
       "org": "Esports XO",
-      "image": "",
+      "image": "images/XOS2.png",
       "tags": [
         "esports",
         "codm",
@@ -46,7 +46,7 @@
       "title": "Asian League Season 2",
       "category": "Esports",
       "org": "Asian League & Nicecactus",
-      "image": "",
+      "image": "images/ASIANLEAGUE.png",
       "tags": [
         "esports",
         "codm",
@@ -60,7 +60,7 @@
       "title": "XO Champions League Season 1",
       "category": "Esports",
       "org": "Esports XO",
-      "image": "",
+      "image": "images/XOS1.png",
       "tags": [
         "esports",
         "codm",
@@ -74,7 +74,7 @@
       "title": "FRONTIER League - Asia Season 1",
       "category": "Esports",
       "org": "Staxx GameHouse & Revenant Esports (Frontier League)",
-      "image": "",
+      "image": "images/FLA.png",
       "tags": [
         "esports",
         "codm",
@@ -88,7 +88,7 @@
       "title": "League 1.0",
       "category": "Esports",
       "org": "Crust Esports & The World of Battle",
-      "image": "",
+      "image": "images/League_1.0.png",
       "tags": [
         "esports",
         "codm",
@@ -102,7 +102,7 @@
       "title": "Loco India Cup",
       "category": "Esports",
       "org": "Loco",
-      "image": "",
+      "image": "images/CICP.png",
       "tags": [
         "esports",
         "codm",
@@ -116,7 +116,7 @@
       "title": "East Open League",
       "category": "Esports",
       "org": "Staxx GameHouse & Revenant Esports",
-      "image": "",
+      "image": "images/FLA.png",
       "tags": [
         "esports",
         "codm",
@@ -127,10 +127,20 @@
       "readTime": "Feb 2021"
     },
     {
+      "title": "Claxon Pro League",
+      "category": "Esports",
+      "org": "Claxon Tournaments & Doctor Battles",
+      "image": "images/CPL.png",
+      "tags": ["esports", "codm", "director"],
+      "description": "Directed complete event operations, bracket flow, and rulebook enforcement for the premier Claxon Pro League CODM competition.",
+      "year": "2020",
+      "readTime": "Dec 2020"
+    },
+    {
       "title": "Zenith CoDM League - Asia",
       "category": "Esports",
       "org": "Zenith League & Doctor Battles",
-      "image": "",
+      "image": "images/ZCLA.png",
       "tags": [
         "esports",
         "codm",
@@ -144,7 +154,7 @@
       "title": "Ecstasy Cup",
       "category": "Esports",
       "org": "Modelling CopS & Battlemania Esports",
-      "image": "",
+      "image": "images/EC.png",
       "tags": [
         "esports",
         "codm",
@@ -158,7 +168,7 @@
       "title": "Revenant Esports Duel Arena",
       "category": "Esports",
       "org": "Revenant Esports",
-      "image": "",
+      "image": "images/RDA.png",
       "tags": [
         "esports",
         "codm",
@@ -172,7 +182,7 @@
       "title": "Claxon Competitive League",
       "category": "Esports",
       "org": "Claxon Tournaments & Doctor Battles",
-      "image": "",
+      "image": "images/CCL.png",
       "tags": [
         "esports",
         "codm",
@@ -186,7 +196,7 @@
       "title": "Global Esports Call of Duty Mobile League 2020",
       "category": "Esports",
       "org": "Global Esports & Asian League",
-      "image": "",
+      "image": "images/GE_League.png",
       "tags": [
         "esports",
         "codm",
@@ -200,7 +210,7 @@
       "title": "Janata Curfew League - Season 1",
       "category": "Esports",
       "org": "Asian League & Doctor Battles",
-      "image": "",
+      "image": "images/ASIANLEAGUE.png",
       "tags": [
         "esports",
         "codm",

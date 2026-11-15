@@ -19,6 +19,23 @@
       .replace(/"/g, "&quot;");
   }
 
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  // Parse "Mon Year" (or "Year") into a sortable numeric key, newest first.
+  function sortKey(p) {
+    const rt = (p.readTime || "").trim();
+    const m = rt.match(/^([A-Za-z]+)\s+(\d{4})$/);
+    if (m) {
+      const mi = MONTHS.indexOf(m[1]);
+      return mi >= 0 ? parseInt(m[2]) * 12 + mi : parseInt(m[2]) * 12;
+    }
+    return parseInt(p.year) * 12 || 0;
+  }
+
+  function sortByDate(projects) {
+    return projects.slice().sort((a, b) => sortKey(b) - sortKey(a));
+  }
+
   function renderCards(projects) {
     if (!grid) return;
     if (!projects.length) {
@@ -67,7 +84,7 @@
         .toLowerCase();
       return haystack.includes(query);
     });
-    renderCards(filtered);
+    renderCards(sortByDate(filtered));
   }
 
   function initFilterBar() {
@@ -93,7 +110,7 @@
 
   async function init() {
     allProjects = await DataLoader.getProjects();
-    renderCards(allProjects);
+    renderCards(sortByDate(allProjects));
     initFilterBar();
     initSearch();
   }
