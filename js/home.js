@@ -51,6 +51,12 @@
         }
       )
       .join("");
+
+    const viewAll = document.createElement("a");
+    viewAll.href = "work.html";
+    viewAll.className = "view-all-link";
+    viewAll.textContent = "Explore all work →";
+    container.parentElement.appendChild(viewAll);
   }
 
   function renderSelectedWork(container, data) {
