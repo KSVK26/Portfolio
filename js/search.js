@@ -31,6 +31,7 @@
         type: "Project",
         title: p.title,
         desc: p.description,
+        image: p.image,
         tags: p.tags || [],
         url: "work.html",
       })),
@@ -45,6 +46,7 @@
         type: "Building Now",
         title: b.title,
         desc: b.role + " — " + b.description,
+        image: b.image,
         tags: [b.category],
         url: "now.html",
       })),
@@ -72,7 +74,7 @@
         (item) => `
         <div class="card">
           <div class="card-media">
-            <div class="card-media-placeholder">${escapeHtml(item.type)}</div>
+            ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(item.type)}</div>`}
           </div>
           <div class="card-body">
             <span class="card-tag">${escapeHtml(item.type)}</span>
