@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "title": "CODM WC 2026 Regionals",
+      "category": "Esports",
+      "org": "Call of Duty Mobile World Championship",
+      "image": "images/work/CODMWC26.png",
+      "tags": [
+        "esports",
+        "codm",
+        "referee"
+      ],
+      "description": "Served on the referee team for the CODM World Championship 2026 Regionals across IN, EU, NA, and LATAM, officiating matches, resolving disputes, and handling all on-event issues.",
+      "year": "2026",
+      "readTime": "Sep 2026"
+    },
+    {
       "title": "Chadni Chow to China",
       "category": "Esports",
       "org": "Sweats Den",
