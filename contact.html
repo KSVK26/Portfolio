@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Get in touch with K S Vasanth Karthik — projects, collaborations, opportunities and interesting conversations." />
   <meta property="og:title" content="Contact — K S Vasanth Karthik" />
-  <meta property="og:description" content="Have something interesting in mind? I'd be glad to hear from you." />
+  <meta property="og:description" content="Have something interesting in mind? Send a message." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ksvk.netlify.app/contact.html" />
   <meta property="og:image" content="https://ksvk.netlify.app/images/ksvk-black.png" />
@@ -19,30 +19,60 @@
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <section class="page-section">
+    <section class="page-section" style="max-width: 680px; margin: 0 auto;">
       <span class="section-tag">00 — Contact</span>
       <h1 class="section-title">Let's connect</h1>
-      <p class="section-subtitle">
-        Have something interesting in mind?
+      <p class="section-subtitle" style="margin-bottom: 2.5rem;">
+        Whether it's a project, a collaboration, an opportunity or simply an interesting conversation, drop a message below.
       </p>
-      <p class="section-subtitle" style="margin-top: -1rem; margin-bottom: 2.5rem;">
-        Whether it's a project, a collaboration, an opportunity or simply an
-        interesting conversation, I'd be glad to hear from you. I'm
-        particularly interested in connecting with people working across
-        esports, creative industries and community-driven initiatives.
-      </p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 2.5rem; margin-bottom: 3rem;">
+        <!-- Netlify hidden input for form name -->
+        <input type="hidden" name="form-name" value="contact" />
+
+        <!-- Honeypot anti-spam field -->
+        <p style="display: none;">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="gen-field">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Alex Smith" />
+        </div>
+
+        <div class="gen-field">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="alex@example.com" />
+        </div>
+
+        <div class="gen-field">
+          <label for="inquiry-type">What's this about?</label>
+          <select id="inquiry-type" name="inquiry-type">
+            <option value="work">Work / Hire me</option>
+            <option value="collaboration">Collaboration / Project</option>
+            <option value="conversation">Just connecting / General question</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="gen-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Brief summary of your message" />
+        </div>
+
+        <div class="gen-field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell me what's on your mind..."></textarea>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button type="submit" class="btn-primary" style="width: 100%; text-align: center; cursor: pointer; border: none;">Send message →</button>
+        </div>
+      </form>
 
       <div class="contact-options" id="contact-options">
         <!-- Populated by js/contact.js -->
       </div>
-
-      <p style="margin-top: 3rem; color: var(--text-secondary); font-size: 0.95rem;">
-        Based in Bengaluru, India. Currently open to interesting
-        opportunities and collaborations.
-      </p>
-      <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-secondary);">
-        Good things usually start with a conversation.
-      </p>
     </section>
   </main>
 
