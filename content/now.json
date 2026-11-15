@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "title": "GDGoC SJBIT Organizer",
+      "category": "Community",
+      "role": "Google Developer Groups on Campus — SJBIT",
+      "period": "Sep 2026 – Present",
+      "description": "Running Google Developer Groups on Campus at SJBIT — delivering Google-curated campaigns (Build with AI, Solution Challenge, study jams), guiding students to build prototypes with Firebase, Gemini API, and Vertex AI, growing campus membership, and curating talks from Google Developer Experts."
+    },
+    {
       "title": "Operations Executive",
       "category": "Operations",
       "role": "Esports Tournaments & Events",
@@ -20,13 +27,6 @@
       "role": "The Esports Club (TEC Spartans)",
       "period": "Mar 2025 – Present",
       "description": "Promoting The Esports Club across my college, the city, and the gaming community through on-ground events, digital initiatives, and partnerships with student organizations, local venues, and gaming stores."
-    },
-    {
-      "title": "GDGoC SJBIT Organizer",
-      "category": "Community",
-      "role": "Google Developer Groups on Campus — SJBIT",
-      "period": "?? – Present",
-      "description": "Running Google Developer Groups on Campus at SJBIT — delivering Google-curated campaigns (Build with AI, Solution Challenge, study jams), guiding students to build prototypes with Firebase, Gemini API, and Vertex AI, growing campus membership, and curating talks from Google Developer Experts."
     }
   ]
 }
