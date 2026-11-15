@@ -1,10 +1,24 @@
 {
   "items": [
     {
+      "title": "Chadni Chow to China",
+      "category": "Esports",
+      "org": "Sweats Den",
+      "image": "images/work/CCTC.png",
+      "tags": [
+        "esports",
+        "codm",
+        "admin"
+      ],
+      "description": "Tournament administrator for Sweats Den's Chadni Chow to China, running event operations, lobby coordination, and competitive delivery.",
+      "year": "2026",
+      "readTime": "Feb 2026"
+    },
+    {
       "title": "Ascend Cup",
       "category": "Esports",
       "org": "Ascension Esports",
-      "image": "images/AC.png",
+      "image": "images/work/AC.png",
       "tags": [
         "esports",
         "codm",
@@ -18,7 +32,7 @@
       "title": "CODM India Clash Season 1",
       "category": "Esports",
       "org": "CODM Clash & CaliGaming",
-      "image": "images/CODMIndiaClashS1.png",
+      "image": "images/work/CODMIndiaClashS1.png",
       "tags": [
         "esports",
         "codm",
@@ -32,52 +46,52 @@
       "title": "Rise of Champions",
       "category": "Esports",
       "org": "CODM India",
-      "image": "images/ROC.png",
+      "image": "images/work/ROC.png",
       "tags": [
         "esports",
         "codm",
         "admin",
         "graphics"
       ],
-      "description": "Lead administrator for Rise of Champions, handling full event operations, graphics production, and social media promotion for CODM India.",
+      "description": "Lead administrator for CODM India's Rise of Champions, running full tournament operations, producing match graphics, and driving social media promotion.",
       "year": "2024",
-      "readTime": "2024"
+      "readTime": "Sep 2024"
     },
     {
       "title": "Tussle Thrive Season 1",
       "category": "Esports",
       "org": "CODM India",
-      "image": "images/TTS1.png",
+      "image": "images/work/TTS1.png",
       "tags": [
         "esports",
         "codm",
         "admin",
         "graphics"
       ],
-      "description": "Lead administrator for Tussle Thrive Season 1, overseeing complete event operations, graphics creation, and social media promotion for CODM India.",
+      "description": "Lead administrator for the inaugural Tussle Thrive Season 1, managing end-to-end event operations, in-house graphics, and community promotion for CODM India.",
       "year": "2024",
-      "readTime": "2024"
+      "readTime": "Jul 2024"
     },
     {
       "title": "Tussle Thrive Season 2",
       "category": "Esports",
       "org": "CODM India",
-      "image": "images/TTS2.png",
+      "image": "images/work/TTS2.png",
       "tags": [
         "esports",
         "codm",
         "admin",
         "graphics"
       ],
-      "description": "Lead administrator for Tussle Thrive Season 2, overseeing complete event operations, graphics creation, and social media promotion for CODM India.",
+      "description": "Lead administrator for Tussle Thrive Season 2, running tournament operations, producing event graphics, and handling CODM India's social media push for the season.",
       "year": "2024",
-      "readTime": "2024"
+      "readTime": "Dec 2024"
     },
     {
       "title": "XO Champions League Season 2",
       "category": "Esports",
       "org": "Esports XO",
-      "image": "images/XOS2.png",
+      "image": "images/work/XOS2.png",
       "tags": [
         "esports",
         "codm",
@@ -91,7 +105,7 @@
       "title": "Asian League Season 2",
       "category": "Esports",
       "org": "Asian League & Nicecactus",
-      "image": "images/ASIANLEAGUE.png",
+      "image": "images/work/ASIANLEAGUE.png",
       "tags": [
         "esports",
         "codm",
@@ -105,7 +119,7 @@
       "title": "XO Champions League Season 1",
       "category": "Esports",
       "org": "Esports XO",
-      "image": "images/XOS1.png",
+      "image": "images/work/XOS1.png",
       "tags": [
         "esports",
         "codm",
@@ -119,7 +133,7 @@
       "title": "FRONTIER League - Asia Season 1",
       "category": "Esports",
       "org": "Staxx GameHouse & Revenant Esports (Frontier League)",
-      "image": "images/FLA.png",
+      "image": "images/work/FLA.png",
       "tags": [
         "esports",
         "codm",
@@ -133,7 +147,7 @@
       "title": "League 1.0",
       "category": "Esports",
       "org": "Crust Esports & The World of Battle",
-      "image": "images/League_1.0.png",
+      "image": "images/work/League_1.0.png",
       "tags": [
         "esports",
         "codm",
@@ -147,7 +161,7 @@
       "title": "Loco India Cup",
       "category": "Esports",
       "org": "Loco",
-      "image": "images/CICP.png",
+      "image": "images/work/CICP.png",
       "tags": [
         "esports",
         "codm",
@@ -161,7 +175,7 @@
       "title": "East Open League",
       "category": "Esports",
       "org": "Staxx GameHouse & Revenant Esports",
-      "image": "images/FLA.png",
+      "image": "images/work/FLA.png",
       "tags": [
         "esports",
         "codm",
@@ -175,7 +189,7 @@
       "title": "Claxon Pro League",
       "category": "Esports",
       "org": "Claxon Tournaments & Doctor Battles",
-      "image": "images/CPL.png",
+      "image": "images/work/CPL.png",
       "tags": ["esports", "codm", "director"],
       "description": "Directed complete event operations, bracket flow, and rulebook enforcement for the premier Claxon Pro League CODM competition.",
       "year": "2020",
@@ -185,7 +199,7 @@
       "title": "Zenith CoDM League - Asia",
       "category": "Esports",
       "org": "Zenith League & Doctor Battles",
-      "image": "images/ZCLA.png",
+      "image": "images/work/ZCLA.png",
       "tags": [
         "esports",
         "codm",
@@ -199,7 +213,7 @@
       "title": "Ecstasy Cup",
       "category": "Esports",
       "org": "Modelling CopS & Battlemania Esports",
-      "image": "images/EC.png",
+      "image": "images/work/EC.png",
       "tags": [
         "esports",
         "codm",
@@ -213,7 +227,7 @@
       "title": "Revenant Esports Duel Arena",
       "category": "Esports",
       "org": "Revenant Esports",
-      "image": "images/RDA.png",
+      "image": "images/work/RDA.png",
       "tags": [
         "esports",
         "codm",
@@ -227,7 +241,7 @@
       "title": "Claxon Competitive League",
       "category": "Esports",
       "org": "Claxon Tournaments & Doctor Battles",
-      "image": "images/CCL.png",
+      "image": "images/work/CCL.png",
       "tags": [
         "esports",
         "codm",
@@ -241,7 +255,7 @@
       "title": "Global Esports Call of Duty Mobile League 2020",
       "category": "Esports",
       "org": "Global Esports & Asian League",
-      "image": "images/GE_League.png",
+      "image": "images/work/GE_League.png",
       "tags": [
         "esports",
         "codm",
@@ -255,7 +269,7 @@
       "title": "Janata Curfew League - Season 1",
       "category": "Esports",
       "org": "Asian League & Doctor Battles",
-      "image": "images/ASIANLEAGUE.png",
+      "image": "images/work/ASIANLEAGUE.png",
       "tags": [
         "esports",
         "codm",
