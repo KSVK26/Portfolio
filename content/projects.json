@@ -15,16 +15,17 @@
       "readTime": "Sep 2026"
     },
     {
-      "title": "Chadni Chow to China",
+      "title": "Chandni Chowk to China",
       "category": "Esports",
       "org": "Sweats Den",
       "image": "images/work/CCTC.png",
       "tags": [
         "esports",
         "codm",
-        "admin"
+        "admin",
+        "stats"
       ],
-      "description": "Tournament administrator for Sweats Den's Chadni Chow to China, running event operations, lobby coordination, and competitive delivery.",
+      "description": "Tournament administrator for Sweats Den's Chandni Chowk to China, running event operations, lobby coordination, and competitive delivery, and handling match statistics for the event.",
       "year": "2026",
       "readTime": "Feb 2026"
     },
