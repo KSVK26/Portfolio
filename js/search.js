@@ -20,9 +20,8 @@
   }
 
   async function buildIndex() {
-    const [projects, writing, timeline, now] = await Promise.all([
+    const [projects, timeline, now] = await Promise.all([
       DataLoader.getProjects(),
-      DataLoader.getWriting(),
       DataLoader.getTimeline(),
       DataLoader.getNow(),
     ]);
@@ -34,13 +33,6 @@
         desc: p.description,
         tags: p.tags || [],
         url: "work.html",
-      })),
-      ...writing.map((w) => ({
-        type: "Writing",
-        title: w.title,
-        desc: w.excerpt,
-        tags: [w.format, w.topic],
-        url: "writing.html",
       })),
       ...timeline.map((t) => ({
         type: "Timeline",
