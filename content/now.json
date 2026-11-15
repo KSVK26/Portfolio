@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "title": "Stats Manager",
+      "category": "Operations",
+      "role": "RNE Production",
+      "period": "Oct 2026 – Present",
+      "image": "images/RNE.webp",
+      "description": "Compiling match statistics for 5v5 and FPS titles for RNE Production, and delivering graphics and JSON feeds to the production manager for on-stream display."
+    },
+    {
       "title": "GDGoC SJBIT Organizer",
       "category": "Community",
       "role": "Google Developer Groups on Campus — SJBIT",
@@ -13,7 +21,7 @@
       "category": "Operations",
       "role": "Claxon Tournaments",
       "period": "Jul 2026 – Present",
-      "image": "images/CLT Coloured Transparent.png",
+      "image": "images/CLT.png",
       "description": "Supporting the execution and delivery of esports tournaments and events by coordinating operations, logistics, cross-functional teams, and performance tracking to ensure seamless event delivery."
     },
     {
@@ -21,7 +29,7 @@
       "category": "Operations",
       "role": "AlphaZegus Titans Network",
       "period": "Mar 2026 – Present",
-      "image": "images/AZ.svg",
+      "image": "images/AZ.png",
       "description": "Managing community operations, onboarding, and campaign execution for AlphaZegus Titans Network, monitoring platform performance, leading new Titan activation, and driving engagement across forums and Discord."
     },
     {
@@ -29,7 +37,7 @@
       "category": "Community",
       "role": "The Esports Club (TEC Spartans)",
       "period": "Mar 2025 – Present",
-      "image": "images/TEC.svg",
+      "image": "images/TEC.png",
       "description": "Promoting The Esports Club across my college, the city, and the gaming community through on-ground events, digital initiatives, and partnerships with student organizations, local venues, and gaming stores."
     }
   ]
