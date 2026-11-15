@@ -32,10 +32,11 @@
       // Post to the same page so Netlify sees the form in the response
       // HTML and registers the submission. Posting to "/" would return
       // index.html, which has no form, and the submission would be dropped.
+      // Let fetch set the Content-Type from the FormData body (multipart with
+      // boundary). Overriding it manually breaks the body Netlify receives.
       fetch("contact.html", {
         method: "POST",
         body: data,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
       })
         .then(function () {
           form.innerHTML = `
