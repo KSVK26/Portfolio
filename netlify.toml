@@ -16,3 +16,8 @@
   for = "/js/*"
   [headers.values]
   cache-control = "public, max-age=86400"
+
+# Email notifications for the contact form submissions
+[[form_notifications]]
+  name = "contact"
+  email = "ksvk26@gmail.com"
