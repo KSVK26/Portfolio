@@ -29,7 +29,10 @@
 
       const data = new FormData(form);
 
-      fetch("/", {
+      // Post to the same page so Netlify sees the form in the response
+      // HTML and registers the submission. Posting to "/" would return
+      // index.html, which has no form, and the submission would be dropped.
+      fetch("contact.html", {
         method: "POST",
         body: data,
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
