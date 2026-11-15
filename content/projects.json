@@ -11,6 +11,7 @@
         "referee"
       ],
       "description": "Served on the referee team for the CODM World Championship 2026 Regionals across IN, EU, NA, and LATAM, officiating matches, resolving disputes, and handling all on-event issues.",
+      "featured": true,
       "year": "2026",
       "readTime": "Sep 2026"
     },
@@ -26,6 +27,7 @@
         "stats"
       ],
       "description": "Tournament administrator for Sweats Den's Chandni Chowk to China, running event operations, lobby coordination, and competitive delivery, and handling match statistics for the event.",
+      "featured": true,
       "year": "2026",
       "readTime": "Feb 2026"
     },
@@ -69,6 +71,7 @@
         "graphics"
       ],
       "description": "Lead administrator for CODM India's Rise of Champions, running full tournament operations, producing match graphics, and driving social media promotion.",
+      "featured": true,
       "year": "2024",
       "readTime": "Sep 2024"
     },
@@ -127,6 +130,7 @@
         "executive"
       ],
       "description": "Executive league operations for regional Asian CODM competition in strategic partnership with Nicecactus.",
+      "featured": true,
       "year": "2021",
       "readTime": "Jun 2021"
     },
@@ -207,6 +211,7 @@
       "image": "images/work/CPL.png",
       "tags": ["esports", "codm", "director"],
       "description": "Directed complete event operations, bracket flow, and rulebook enforcement for the premier Claxon Pro League CODM competition.",
+      "featured": true,
       "year": "2020",
       "readTime": "Dec 2020"
     },

@@ -42,7 +42,21 @@
 
   function renderSelectedWork(container, data) {
     if (!container || !data || !data.items) return;
-    const items = data.items.slice(0, 5);
+    // Hand-picked highlights, newest first.
+    const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const sortKey = (p) => {
+      const rt = (p.readTime || "").trim();
+      const m = rt.match(/^([A-Za-z]+)\s+(\d{4})$/);
+      if (m) {
+        const mi = MONTHS.indexOf(m[1]);
+        return mi >= 0 ? parseInt(m[2]) * 12 + mi : parseInt(m[2]) * 12;
+      }
+      return parseInt(p.year) * 12 || 0;
+    };
+    const items = data.items
+      .filter((p) => p.featured)
+      .sort((a, b) => sortKey(b) - sortKey(a))
+      .slice(0, 5);
     container.innerHTML = items
       .map(
         (item) => `
