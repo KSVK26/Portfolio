@@ -153,45 +153,6 @@
     }
   }
 
-  function renderContact(container) {
-    if (!container) return;
-    const channels = [
-      {
-        title: "Email",
-        desc: "Direct inquiry & collaboration",
-        link: "mailto:ksvk26@gmail.com",
-        label: "ksvk26@gmail.com"
-      },
-      {
-        title: "LinkedIn",
-        desc: "Professional background & networking",
-        link: "https://www.linkedin.com/in/k-s-vasanth-karthik-7264842b0/",
-        label: "K S Vasanth Karthik"
-      },
-      {
-        title: "Instagram",
-        desc: "Event updates & creative work",
-        link: "https://www.instagram.com/ksvk_26",
-        label: "@ksvk_26"
-      }
-    ];
-
-    container.innerHTML = channels
-      .map(
-        (c) => `
-        <div class="card-editorial" style="max-width: 320px;">
-          <div class="card-body">
-            <h3 class="card-title">${c.title}</h3>
-            <p class="card-desc">${c.desc}</p>
-          </div>
-          <div class="card-footer">
-            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-vermilion-hover" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">${c.label} →</a>
-          </div>
-        </div>`
-      )
-      .join("");
-  }
-
   async function loadJSON(path) {
     try {
       const res = await fetch(path);
@@ -213,7 +174,6 @@
     renderStats(document.getElementById("stats-grid"), stats);
     renderAreasOfWork(document.getElementById("areas-grid"), areas);
     renderSelectedWork(document.getElementById("selected-work-grid"), projects);
-    renderContact(document.getElementById("contact-options"));
   }
 
   document.addEventListener("DOMContentLoaded", init);
