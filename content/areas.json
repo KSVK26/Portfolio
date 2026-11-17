@@ -3,22 +3,46 @@
     {
       "title": "Esports Operations",
       "category": "Esports",
-      "description": "Tournament administration, league operations, and match moderation across competitive Call of Duty Mobile — from regional director to lead admin, running events end to end."
+      "description": "Tournament administration, league operations, and match moderation across competitive Call of Duty Mobile — from regional director to lead admin, running events end to end.",
+      "deliverables": [
+        "Tournament Rulebooks & Formats",
+        "Bracket Seeding & Match Admin",
+        "Broadcast & Observer Sync",
+        "Competitive Integrity & Rulings"
+      ]
     },
     {
       "title": "Event Management",
       "category": "Events",
-      "description": "Coordinating live tournament delivery: scheduling, bracket flow, lobby setup, rule enforcement, and on-event issue resolution across independent and major organizers."
+      "description": "Coordinating live tournament delivery: scheduling, bracket flow, lobby setup, rule enforcement, and on-event issue resolution across independent and major organizers.",
+      "deliverables": [
+        "Minute-by-Minute Run of Show",
+        "Venue, LAN & Stage Logistics",
+        "Volunteer & Staff Briefing",
+        "Partner & Sponsor Touchpoints"
+      ]
     },
     {
       "title": "Creative Work",
       "category": "Creative",
-      "description": "Producing match graphics, stats feeds, and on-stream visuals, plus driving social media promotion and community engagement for the events I run."
+      "description": "Producing match graphics, stats feeds, and on-stream visuals, plus driving social media promotion and community engagement for the events I run.",
+      "deliverables": [
+        "Event Visual Identity Systems",
+        "Stream & Matchday Overlays",
+        "Editorial Social & Print Kits",
+        "Web & Micro-site Prototyping"
+      ]
     },
     {
       "title": "Community & Campaigns",
       "category": "Community",
-      "description": "Building and activating communities — campus developer groups, gaming networks, and brand ambassador campaigns — bringing people together around shared interests."
+      "description": "Building and activating communities — campus developer groups, gaming networks, and brand ambassador campaigns — bringing people together around shared interests.",
+      "deliverables": [
+        "Discord Architecture & Bots",
+        "Moderation & Safety Guidelines",
+        "Collegiate & Grassroots Loops",
+        "Player Support & Comms"
+      ]
     }
   ]
 }

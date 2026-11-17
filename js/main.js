@@ -12,12 +12,16 @@
     const promises = Array.from(placeholders).map((el) => {
       const path = el.getAttribute("data-include");
       return fetch(path)
-        .then((res) => res.text())
+        .then((res) => {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.text();
+        })
         .then((html) => {
           el.outerHTML = html.trim();
         })
         .catch((err) => {
           console.warn("Failed to load include: " + path, err);
+          return { failed: true, path: path };
         });
     });
     return Promise.all(promises);
@@ -54,7 +58,8 @@
 
     function updateThemeLabel(dark) {
       const label = themeToggle.querySelector(".theme-label");
-      if (label) label.textContent = dark ? "Night" : "Day";
+      if (label) label.textContent = dark ? "Night Ed." : "Day Ed.";
+      themeToggle.setAttribute("aria-label", dark ? "Switch to Day Edition" : "Switch to Night Edition");
     }
   }
 
@@ -103,13 +108,53 @@
   /* Project Modal — Dossier Drawer */
   function initProjectModal() {
     const modal = document.getElementById("projectModal");
+    if (!modal) return;
+
+    // Recover from a stale or partially cached shared include.
+    if (!document.getElementById("modalClose")) {
+      const panel = modal.querySelector(".modal-panel");
+      if (!panel) return;
+      panel.innerHTML = `
+        <div class="modal-bar">
+          <span class="modal-eyebrow" id="modalEyebrow">Project</span>
+          <button class="modal-close" id="modalClose" aria-label="Close project details">Close</button>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <dl class="modal-meta">
+          <dt>Discipline</dt>
+          <dd id="modalDiscipline"></dd>
+          <dt>Context</dt>
+          <dd id="modalContext"></dd>
+        </dl>
+        <section class="modal-section">
+          <h3 class="modal-section-title">Overview</h3>
+          <p class="modal-body-text" id="modalSummary"></p>
+        </section>
+        <section class="modal-section" id="modalExecutionSection" style="display: none;">
+          <h3 class="modal-section-title">Execution</h3>
+          <ul class="modal-execution" id="modalExecution"></ul>
+        </section>
+        <section class="modal-section" id="modalOutcomeSection" style="display: none;">
+          <h3 class="modal-section-title">Outcome</h3>
+          <div class="modal-outcome">
+            <p class="modal-outcome-label">Result</p>
+            <p class="modal-outcome-text" id="modalOutcome"></p>
+          </div>
+        </section>`;
+    }
+
     const closeBtn = document.getElementById("modalClose");
-    if (!modal || !closeBtn) return;
+    if (!closeBtn) return;
+
+    let lastFocusedElement = null;
 
     function closeModal() {
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        lastFocusedElement.focus();
+      }
     }
 
     closeBtn.addEventListener("click", closeModal);
@@ -122,6 +167,7 @@
 
     // Expose open function globally
     window.openProjectModal = function (project) {
+      lastFocusedElement = document.activeElement;
       // Set eyebrow
       const eyebrow = document.getElementById("modalEyebrow");
       if (eyebrow) eyebrow.textContent = project.discipline || "Project";
@@ -166,6 +212,7 @@
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      closeBtn.focus();
     };
   }
 
@@ -185,6 +232,7 @@
       initMobileNav();
       initTheme();
       initProjectModal();
+      document.dispatchEvent(new CustomEvent("portfolio:includes-ready"));
     });
   });
 })();

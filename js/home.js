@@ -30,22 +30,50 @@
 
   function renderAreasOfWork(container, data) {
     if (!container || !data || !data.items) return;
+
     container.innerHTML = data.items
-      .map(
-        (item) => `
-        <div class="card-editorial">
-          <div class="card-body">
-            <span class="card-tag">${escapeHtml(item.category || "")}</span>
-            <h3 class="card-title">${escapeHtml(item.title)}</h3>
-            <p class="card-desc">${escapeHtml(item.description)}</p>
-            <div class="card-footer">
-              <span>${escapeHtml(item.role || "")}</span>
-              <span>${escapeHtml(item.period || "")}</span>
+      .map((item, i) => {
+        const open = i === 0 ? "true" : "false";
+        const icon = i === 0 ? "[ − ]" : "[ + ]";
+        const numClass = i === 0 ? "accordion-number" : "accordion-number accordion-number-muted";
+        const deliverables = Array.isArray(item.deliverables) ? item.deliverables : [];
+        return `
+        <div class="accordion-item" data-open="${open}">
+          <button type="button" class="accordion-trigger" aria-expanded="${open}">
+            <div class="accordion-trigger-row">
+              <span class="${numClass}">01.${i + 1}</span>
+              <h3 class="accordion-title">${escapeHtml(item.title)}</h3>
+            </div>
+            <span class="accordion-icon">${icon}</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div class="accordion-body">
+                <p class="accordion-description">${escapeHtml(item.description)}</p>
+                <div class="accordion-deliverables">
+                  <div class="accordion-deliverables-label">Key Deliverables</div>
+                  <ul class="accordion-deliverables-list">
+                    ${deliverables.map((d) => `<li>${escapeHtml(d)}</li>`).join("")}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </div>`
-      )
+        </div>`;
+      })
       .join("");
+
+    // Accordion toggle behaviour
+    container.querySelectorAll(".accordion-item").forEach((item) => {
+      const trigger = item.querySelector(".accordion-trigger");
+      const icon = item.querySelector(".accordion-icon");
+      trigger.addEventListener("click", () => {
+        const isOpen = item.getAttribute("data-open") === "true";
+        item.setAttribute("data-open", String(!isOpen));
+        trigger.setAttribute("aria-expanded", String(!isOpen));
+        icon.textContent = !isOpen ? "[ − ]" : "[ + ]";
+      });
+    });
 
     const viewAll = document.createElement("a");
     viewAll.href = "work.html";
