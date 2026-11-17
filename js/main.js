@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Main Utilities — Global header/footer injection and mobile navigation
+   Main Utilities — Global header/footer injection, mobile navigation, theme
    ========================================================================== */
 
 (function () {
@@ -33,6 +33,31 @@
     });
   }
 
+  /* Theme toggle — persists to localStorage, respects prefers-color-scheme */
+  function initTheme() {
+    const themeToggle = document.getElementById("themeToggle");
+    if (!themeToggle) return;
+
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = saved ? saved === "dark" : prefersDark;
+
+    if (isDark) document.documentElement.classList.add("dark");
+    updateThemeLabel(isDark);
+
+    themeToggle.addEventListener("click", function () {
+      const willBeDark = !document.documentElement.classList.contains("dark");
+      document.documentElement.classList.toggle("dark", willBeDark);
+      localStorage.setItem("theme", willBeDark ? "dark" : "light");
+      updateThemeLabel(willBeDark);
+    });
+
+    function updateThemeLabel(dark) {
+      const label = themeToggle.querySelector(".theme-label");
+      if (label) label.textContent = dark ? "Night" : "Day";
+    }
+  }
+
   /* Mobile navigation drawer toggle */
   function initMobileNav() {
     const menuToggle = document.getElementById("menuToggle");
@@ -46,12 +71,18 @@
       drawer.classList.add("open");
       overlay.classList.add("open");
       document.body.style.overflow = "hidden";
+      menuToggle.setAttribute("aria-expanded", "true");
+      drawer.setAttribute("aria-hidden", "false");
+      overlay.setAttribute("aria-hidden", "false");
     }
 
     function closeDrawerFn() {
       drawer.classList.remove("open");
       overlay.classList.remove("open");
       document.body.style.overflow = "";
+      menuToggle.setAttribute("aria-expanded", "false");
+      drawer.setAttribute("aria-hidden", "true");
+      overlay.setAttribute("aria-hidden", "true");
     }
 
     menuToggle.addEventListener("click", openDrawer);
@@ -69,11 +100,82 @@
     });
   }
 
+  /* Project Modal — Dossier Drawer */
+  function initProjectModal() {
+    const modal = document.getElementById("projectModal");
+    const closeBtn = document.getElementById("modalClose");
+    if (!modal || !closeBtn) return;
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+
+    // Expose open function globally
+    window.openProjectModal = function (project) {
+      // Set eyebrow
+      const eyebrow = document.getElementById("modalEyebrow");
+      if (eyebrow) eyebrow.textContent = project.discipline || "Project";
+
+      // Set title
+      const title = document.getElementById("modalTitle");
+      if (title) title.textContent = project.title || "Untitled";
+
+      // Set meta
+      const discipline = document.getElementById("modalDiscipline");
+      if (discipline) discipline.textContent = project.discipline || "—";
+
+      const context = document.getElementById("modalContext");
+      if (context) context.textContent = project.context || "—";
+
+      // Set summary
+      const summary = document.getElementById("modalSummary");
+      if (summary) summary.textContent = project.summary || project.description || "—";
+
+      // Execution
+      const execSection = document.getElementById("modalExecutionSection");
+      const execList = document.getElementById("modalExecution");
+      if (execList && project.execution && project.execution.length) {
+        execSection.style.display = "block";
+        execList.innerHTML = project.execution
+          .map((item) => `<li><span class="bullet">•</span>${item}</li>`)
+          .join("");
+      } else if (execSection) {
+        execSection.style.display = "none";
+      }
+
+      // Outcome
+      const outcomeSection = document.getElementById("modalOutcomeSection");
+      const outcomeText = document.getElementById("modalOutcome");
+      if (outcomeText && project.outcome) {
+        outcomeSection.style.display = "block";
+        outcomeText.textContent = project.outcome;
+      } else if (outcomeSection) {
+        outcomeSection.style.display = "none";
+      }
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+  }
+
   /* Public API */
   window.PortfolioApp = {
     loadIncludes: loadIncludes,
     highlightActiveLink: highlightActiveLink,
     initMobileNav: initMobileNav,
+    initTheme: initTheme,
+    initProjectModal: initProjectModal,
   };
 
   /* Boot sequence: load fragments, then wire up navigation */
@@ -81,6 +183,8 @@
     loadIncludes().then(function () {
       highlightActiveLink();
       initMobileNav();
+      initTheme();
+      initProjectModal();
     });
   });
 })();

@@ -11,67 +11,94 @@
   <meta property="og:image" content="https://ksvk.netlify.app/images/ksvk-black.png" />
   <meta name="twitter:card" content="summary" />
   <link rel="canonical" href="https://ksvk.netlify.app/contact.html" />
+  <title>Contact — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
-  <title>Contact — K S Vasanth Karthik</title>
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <section class="page-section" style="max-width: 680px; margin: 0 auto;">
-      <span class="section-tag">00 — Contact</span>
-      <h1 class="section-title">Let's connect</h1>
-      <p class="section-subtitle" style="margin-bottom: 2.5rem;">
-        Whether it's a project, a collaboration, an opportunity or simply an interesting conversation, drop a message below.
-      </p>
+    <section class="contact-section">
+      <div class="contact-grid">
+        <!-- Left: Invitation -->
+        <div class="contact-invite">
+          <span class="contact-eyebrow">00 — Contact</span>
+          <h1 class="contact-headline">Have something worth building?</h1>
+          <p class="contact-bio">
+            I'm always interested in interesting projects, collaborations and conversations
+            with people who enjoy making things happen. Whether it's a project, an
+            opportunity or simply an interesting conversation — drop a message.
+          </p>
 
-      <form name="contact" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field" id="contact-form" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 2.5rem; margin-bottom: 3rem;">
-        <!-- Netlify hidden input for form name -->
-        <input type="hidden" name="form-name" value="contact" />
-
-        <!-- Honeypot anti-spam field -->
-        <p style="display: none;">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-
-        <div class="gen-field">
-          <label for="name">Your Name *</label>
-          <input type="text" id="name" name="name" required placeholder="e.g. Alex Smith" />
+          <div class="contact-social">
+            <span class="contact-eyebrow">Find me elsewhere</span>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/k-s-vasanth-karthik-7264842b0/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/KSVK26" class="social-link" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.instagram.com/ksvk_26/" class="social-link" target="_blank" rel="noopener">Instagram</a>
+              <a href="mailto:ksvk26@gmail.com" class="social-link">Email</a>
+            </div>
+          </div>
         </div>
 
-        <div class="gen-field">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required placeholder="alex@example.com" />
-        </div>
+        <!-- Right: Form Panel -->
+        <aside class="contact-form-panel">
+          <div class="form-panel-header">
+            <span class="form-panel-title">Message</span>
+            <span class="form-panel-badge">Netlify Forms</span>
+          </div>
 
-        <div class="gen-field">
-          <label for="inquiry-type">What's this about?</label>
-          <select id="inquiry-type" name="inquiry-type">
-            <option value="work">Work / Hire me</option>
-            <option value="collaboration">Collaboration / Project</option>
-            <option value="conversation">Just connecting / General question</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+          <form name="contact" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field" id="contact-form">
+            <!-- Netlify hidden input for form name -->
+            <input type="hidden" name="form-name" value="contact" />
 
-        <div class="gen-field">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Brief summary of your message" />
-        </div>
+            <!-- Honeypot anti-spam field -->
+            <p style="display: none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
 
-        <div class="gen-field">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Tell me what's on your mind..."></textarea>
-        </div>
+            <div class="form-field">
+              <label for="name" class="form-label">Name *</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="e.g. Alex Smith" />
+            </div>
 
-        <div style="margin-top: 2rem;">
-          <button type="submit" class="btn-primary" style="width: 100%; text-align: center; cursor: pointer; border: none;">Send message →</button>
-        </div>
-      </form>
+            <div class="form-field">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="alex@example.com" />
+            </div>
 
-      <div class="contact-options" id="contact-options">
-        <!-- Populated by js/contact.js -->
+            <div class="form-field">
+              <label for="inquiry-type" class="form-label">What's this about?</label>
+              <select id="inquiry-type" name="inquiry-type" class="form-select">
+                <option value="work">Work / Hire me</option>
+                <option value="collaboration">Collaboration / Project</option>
+                <option value="conversation">Just connecting / General question</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Brief summary of your message" />
+            </div>
+
+            <div class="form-field">
+              <label for="message" class="form-label">Message *</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" required placeholder="Tell me what's on your mind..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send message</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+        </aside>
       </div>
     </section>
   </main>

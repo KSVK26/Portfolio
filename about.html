@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About me" />
+  <meta name="description" content="About K S Vasanth Karthik — Esports Operations, Events & Creative Work" />
   <meta property="og:title" content="About — K S Vasanth Karthik" />
   <meta property="og:description" content="A brief journey through my background and work." />
   <meta property="og:type" content="website" />
@@ -14,11 +14,19 @@
   <title>About — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
+    <!-- 00 — Hero / Intro -->
     <section class="page-section">
       <span class="section-tag">00 — About</span>
       <h1 class="section-title">A little curiosity goes a long way.</h1>
@@ -32,8 +40,9 @@
       </p>
     </section>
 
+    <!-- 01 — How I got into esports -->
     <section class="page-section">
-      <span class="section-tag">01 — How I got into esports</span>
+      <span class="section-tag">01 — Origin</span>
       <h2 class="section-title">From gaming to governance</h2>
       <p class="section-subtitle">
         Competitive gaming was my first launch pad into organized community
@@ -43,8 +52,9 @@
       </p>
     </section>
 
+    <!-- 02 — Operations & Events -->
     <section class="page-section">
-      <span class="section-tag">02 — Operations &amp; Events</span>
+      <span class="section-tag">02 — Operations</span>
       <h2 class="section-title">Bringing structure to excitement</h2>
       <p class="section-subtitle">
         I spend most of my time coordinating leagues, scheduling live events,
@@ -54,8 +64,9 @@
       </p>
     </section>
 
+    <!-- 03 — Creative Work -->
     <section class="page-section">
-      <span class="section-tag">03 — Creative Work</span>
+      <span class="section-tag">03 — Creative</span>
       <h2 class="section-title">Designing the look and feel</h2>
       <p class="section-subtitle">
         From esports graphics to community campaigns, visual storytelling has
@@ -65,31 +76,64 @@
       </p>
     </section>
 
+    <!-- 04 — Working Philosophy — Accordion -->
     <section class="page-section">
-      <span class="section-tag">04 — Working Philosophy</span>
+      <span class="section-tag">04 — Philosophy</span>
       <h2 class="section-title">The three principles I live by</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <span class="card-tag">Clarity</span>
-          <h3 class="card-title">Clarity over chaos</h3>
-          <p class="card-desc">Good planning and communication simplify execution.</p>
+      <div class="accordion-item" data-open="false">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-number">01</span>
+          <span class="accordion-title">Clarity over chaos</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <p class="accordion-description">
+              Good planning and communication simplify execution. When everyone
+              understands the objective and their role, complexity collapses
+              into clear action.
+            </p>
+          </div>
         </div>
-        <div class="card">
-          <span class="card-tag">Empathy</span>
-          <h3 class="card-title">Empathy in enforcement</h3>
-          <p class="card-desc">People matter as much as the process.</p>
+      </div>
+      <div class="accordion-item" data-open="false">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-number">02</span>
+          <span class="accordion-title">Empathy in enforcement</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <p class="accordion-description">
+              People matter as much as the process. Rules and structures exist
+              to serve humans — not the other way around. Fairness and context
+              beat rigidity every time.
+            </p>
+          </div>
         </div>
-        <div class="card">
-          <span class="card-tag">Ship</span>
-          <h3 class="card-title">Ship, observe, refine</h3>
-          <p class="card-desc">Ideas become valuable when built, evaluated and improved.</p>
+      </div>
+      <div class="accordion-item" data-open="false">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-number">03</span>
+          <span class="accordion-title">Ship, observe, refine</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <p class="accordion-description">
+              Ideas become valuable when built, evaluated and improved. Perfect
+              is the enemy of done. Launch, learn, iterate — that's the only
+              loop that compounds.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- 05 — Education & Interests -->
     <section class="page-section">
-      <span class="section-tag">05 — Education &amp; Interests</span>
-      <h2 class="section-title">Learning &amp; interests</h2>
+      <span class="section-tag">05 — Learning</span>
+      <h2 class="section-title">Learning & interests</h2>
       <p class="section-subtitle">
         I'm studying Computer Science – Data Science at SJBIT, while exploring
         roles in esports, event coordination, creative direction and community
@@ -97,10 +141,11 @@
       </p>
     </section>
 
+    <!-- 06 — Timeline / Record of Milestones -->
     <section class="page-section">
-      <span class="section-tag">06 — Places &amp; Roles</span>
+      <span class="section-tag">06 — Record</span>
       <h2 class="section-title">A record of milestones</h2>
-      <p class="section-subtitle">
+      <p class="section-subtitle" style="margin-bottom: 2rem;">
         A concise chronology of the roles and projects that have shaped me.
       </p>
       <div class="timeline-container">
@@ -116,5 +161,18 @@
   <script src="js/main.js"></script>
   <script src="js/data-loader.js"></script>
   <script src="js/timeline.js"></script>
+  <script>
+    // Accordion functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".accordion-trigger").forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+          const item = this.closest(".accordion-item");
+          const isOpen = item.getAttribute("data-open") === "true";
+          item.setAttribute("data-open", !isOpen);
+          this.setAttribute("aria-expanded", !isOpen);
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Work & Projects — Category pill filtering + live text search.
+   Work & Projects — Editorial filter pills + live text search + dossier rows
    ========================================================================== */
 
 (function () {
@@ -14,8 +14,8 @@
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
       .replace(/"/g, "&quot;");
   }
 
@@ -36,32 +36,64 @@
     return projects.slice().sort((a, b) => sortKey(b) - sortKey(a));
   }
 
-  function renderCards(projects) {
+  function renderDossiers(projects) {
     if (!grid) return;
     if (!projects.length) {
-      grid.innerHTML = `<p style="grid-column:1/-1;color:var(--muted-gray);padding:2rem;">No projects match your filters.</p>`;
+      grid.innerHTML = `<p style="grid-column:1/-1;color:var(--text-muted);padding:2rem;text-align:center;">No projects match your filters.</p>`;
       return;
     }
 
-    grid.innerHTML = projects
-      .map(
-        (p) => `
-        <div class="card" data-tags="${(p.tags || []).join(",")}" data-category="${p.category || ""}">
-          <div class="card-media">
-            ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(p.category || "")}</div>`}
-          </div>
-          <div class="card-body">
-            <span class="card-tag">${escapeHtml(p.category || "")}</span>
-            <h3 class="card-title">${escapeHtml(p.title)}</h3>
-            <p class="card-desc">${escapeHtml(p.description)}</p>
-          </div>
-          <div class="card-footer">
-            <span>${escapeHtml(p.org || p.year || "")}</span>
-            <span>${escapeHtml(p.year || "")}</span>
-          </div>
-        </div>`
-      )
-      .join("");
+    grid.innerHTML = `
+      <div class="dossier-table">
+        <div class="dossier-header">
+          <span>No.</span>
+          <span>Initiative</span>
+          <span>Dossier</span>
+          <span>Discipline</span>
+          <span>Context</span>
+          <span>Inspect</span>
+        </div>
+        ${projects
+          .map(
+            (p, i) => `
+          <div class="dossier-row" data-title="${escapeHtml(p.title)}" data-category="${escapeHtml(p.category || "")}">
+            <span class="dossier-number">${String(i + 1).padStart(2, "0")}</span>
+            <span class="dossier-title">${escapeHtml(p.title)}</span>
+            <span class="dossier-summary">${escapeHtml(p.description)}</span>
+            <span class="dossier-discipline">${escapeHtml(p.category || "—")}</span>
+            <span class="dossier-context">${escapeHtml(p.org || "—")}</span>
+            <span class="dossier-action">Open →</span>
+          </div>`
+          )
+          .join("")}
+      </div>
+    `;
+
+    // Attach click handlers for modal
+    grid.querySelectorAll(".dossier-row").forEach((row) => {
+      row.style.cursor = "pointer";
+      row.addEventListener("click", function () {
+        const title = row.getAttribute("data-title");
+        const category = row.getAttribute("data-category");
+        const project = allProjects.find((p) => p.title === title && p.category === category);
+        if (project && window.openProjectModal) {
+          const modalProject = {
+            ...project,
+            discipline: project.category || "Esports",
+            context: project.org || "—",
+            summary: project.description || "—",
+            execution: [
+              `Role: ${project.role || "Operations"}`,
+              `Organization: ${project.org || "—"}`,
+              `Timeline: ${project.readTime || project.year || "—"}`,
+              `Scope: Tournament administration, bracket management, live operations`,
+            ],
+            outcome: `Delivered ${project.description?.toLowerCase().replace(/^\w/, c => c.toUpperCase()) || "successful tournament operations"} across ${project.tags?.join(", ") || "multiple domains"}.`,
+          };
+          window.openProjectModal(modalProject);
+        }
+      });
+    });
   }
 
   function applyFilters() {
@@ -84,7 +116,7 @@
         .toLowerCase();
       return haystack.includes(query);
     });
-    renderCards(sortByDate(filtered));
+    renderDossiers(sortByDate(filtered));
   }
 
   function initFilterBar() {
@@ -110,7 +142,7 @@
 
   async function init() {
     allProjects = await DataLoader.getProjects();
-    renderCards(sortByDate(allProjects));
+    renderDossiers(sortByDate(allProjects));
     initFilterBar();
     initSearch();
   }

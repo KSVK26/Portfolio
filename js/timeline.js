@@ -1,26 +1,34 @@
 /* ==========================================================================
-   Timeline Page — renders the full chronological timeline from content/timeline.json
+   Timeline Page — renders the full chronological timeline from content/timeline.json (Editorial)
    ========================================================================== */
 
 (function () {
   "use strict";
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
 
   function renderTimeline(container, data) {
     if (!container || !data) return;
     const items = data.items || [];
     if (items.length === 0) {
       container.innerHTML =
-        '<p style="color:var(--text-secondary);font-style:italic;">Timeline content is being prepared. Check back soon.</p>';
+        '<p style="color:var(--text-muted);font-style:italic;">Timeline content is being prepared. Check back soon.</p>';
       return;
     }
     container.innerHTML = items
       .map(
         (item) => `
         <div class="timeline-node">
-          <div class="timeline-date">${item.year}</div>
-          <div class="timeline-title">${item.title}</div>
-          <div class="timeline-subtitle">${item.subtitle}</div>
-          <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.4rem;">${item.description}</p>
+          <div class="timeline-date">${escapeHtml(item.year)}</div>
+          <div class="timeline-title">${escapeHtml(item.title)}</div>
+          <div class="timeline-subtitle">${escapeHtml(item.subtitle)}</div>
+          <p class="timeline-desc">${escapeHtml(item.description)}</p>
         </div>`
       )
       .join("");

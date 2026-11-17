@@ -59,19 +59,20 @@
     return String(str || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
   function fieldInput(f) {
     if (f.select) {
-      return `<select id="gen-${f.key}">
+      return `<select id="gen-${f.key}" class="form-select">
         ${f.select.map((o) => `<option value="${o}">${o}</option>`).join("")}
       </select>`;
     }
     if (f.textarea) {
-      return `<textarea id="gen-${f.key}" placeholder="${escapeHtml(f.placeholder)}" rows="3"></textarea>`;
+      return `<textarea id="gen-${f.key}" class="form-textarea" placeholder="${escapeHtml(f.placeholder)}" rows="3"></textarea>`;
     }
-    return `<input id="gen-${f.key}" type="text" placeholder="${escapeHtml(f.placeholder)}" />`;
+    return `<input id="gen-${f.key}" type="text" class="form-input" placeholder="${escapeHtml(f.placeholder)}" />`;
   }
 
   function renderFields() {
@@ -80,8 +81,8 @@
     fieldsRoot.innerHTML = def.fields
       .map(
         (f) => `
-        <div class="gen-field">
-          <label for="gen-${f.key}">${escapeHtml(f.label)}</label>
+        <div class="form-field">
+          <label for="gen-${f.key}" class="form-label">${escapeHtml(f.label)}</label>
           ${fieldInput(f)}
         </div>`
       )

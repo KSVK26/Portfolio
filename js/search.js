@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Global Search — Full-text indexing across all content collections.
+   Global Search — Full-text indexing across all content collections (Editorial).
    ========================================================================== */
 
 (function () {
@@ -14,8 +14,8 @@
   function escapeHtml(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
       .replace(/"/g, "&quot;");
   }
 
@@ -72,7 +72,7 @@
     grid.innerHTML = results
       .map(
         (item) => `
-        <div class="card">
+        <div class="card-editorial">
           <div class="card-media">
             ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(item.type)}</div>`}
           </div>
@@ -80,9 +80,9 @@
             <span class="card-tag">${escapeHtml(item.type)}</span>
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <p class="card-desc">${escapeHtml(item.desc)}</p>
-          </div>
-          <div class="card-footer">
-            <a href="${item.url}" style="color:var(--accent-blue);">View in ${item.type} →</a>
+            <div class="card-footer">
+              <a href="${item.url}" class="text-vermilion-hover" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">View in ${item.type} →</a>
+            </div>
           </div>
         </div>`
       )

@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K S Vasanth Karthik — Esports Operations, Events &amp; Creative Work</title>
+  <meta name="description" content="Portfolio & editorial index of K S Vasanth Karthik — working across esports operations, event management, creative projects and communities." />
+
+  <!-- Editorial & Technical Typefaces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            paper: {
+              light: '#F5F3EE',
+              surface: '#ECE9E1',
+              dark: '#141413',
+              darkSurface: '#1C1B19',
+            },
+            ink: {
+              light: '#141413',
+              muted: '#575550',
+              dark: '#EFECE6',
+              darkMuted: '#9A968E',
+            },
+            rule: {
+              light: '#D8D4CC',
+              dark: '#2B2A27',
+            },
+            vermilion: '#C83E2B',
+          },
+          letterSpacing: {
+            tightest: '-0.035em',
+            editorial: '-0.02em',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Base archival paper tokens & tactile rules */
+    :root {
+      --bg-paper: #F5F3EE;
+      --bg-elevated: #ECE9E1;
+      --text-ink: #141413;
+      --text-muted: #575550;
+      --border-rule: #D8D4CC;
+      --accent: #C83E2B;
+    }
+
+    html.dark {
+      --bg-paper: #141413;
+      --bg-elevated: #1C1B19;
+      --text-ink: #EFECE6;
+      --text-muted: #9A968E;
+      --border-rule: #2B2A27;
+      --accent: #D94E3B;
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Subtle tactile paper grain overlay — zero synthetic gradients */
+    .paper-grain {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    html.dark .paper-grain {
+      opacity: 0.04;
+    }
+
+    /* Custom selection styling like highlighter ink on newsprint */
+    ::selection {
+      background-color: #C83E2B;
+      color: #F5F3EE;
+    }
+
+    /* Tactile letterpress deboss effect for the KSVK monogram plate */
+    .monogram-plate {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-rule);
+      position: relative;
+    }
+
+    .deboss-type {
+      color: var(--text-ink);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    html.dark .deboss-type {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+    }
+
+    /* Weighted accordion transition */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .accordion-item[data-open="true"] .accordion-content {
+      grid-template-rows: 1fr;
+    }
+    .accordion-inner {
+      overflow: hidden;
+    }
+
+    /* Sharp print-like button hover fill */
+    .btn-editorial {
+      position: relative;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-paper);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-rule);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-vermilion selection:text-paper-light">
+  <!-- Subtle Paper Texture Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Top Editorial Masthead / Navigation -->
+  <header class="sticky top-0 z-40 border-b border-rule-light dark:border-rule-dark bg-paper-light/95 dark:bg-paper-dark/95 backdrop-blur-[2px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-14 sm:h-16">
+        <!-- Left: Monogram & Name -->
+        <a href="#top" class="flex items-center gap-3 group focus:outline-none">
+          <span class="font-mono text-xs tracking-widest uppercase px-2 py-1 border border-ink-light dark:border-ink-dark font-medium group-hover:bg-ink-light group-hover:text-paper-light dark:group-hover:bg-ink-dark dark:group-hover:text-paper-dark transition-colors">
+            KSVK
+          </span>
+          <span class="hidden sm:inline-block font-sans text-xs font-medium tracking-wide uppercase text-ink-light dark:text-ink-dark">
+            K S Vasanth Karthik
+          </span>
+        </a>
+
+        <!-- Center: Editorial Edition Metadata (Desktop) -->
+        <div class="hidden lg:flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-ink-muted dark:text-ink-darkMuted">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-vermilion"></span>
+          <span>BENGALURU · PORTFOLIO / ARCHIVE</span>
+        </div>
+
+        <!-- Right: Navigation & Paper Edition Toggle -->
+        <nav class="flex items-center gap-4 sm:gap-7" aria-label="Primary Navigation">
+          <a href="#work" class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted hover:text-ink-light dark:hover:text-ink-dark transition-colors">
+            Work
+          </a>
+          <a href="#capabilities" class="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted hover:text-ink-light dark:hover:text-ink-dark transition-colors">
+            Index
+          </a>
+          <a href="#about" class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted hover:text-ink-light dark:hover:text-ink-dark transition-colors">
+            About
+          </a>
+          <a href="#contact" class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted hover:text-ink-light dark:hover:text-ink-dark transition-colors">
+            Contact
+          </a>
+
+          <!-- Tactile Paper Mode Switcher -->
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle Night Edition"
+            class="ml-1 pl-3 sm:pl-4 border-l border-rule-light dark:border-rule-dark flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-light dark:text-ink-dark hover:text-vermilion dark:hover:text-vermilion transition-colors cursor-pointer"
+          >
+            <span id="themeIndicator" class="w-2 h-2 border border-current inline-block"></span>
+            <span id="themeLabel" class="hidden sm:inline">Night Ed.</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="top" class="flex-grow">
+    <!-- HERO SECTION: Asymmetric 12-Column Swiss Editorial Grid -->
+    <section class="border-b border-rule-light dark:border-rule-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          <!-- Left 8 Columns: Primary Typographic Statement -->
+          <div class="lg:col-span-8 py-12 sm:py-16 lg:py-24 lg:pr-12 lg:border-r border-rule-light dark:border-rule-dark flex flex-col justify-between">
+            <div>
+              <!-- Eyebrow -->
+              <div class="flex items-center gap-3 mb-6 sm:mb-8">
+                <span class="font-mono text-[11px] sm:text-xs tracking-[0.16em] uppercase text-vermilion font-medium">
+                  ESPORTS OPERATIONS · EVENTS · CREATIVE WORK
+                </span>
+              </div>
+
+              <!-- Headline -->
+              <h1 class="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] leading-[0.94] tracking-tightest uppercase text-ink-light dark:text-ink-dark font-normal mb-6 sm:mb-8">
+                K S VASANTH<br class="hidden sm:inline" /> KARTHIK
+              </h1>
+
+              <!-- Subheadline -->
+              <p class="font-serif italic text-2xl sm:text-3xl lg:text-[2.15rem] leading-snug text-ink-light dark:text-ink-dark mb-6 sm:mb-8">
+                "I turn ideas into things that work."
+              </p>
+
+              <!-- Bio Paragraph -->
+              <p class="font-sans text-base sm:text-lg leading-relaxed text-ink-muted dark:text-ink-darkMuted max-w-2xl mb-10 sm:mb-12">
+                I'm Vasanth — working across esports operations, event management, creative projects and communities. I enjoy bringing people together, figuring out the details and turning ideas into experiences that work.
+              </p>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+              <a
+                href="#work"
+                class="btn-editorial inline-flex items-center justify-between gap-4 px-6 py-3.5 bg-ink-light text-paper-light dark:bg-ink-dark dark:text-paper-dark font-mono text-xs uppercase tracking-widest hover:bg-vermilion dark:hover:bg-vermilion dark:hover:text-paper-light border border-ink-light dark:border-ink-dark hover:border-vermilion"
+              >
+                <span>Explore my work</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+
+              <a
+                href="#about"
+                class="btn-editorial inline-flex items-center justify-between gap-4 px-6 py-3.5 bg-transparent text-ink-light dark:text-ink-dark font-mono text-xs uppercase tracking-widest border border-ink-light/40 dark:border-ink-dark/40 hover:border-ink-light dark:hover:border-ink-dark"
+              >
+                <span>A little about me</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right 4 Columns: Architectural Letterpress Colophon Plate -->
+          <div class="lg:col-span-4 py-10 sm:py-14 lg:py-24 lg:pl-10 flex flex-col justify-between border-t lg:border-t-0 border-rule-light dark:border-rule-dark">
+            <!-- Studio Monogram Card -->
+            <div class="monogram-plate p-6 sm:p-8 flex flex-col justify-between aspect-[4/4.3] max-w-md mx-auto lg:max-w-none w-full">
+              <!-- Top Print Registration Marks -->
+              <div class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase text-ink-muted dark:text-ink-darkMuted">
+                <span>FIG. 01 — MONOGRAM</span>
+                <span>12.9716° N</span>
+              </div>
+
+              <!-- Center Blind-Debossed Monogram -->
+              <div class="my-auto py-8 border-y border-rule-light dark:border-rule-dark flex flex-col items-center justify-center text-center relative">
+                <!-- Subtle Crosshair Ticks -->
+                <span class="absolute top-2 left-2 font-mono text-[10px] text-ink-muted/50 select-none">+</span>
+                <span class="absolute top-2 right-2 font-mono text-[10px] text-ink-muted/50 select-none">+</span>
+                <span class="absolute bottom-2 left-2 font-mono text-[10px] text-ink-muted/50 select-none">+</span>
+                <span class="absolute bottom-2 right-2 font-mono text-[10px] text-ink-muted/50 select-none">+</span>
+
+                <div class="font-serif text-6xl sm:text-7xl tracking-tight deboss-type select-none leading-none">
+                  K<span class="italic font-normal">S</span>VK
+                </div>
+                <div class="mt-3 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-muted dark:text-ink-darkMuted">
+                  OPERATIONS &amp; SYSTEMS
+                </div>
+              </div>
+
+              <!-- Bottom Colophon Spec -->
+              <div class="pt-4 flex items-end justify-between font-mono text-[10px] leading-relaxed uppercase text-ink-muted dark:text-ink-darkMuted">
+                <div>
+                  <div>BASE: BENGALURU, IN</div>
+                  <div>INST: SJBIT · COMP. SCI.</div>
+                </div>
+                <div class="text-right">
+                  <span class="inline-block px-1.5 py-0.5 border border-vermilion text-vermilion">
+                    AVAILABLE
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quiet Editorial Caption below plate -->
+            <div class="mt-6 pt-4 border-t border-rule-light dark:border-rule-dark flex items-center justify-between font-mono text-[11px] text-ink-muted dark:text-ink-darkMuted">
+              <span>INDEX SECTIONS 00 — 03</span>
+              <span>SCROLL TO READ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 00 — PROOF ("Things I've been part of.") -->
+    <section id="proof" class="border-b border-rule-light dark:border-rule-dark bg-paper-surface/55 dark:bg-paper-darkSurface/55">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
+        <!-- Section Header Strip -->
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-8 border-b border-rule-light dark:border-rule-dark">
+          <div class="flex items-baseline gap-4">
+            <span class="font-mono text-xs tracking-widest text-vermilion font-medium">00</span>
+            <h2 class="font-serif text-3xl sm:text-4xl text-ink-light dark:text-ink-dark">
+              Things I've been part of.
+            </h2>
+          </div>
+          <p class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted">
+            OPERATIONAL TRACK RECORD &amp; SCOPE
+          </p>
+        </div>
+
+        <!-- 4-Column Swiss Ledger Strip -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-rule-light dark:divide-rule-dark border-b border-rule-light dark:border-rule-dark">
+          <!-- Column 1 -->
+          <div class="py-6 sm:py-8 sm:pr-6 flex flex-col justify-between">
+            <div class="font-mono text-[11px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-3">
+              00.A / COMPETITIVE OPS
+            </div>
+            <div>
+              <h3 class="font-serif text-2xl text-ink-light dark:text-ink-dark mb-2">
+                Tournament Rulebooks &amp; Admin
+              </h3>
+              <p class="font-sans text-sm leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                Structuring brackets, match schedules, lobby protocols, and dispute resolution for multi-stage online and campus esports brackets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="py-6 sm:py-8 sm:px-6 flex flex-col justify-between">
+            <div class="font-mono text-[11px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-3">
+              00.B / LIVE PRODUCTION
+            </div>
+            <div>
+              <h3 class="font-serif text-2xl text-ink-light dark:text-ink-dark mb-2">
+                Collegiate &amp; LAN Events
+              </h3>
+              <p class="font-sans text-sm leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                On-ground stage flow, player check-ins, technical setup checklists, and run-of-show coordination at SJBIT and Bengaluru venues.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="py-6 sm:py-8 sm:px-6 flex flex-col justify-between">
+            <div class="font-mono text-[11px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-3">
+              00.C / COMMUNITIES
+            </div>
+            <div>
+              <h3 class="font-serif text-2xl text-ink-light dark:text-ink-dark mb-2">
+                Discord &amp; Player Networks
+              </h3>
+              <p class="font-sans text-sm leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                Building structured community servers, moderation workflows, and active grassroots hubs that keep players informed and engaged.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="py-6 sm:py-8 sm:pl-6 flex flex-col justify-between">
+            <div class="font-mono text-[11px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-3">
+              00.D / VISUAL DIRECTION
+            </div>
+            <div>
+              <h3 class="font-serif text-2xl text-ink-light dark:text-ink-dark mb-2">
+                Identity &amp; Event Collateral
+              </h3>
+              <p class="font-sans text-sm leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                Designing coherent tournament graphics, social announcements, broadcast overlays, and clean digital touchpoints.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01 — AREAS OF WORK ("Disciplines & core capabilities") -->
+    <section id="capabilities" class="border-b border-rule-light dark:border-rule-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+          <!-- Left 4 Columns: Sticky Section Title & Philosophy -->
+          <div class="lg:col-span-4">
+            <div class="lg:sticky lg:top-24">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs tracking-widest text-vermilion font-medium">01</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted">AREAS OF WORK</span>
+              </div>
+              <h2 class="font-serif text-4xl sm:text-5xl leading-[1.05] text-ink-light dark:text-ink-dark mb-5">
+                Disciplines &amp; core capabilities
+              </h2>
+              <p class="font-sans text-sm sm:text-base leading-relaxed text-ink-muted dark:text-ink-darkMuted mb-6">
+                Good execution lives in the unglamorous details—clear rules, punctual schedules, legible visuals, and calm communication when plans shift live.
+              </p>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted pt-4 border-t border-rule-light dark:border-rule-dark">
+                SELECT ANY DISCIPLINE TO EXPAND SCOPE
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 8 Columns: Interactive Editorial Index Ledger -->
+          <div class="lg:col-span-8 border-t border-rule-light dark:border-rule-dark">
+            <!-- Discipline 01.1 -->
+            <div class="accordion-item border-b border-rule-light dark:border-rule-dark" data-open="true">
+              <button
+                type="button"
+                class="accordion-trigger w-full py-6 sm:py-7 flex items-baseline justify-between gap-4 text-left group cursor-pointer focus:outline-none"
+                aria-expanded="true"
+              >
+                <div class="flex items-baseline gap-5 sm:gap-8">
+                  <span class="font-mono text-xs sm:text-sm text-vermilion font-medium">01.1</span>
+                  <h3 class="font-serif text-2xl sm:text-4xl text-ink-light dark:text-ink-dark group-hover:translate-x-1 transition-transform">
+                    Esports Operations
+                  </h3>
+                </div>
+                <span class="accordion-icon font-mono text-sm text-ink-muted dark:text-ink-darkMuted shrink-0">
+                  [ − ]
+                </span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <div class="pb-7 pl-9 sm:pl-14 pr-4 grid grid-cols-1 sm:grid-cols-12 gap-6">
+                    <p class="sm:col-span-7 font-sans text-sm sm:text-base leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                      Designing competitive formats that are fair for players and practical for staff. From drafting unambiguous rulebooks and seeding brackets to managing live match check-ins, admin escalations, and broadcast handoffs.
+                    </p>
+                    <div class="sm:col-span-5 border-l border-rule-light dark:border-rule-dark pl-4">
+                      <div class="font-mono text-[10px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-2">
+                        KEY DELIVERABLES
+                      </div>
+                      <ul class="font-mono text-xs space-y-1.5 text-ink-light dark:text-ink-dark">
+                        <li>· Tournament Rulebooks &amp; Formats</li>
+                        <li>· Bracket Seeding &amp; Match Admin</li>
+                        <li>· Broadcast &amp; Observer Sync</li>
+                        <li>· Competitive Integrity &amp; Rulings</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Discipline 01.2 -->
+            <div class="accordion-item border-b border-rule-light dark:border-rule-dark" data-open="false">
+              <button
+                type="button"
+                class="accordion-trigger w-full py-6 sm:py-7 flex items-baseline justify-between gap-4 text-left group cursor-pointer focus:outline-none"
+                aria-expanded="false"
+              >
+                <div class="flex items-baseline gap-5 sm:gap-8">
+                  <span class="font-mono text-xs sm:text-sm text-ink-muted dark:text-ink-darkMuted group-hover:text-vermilion transition-colors">01.2</span>
+                  <h3 class="font-serif text-2xl sm:text-4xl text-ink-light dark:text-ink-dark group-hover:translate-x-1 transition-transform">
+                    Event Management
+                  </h3>
+                </div>
+                <span class="accordion-icon font-mono text-sm text-ink-muted dark:text-ink-darkMuted shrink-0">
+                  [ + ]
+                </span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <div class="pb-7 pl-9 sm:pl-14 pr-4 grid grid-cols-1 sm:grid-cols-12 gap-6">
+                    <p class="sm:col-span-7 font-sans text-sm sm:text-base leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                      Translating concepts on paper into smooth physical and hybrid gatherings. Coordinating venue logistics, stage timelines, volunteer rosters, equipment readiness, and real-time contingency handling on event day.
+                    </p>
+                    <div class="sm:col-span-5 border-l border-rule-light dark:border-rule-dark pl-4">
+                      <div class="font-mono text-[10px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-2">
+                        KEY DELIVERABLES
+                      </div>
+                      <ul class="font-mono text-xs space-y-1.5 text-ink-light dark:text-ink-dark">
+                        <li>· Minute-by-Minute Run of Show</li>
+                        <li>· Venue, LAN &amp; Stage Logistics</li>
+                        <li>· Volunteer &amp; Staff Briefing</li>
+                        <li>· Partner &amp; Sponsor Touchpoints</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Discipline 01.3 -->
+            <div class="accordion-item border-b border-rule-light dark:border-rule-dark" data-open="false">
+              <button
+                type="button"
+                class="accordion-trigger w-full py-6 sm:py-7 flex items-baseline justify-between gap-4 text-left group cursor-pointer focus:outline-none"
+                aria-expanded="false"
+              >
+                <div class="flex items-baseline gap-5 sm:gap-8">
+                  <span class="font-mono text-xs sm:text-sm text-ink-muted dark:text-ink-darkMuted group-hover:text-vermilion transition-colors">01.3</span>
+                  <h3 class="font-serif text-2xl sm:text-4xl text-ink-light dark:text-ink-dark group-hover:translate-x-1 transition-transform">
+                    Creative Projects
+                  </h3>
+                </div>
+                <span class="accordion-icon font-mono text-sm text-ink-muted dark:text-ink-darkMuted shrink-0">
+                  [ + ]
+                </span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <div class="pb-7 pl-9 sm:pl-14 pr-4 grid grid-cols-1 sm:grid-cols-12 gap-6">
+                    <p class="sm:col-span-7 font-sans text-sm sm:text-base leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                      Crafting visual systems that give tournaments, student initiatives, and communities a distinct, trustworthy presence. Focused on strong typography, structured layouts, and practical templates teams can actually reuse.
+                    </p>
+                    <div class="sm:col-span-5 border-l border-rule-light dark:border-rule-dark pl-4">
+                      <div class="font-mono text-[10px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-2">
+                        KEY DELIVERABLES
+                      </div>
+                      <ul class="font-mono text-xs space-y-1.5 text-ink-light dark:text-ink-dark">
+                        <li>· Event Visual Identity Systems</li>
+                        <li>· Stream &amp; Matchday Overlays</li>
+                        <li>· Editorial Social &amp; Print Kits</li>
+                        <li>· Web &amp; Micro-site Prototyping</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Discipline 01.4 -->
+            <div class="accordion-item border-b border-rule-light dark:border-rule-dark" data-open="false">
+              <button
+                type="button"
+                class="accordion-trigger w-full py-6 sm:py-7 flex items-baseline justify-between gap-4 text-left group cursor-pointer focus:outline-none"
+                aria-expanded="false"
+              >
+                <div class="flex items-baseline gap-5 sm:gap-8">
+                  <span class="font-mono text-xs sm:text-sm text-ink-muted dark:text-ink-darkMuted group-hover:text-vermilion transition-colors">01.4</span>
+                  <h3 class="font-serif text-2xl sm:text-4xl text-ink-light dark:text-ink-dark group-hover:translate-x-1 transition-transform">
+                    Community Building
+                  </h3>
+                </div>
+                <span class="accordion-icon font-mono text-sm text-ink-muted dark:text-ink-darkMuted shrink-0">
+                  [ + ]
+                </span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <div class="pb-7 pl-9 sm:pl-14 pr-4 grid grid-cols-1 sm:grid-cols-12 gap-6">
+                    <p class="sm:col-span-7 font-sans text-sm sm:text-base leading-relaxed text-ink-muted dark:text-ink-darkMuted">
+                      Creating welcoming, well-moderated spaces where players, organizers, and creators stick around beyond a single tournament weekend. Designing onboarding flows, clear communication channels, and recurring community touchpoints.
+                    </p>
+                    <div class="sm:col-span-5 border-l border-rule-light dark:border-rule-dark pl-4">
+                      <div class="font-mono text-[10px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-2">
+                        KEY DELIVERABLES
+                      </div>
+                      <ul class="font-mono text-xs space-y-1.5 text-ink-light dark:text-ink-dark">
+                        <li>· Discord Architecture &amp; Bots</li>
+                        <li>· Moderation &amp; Safety Guidelines</li>
+                        <li>· Collegiate &amp; Grassroots Loops</li>
+                        <li>· Player Support &amp; Comms</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 — FEATURED WORK ("Featured projects & initiatives") -->
+    <section id="work" class="border-b border-rule-light dark:border-rule-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24">
+        <!-- Section Header + Editorial Filter Tabs -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-rule-light dark:border-rule-dark">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="font-mono text-xs tracking-widest text-vermilion font-medium">02</span>
+              <span class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted">FEATURED WORK</span>
+            </div>
+            <h2 class="font-serif text-4xl sm:text-5xl text-ink-light dark:text-ink-dark">
+              Featured projects &amp; initiatives
+            </h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Filter projects by category">
+            <button
+              type="button"
+              data-filter="all"
+              class="filter-btn px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider border border-ink-light dark:border-ink-dark bg-ink-light text-paper-light dark:bg-ink-dark dark:text-paper-dark cursor-pointer transition-colors"
+            >
+              All [04]
+            </button>
+            <button
+              type="button"
+              data-filter="operations"
+              class="filter-btn px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider border border-rule-light dark:border-rule-dark text-ink-muted dark:text-ink-darkMuted hover:border-ink-light dark:hover:border-ink-dark cursor-pointer transition-colors"
+            >
+              Operations
+            </button>
+            <button
+              type="button"
+              data-filter="events"
+              class="filter-btn px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider border border-rule-light dark:border-rule-dark text-ink-muted dark:text-ink-darkMuted hover:border-ink-light dark:hover:border-ink-dark cursor-pointer transition-colors"
+            >
+              Events
+            </button>
+            <button
+              type="button"
+              data-filter="creative"
+              class="filter-btn px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider border border-rule-light dark:border-rule-dark text-ink-muted dark:text-ink-darkMuted hover:border-ink-light dark:hover:border-ink-dark cursor-pointer transition-colors"
+            >
+              Creative
+            </button>
+          </div>
+        </div>
+
+        <!-- Editorial Index Table Header (Desktop) -->
+        <div class="hidden md:grid grid-cols-12 py-3.5 border-b border-rule-light dark:border-rule-dark font-mono text-[11px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted">
+          <div class="col-span-1">NO.</div>
+          <div class="col-span-5">INITIATIVE / DOSSIER</div>
+          <div class="col-span-3">DISCIPLINE</div>
+          <div class="col-span-2">CONTEXT</div>
+          <div class="col-span-1 text-right">INSPECT</div>
+        </div>
+
+        <!-- Project Dossier Rows -->
+        <div id="projectList" class="divide-y divide-rule-light dark:divide-rule-dark border-b border-rule-light dark:border-rule-dark">
+          <!-- Rendered cleanly by JS with full static fallback attributes -->
+        </div>
+
+        <!-- Footnote on Dossiers -->
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-[11px] text-ink-muted dark:text-ink-darkMuted">
+          <span>CLICK ANY DOSSIER ROW TO OPEN OPERATIONAL NOTES &amp; EXECUTION BREAKDOWN</span>
+          <span>REPRESENTATIVE ARCHIVE · 2023—2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03 — ABOUT ("A little about me") -->
+    <section id="about" class="border-b border-rule-light dark:border-rule-dark bg-paper-surface/40 dark:bg-paper-darkSurface/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-16 sm:py-24">
+        <!-- Section Eyebrow -->
+        <div class="flex items-center gap-3 mb-8 sm:mb-10">
+          <span class="font-mono text-xs tracking-widest text-vermilion font-medium">03</span>
+          <span class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted">ABOUT</span>
+        </div>
+
+        <!-- Two-Column Magazine Spread -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+          <!-- Left 7 Columns: Editorial Narrative -->
+          <div class="lg:col-span-7 lg:pr-10 lg:border-r border-rule-light dark:border-rule-dark">
+            <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.06] text-ink-light dark:text-ink-dark mb-8">
+              A little about me
+            </h2>
+
+            <div class="space-y-6 font-sans text-base sm:text-lg leading-relaxed text-ink-light dark:text-ink-dark">
+              <p>
+                I'm Vasanth — a Computer Science student at SJBIT and someone who found his way into esports operations, event management, creative work and community building. I enjoy working behind the scenes, bringing people together and taking responsibility for making things happen.
+              </p>
+              <p class="text-ink-muted dark:text-ink-darkMuted text-base">
+                Whether it's structuring a multi-day tournament schedule, coordinating an on-campus production crew, or refining the visual identity of a new initiative, I care most about clarity, reliability, and leaving every system a little calmer and better organized than I found it.
+              </p>
+            </div>
+
+            <div class="mt-9 pt-8 border-t border-rule-light dark:border-rule-dark flex flex-wrap items-center gap-4">
+              <button
+                id="openStoryBtn"
+                type="button"
+                class="btn-editorial inline-flex items-center gap-3 px-5 py-3 border border-ink-light dark:border-ink-dark font-mono text-xs uppercase tracking-widest text-ink-light dark:text-ink-dark hover:bg-ink-light hover:text-paper-light dark:hover:bg-ink-dark dark:hover:text-paper-dark cursor-pointer"
+              >
+                <span>Read my story</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+              <span class="font-mono text-xs text-ink-muted dark:text-ink-darkMuted">
+                BACKGROUND, WORKING PRINCIPLES &amp; TIMELINE
+              </span>
+            </div>
+          </div>
+
+          <!-- Right 5 Columns: Colophon / Currently Sidebar -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div class="border border-rule-light dark:border-rule-dark bg-paper-light dark:bg-paper-dark p-6 sm:p-8">
+              <div class="flex items-center justify-between pb-4 mb-6 border-b border-rule-light dark:border-rule-dark">
+                <span class="font-mono text-xs uppercase tracking-widest font-medium text-ink-light dark:text-ink-dark">
+                  COLOPHON / CURRENTLY
+                </span>
+                <span class="font-mono text-[11px] text-vermilion">● BENGALURU</span>
+              </div>
+
+              <dl class="divide-y divide-rule-light dark:divide-rule-dark font-sans text-sm">
+                <div class="py-3.5 grid grid-cols-3 gap-2">
+                  <dt class="font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted">
+                    EDUCATION
+                  </dt>
+                  <dd class="col-span-2 text-ink-light dark:text-ink-dark font-medium">
+                    B.E. Computer Science, SJBIT Bengaluru
+                  </dd>
+                </div>
+
+                <div class="py-3.5 grid grid-cols-3 gap-2">
+                  <dt class="font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted">
+                    PRIMARY FOCUS
+                  </dt>
+                  <dd class="col-span-2 text-ink-light dark:text-ink-dark">
+                    Esports Operations, Live Events &amp; Creative Systems
+                  </dd>
+                </div>
+
+                <div class="py-3.5 grid grid-cols-3 gap-2">
+                  <dt class="font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted">
+                    APPROACH
+                  </dt>
+                  <dd class="col-span-2 text-ink-light dark:text-ink-dark">
+                    Behind-the-scenes execution, clear documentation, calm ownership
+                  </dd>
+                </div>
+
+                <div class="py-3.5 grid grid-cols-3 gap-2">
+                  <dt class="font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted">
+                    COLLABORATION
+                  </dt>
+                  <dd class="col-span-2 text-ink-light dark:text-ink-dark">
+                    Open to tournament ops, collegiate fests, creative direction &amp; community builds
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION ("Have something worth building?") -->
+    <section id="contact" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <!-- Left 7 Columns: Editorial Invitation & Direct Email -->
+          <div class="lg:col-span-7">
+            <div class="font-mono text-xs uppercase tracking-widest text-vermilion mb-4">
+              CORRESPONDENCE &amp; INQUIRIES
+            </div>
+            <h2 class="font-serif text-4xl sm:text-6xl leading-[1.02] text-ink-light dark:text-ink-dark mb-6">
+              Have something worth building?
+            </h2>
+            <p class="font-sans text-base sm:text-lg leading-relaxed text-ink-muted dark:text-ink-darkMuted max-w-xl mb-8">
+              I'm always interested in interesting projects, collaborations and conversations with people who enjoy making things happen.
+            </p>
+
+            <!-- Direct Copy-to-Clipboard Email Strip -->
+            <div class="inline-flex flex-wrap items-center gap-3 p-2 pl-4 border border-rule-light dark:border-rule-dark bg-paper-surface/60 dark:bg-paper-darkSurface/60">
+              <span id="contactEmailText" class="font-mono text-xs sm:text-sm text-ink-light dark:text-ink-dark select-all">
+                hello@ksvk.in
+              </span>
+              <button
+                id="copyEmailBtn"
+                type="button"
+                class="px-3.5 py-2 bg-ink-light text-paper-light dark:bg-ink-dark dark:text-paper-dark font-mono text-[11px] uppercase tracking-widest hover:bg-vermilion dark:hover:bg-vermilion dark:hover:text-paper-light transition-colors cursor-pointer"
+              >
+                Copy Email
+              </button>
+            </div>
+            <p id="copyFeedback" class="mt-2 font-mono text-[11px] text-vermilion h-4" aria-live="polite"></p>
+
+            <!-- Social / Network Links -->
+            <div class="mt-8 pt-8 border-t border-rule-light dark:border-rule-dark flex flex-wrap gap-6 font-mono text-xs uppercase tracking-wider">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-ink-light dark:text-ink-dark hover:text-vermilion transition-colors">
+                LinkedIn ↗
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="text-ink-light dark:text-ink-dark hover:text-vermilion transition-colors">
+                X / Twitter ↗
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-ink-light dark:text-ink-dark hover:text-vermilion transition-colors">
+                Instagram ↗
+              </a>
+              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="text-ink-light dark:text-ink-dark hover:text-vermilion transition-colors">
+                Discord ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Right 5 Columns: Understated Editorial Note Composer -->
+          <div class="lg:col-span-5 border border-rule-light dark:border-rule-dark p-6 sm:p-8 bg-paper-surface/35 dark:bg-paper-darkSurface/35">
+            <div class="font-mono text-xs uppercase tracking-widest text-ink-light dark:text-ink-dark pb-4 mb-5 border-b border-rule-light dark:border-rule-dark flex justify-between items-center">
+              <span>DISPATCH A QUICK NOTE</span>
+              <span class="text-ink-muted dark:text-ink-darkMuted">DIRECT</span>
+            </div>
+
+            <form id="noteForm" class="space-y-4">
+              <div>
+                <label for="senderName" class="block font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted mb-1.5">
+                  Your Name / Org
+                </label>
+                <input
+                  id="senderName"
+                  name="senderName"
+                  type="text"
+                  required
+                  placeholder="e.g. Rohan · Campus Esports Lead"
+                  class="w-full px-3.5 py-2.5 bg-paper-light dark:bg-paper-dark border border-rule-light dark:border-rule-dark font-sans text-sm text-ink-light dark:text-ink-dark placeholder:text-ink-muted/50 focus:outline-none focus:border-ink-light dark:focus:border-ink-dark"
+                />
+              </div>
+
+              <div>
+                <label for="senderEmail" class="block font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted mb-1.5">
+                  Return Address
+                </label>
+                <input
+                  id="senderEmail"
+                  name="senderEmail"
+                  type="email"
+                  required
+                  placeholder="you@domain.com"
+                  class="w-full px-3.5 py-2.5 bg-paper-light dark:bg-paper-dark border border-rule-light dark:border-rule-dark font-sans text-sm text-ink-light dark:text-ink-dark placeholder:text-ink-muted/50 focus:outline-none focus:border-ink-light dark:focus:border-ink-dark"
+                />
+              </div>
+
+              <div>
+                <label for="senderNote" class="block font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted mb-1.5">
+                  What are we building?
+                </label>
+                <textarea
+                  id="senderNote"
+                  name="senderNote"
+                  rows="3"
+                  required
+                  placeholder="Event ops, tournament format, community project, or a quick hello..."
+                  class="w-full px-3.5 py-2.5 bg-paper-light dark:bg-paper-dark border border-rule-light dark:border-rule-dark font-sans text-sm text-ink-light dark:text-ink-dark placeholder:text-ink-muted/50 focus:outline-none focus:border-ink-light dark:focus:border-ink-dark resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-3 px-5 bg-ink-light text-paper-light dark:bg-ink-dark dark:text-paper-dark font-mono text-xs uppercase tracking-widest hover:bg-vermilion dark:hover:bg-vermilion dark:hover:text-paper-light transition-colors cursor-pointer"
+              >
+                Prepare Dispatch →
+              </button>
+              <p id="noteStatus" class="font-mono text-[11px] text-ink-muted dark:text-ink-darkMuted min-h-[1rem]" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Colophon Footer -->
+  <footer class="border-t border-rule-light dark:border-rule-dark bg-paper-surface/50 dark:bg-paper-darkSurface/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-wider text-ink-muted dark:text-ink-darkMuted">
+      <div>
+        © <span id="yearNow">2026</span> K S VASANTH KARTHIK · ALL RIGHTS RESERVED
+      </div>
+      <div class="flex items-center gap-6">
+        <span>SET IN INSTRUMENT SERIF &amp; PLUS JAKARTA SANS</span>
+        <a href="#top" class="text-ink-light dark:text-ink-dark hover:text-vermilion transition-colors">
+          TOP ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DOSSIER / STORY DRAWER MODAL (Tactile Print Sheet) -->
+  <div
+    id="editorialModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-ink-light/60 dark:bg-black/75 backdrop-blur-[1px]"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+    <div class="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto bg-paper-light dark:bg-paper-dark border border-ink-light dark:border-ink-dark p-6 sm:p-10">
+      <!-- Top Modal Bar -->
+      <div class="flex items-center justify-between pb-4 mb-6 border-b border-rule-light dark:border-rule-dark">
+        <span id="modalEyebrow" class="font-mono text-xs uppercase tracking-widest text-vermilion">
+          DOSSIER // 01
+        </span>
+        <button
+          id="closeModalBtn"
+          type="button"
+          class="font-mono text-xs uppercase tracking-widest px-2.5 py-1 border border-rule-light dark:border-rule-dark text-ink-light dark:text-ink-dark hover:border-ink-light dark:hover:border-ink-dark cursor-pointer"
+        >
+          CLOSE [ESC]
+        </button>
+      </div>
+
+      <!-- Dynamic Modal Body -->
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Interactive Editorial Logic -->
+  <script>
+    // 1. Representative Operational Dossiers (Grounded in Vasanth's domains)
+    const PROJECTS = [
+      {
+        id: '02.1',
+        title: 'Collegiate Esports Championship & LAN Operations',
+        category: 'operations',
+        categoryLabel: 'Esports Operations · Events',
+        context: 'SJBIT / Bengaluru',
+        year: '2025',
+        role: 'Lead Tournament & Floor Operations',
+        summary: 'End-to-end competitive framework and on-ground execution for a multi-title inter-collegiate esports tournament.',
+        execution: [
+          'Authored standardized rulebooks, tie-breaker matrices, and lobby check-in procedures across multiple competitive titles.',
+          'Coordinated stage scheduling, player seating rotations, and network verification checks to keep LAN matches on schedule.',
+          'Managed real-time admin escalations and synced match state updates with the student broadcast desk.'
+        ],
+        outcome: 'Delivered a structured, dispute-free bracket progression with clear player communication from registration to grand finals.'
+      },
+      {
+        id: '02.2',
+        title: 'Campus Tech & Cultural Fest — Production & Run-of-Show',
+        category: 'events',
+        categoryLabel: 'Event Management',
+        context: 'Bengaluru Campus',
+        year: '2025',
+        role: 'Event Operations & Stage Coordination',
+        summary: 'Behind-the-scenes logistics, volunteer team alignment, and live stage cueing for high-footfall campus programming.',
+        execution: [
+          'Built minute-by-minute run-of-show documents connecting stage managers, AV technicians, and registration desks.',
+          'Organized cross-functional student volunteer pods with clear escalation ladders for crowd flow and equipment handoffs.',
+          'Maintained buffer protocols so schedule shifts were absorbed smoothly without disrupting participant experience.'
+        ],
+        outcome: 'Seamless transitions across multi-track sessions and strong coordination between organizing committees and faculty.'
+      },
+      {
+        id: '02.3',
+        title: 'Tournament Visual Identity & Broadcast Asset System',
+        category: 'creative',
+        categoryLabel: 'Creative Projects',
+        context: 'Independent / Community',
+        year: '2024',
+        role: 'Creative Direction & Systems Design',
+        summary: 'Modular visual identity, matchday graphics, and broadcast overlay kit engineered for rapid tournament updates.',
+        execution: [
+          'Established a high-contrast typographic hierarchy and color system legible across mobile social feeds and 1080p stream overlays.',
+          'Created reusable templates for bracket reveals, MVP cards, schedule tickers, and rulebook PDFs so ops teams could ship updates in minutes.',
+          'Eliminated visual clutter in favor of crisp grid alignment and clear match metadata.'
+        ],
+        outcome: 'Reduced matchday graphic turnaround time while giving grassroots events a cohesive, broadcast-ready look.'
+      },
+      {
+        id: '02.4',
+        title: 'Grassroots Gaming Community & Discord Infrastructure',
+        category: 'operations',
+        categoryLabel: 'Community Building · Ops',
+        context: 'Regional Network',
+        year: '2024',
+        role: 'Community Architect & Operations Lead',
+        summary: 'Structured Discord server architecture, automated check-in pipelines, and moderation frameworks for student & amateur players.',
+        execution: [
+          'Designed role-gated channels, automated scrim/tournament registration flows, and concise onboarding documentation.',
+          'Trained a core moderation team around fair-play enforcement, constructive feedback, and low-noise announcements.',
+          'Ran recurring weekend community cups to sustain engagement between flagship seasonal tournaments.'
+        ],
+        outcome: 'Cultivated an active, self-sustaining player hub with reliable communication and minimal administrative friction.'
+      }
+    ];
+
+    // 2. Render Project Dossier Table
+    const projectListEl = document.getElementById('projectList');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function renderProjects(filter = 'all') {
+      const filtered = filter === 'all'
+        ? PROJECTS
+        : PROJECTS.filter(p => p.category === filter);
+
+      projectListEl.innerHTML = filtered.map(project => `
+        <article
+          data-project-id="${project.id}"
+          class="project-row group py-6 sm:py-7 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-baseline cursor-pointer hover:bg-paper-surface/70 dark:hover:bg-paper-darkSurface/70 transition-colors px-2 -mx-2"
+          tabindex="0"
+          role="button"
+          aria-label="Inspect dossier ${project.title}"
+        >
+          <div class="md:col-span-1 font-mono text-xs text-vermilion font-medium">
+            ${project.id}
+          </div>
+          <div class="md:col-span-5 pr-4">
+            <h3 class="font-serif text-2xl sm:text-[1.7rem] leading-tight text-ink-light dark:text-ink-dark group-hover:translate-x-1 transition-transform">
+              ${project.title}
+            </h3>
+            <p class="mt-1.5 font-sans text-sm text-ink-muted dark:text-ink-darkMuted line-clamp-2 md:hidden">
+              ${project.summary}
+            </p>
+          </div>
+          <div class="md:col-span-3 font-mono text-xs text-ink-muted dark:text-ink-darkMuted">
+            ${project.categoryLabel}
+          </div>
+          <div class="md:col-span-2 font-mono text-xs text-ink-muted dark:text-ink-darkMuted">
+            ${project.context} · ${project.year}
+          </div>
+          <div class="md:col-span-1 md:text-right font-mono text-xs uppercase tracking-wider text-ink-light dark:text-ink-dark group-hover:text-vermilion transition-colors">
+            Open ↗
+          </div>
+        </article>
+      `).join('');
+
+      // Attach click & keyboard listeners
+      document.querySelectorAll('.project-row').forEach(row => {
+        const openHandler = () => {
+          const id = row.getAttribute('data-project-id');
+          const item = PROJECTS.find(p => p.id === id);
+          if (item) openProjectModal(item);
+        };
+        row.addEventListener('click', openHandler);
+        row.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openHandler();
+          }
+        });
+      });
+    }
+
+    // Filter Tab Interactions
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-ink-light', 'text-paper-light', 'dark:bg-ink-dark', 'dark:text-paper-dark', 'border-ink-light', 'dark:border-ink-dark');
+          b.classList.add('border-rule-light', 'dark:border-rule-dark', 'text-ink-muted', 'dark:text-ink-darkMuted');
+        });
+
+        btn.classList.remove('border-rule-light', 'dark:border-rule-dark', 'text-ink-muted', 'dark:text-ink-darkMuted');
+        btn.classList.add('bg-ink-light', 'text-paper-light', 'dark:bg-ink-dark', 'dark:text-paper-dark', 'border-ink-light', 'dark:border-ink-dark');
+
+        renderProjects(filter);
+      });
+    });
+
+    // Initial Render
+    renderProjects('all');
+
+    // 3. Editorial Accordion for Areas of Work (01.1 - 01.4)
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+      const trigger = item.querySelector('.accordion-trigger');
+      const icon = item.querySelector('.accordion-icon');
+
+      trigger.addEventListener('click', () => {
+        const isOpen = item.getAttribute('data-open') === 'true';
+        item.setAttribute('data-open', String(!isOpen));
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        icon.textContent = !isOpen ? '[ − ]' : '[ + ]';
+      });
+    });
+
+    // 4. Modal / Editorial Dossier Drawer Logic
+    const modal = document.getElementById('editorialModal');
+    const modalEyebrow = document.getElementById('modalEyebrow');
+    const modalBody = document.getElementById('modalBody');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function openProjectModal(project) {
+      modalEyebrow.textContent = `DOSSIER // ${project.id} · ${project.year}`;
+      modalBody.innerHTML = `
+        <h3 id="modalTitle" class="font-serif text-3xl sm:text-4xl leading-tight text-ink-light dark:text-ink-dark mb-4">
+          ${project.title}
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 mb-6 border-y border-rule-light dark:border-rule-dark font-mono text-xs">
+          <div>
+            <span class="text-ink-muted dark:text-ink-darkMuted block text-[10px] uppercase">ROLE</span>
+            <span class="text-ink-light dark:text-ink-dark">${project.role}</span>
+          </div>
+          <div>
+            <span class="text-ink-muted dark:text-ink-darkMuted block text-[10px] uppercase">CONTEXT &amp; DISCIPLINE</span>
+            <span class="text-ink-light dark:text-ink-dark">${project.context} · ${project.categoryLabel}</span>
+          </div>
+        </div>
+        <p class="font-sans text-base leading-relaxed text-ink-light dark:text-ink-dark mb-6">
+          ${project.summary}
+        </p>
+        <div class="mb-6">
+          <h4 class="font-mono text-[11px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted mb-3">
+            OPERATIONAL EXECUTION NOTES
+          </h4>
+          <ul class="space-y-2.5 font-sans text-sm leading-relaxed text-ink-light dark:text-ink-dark">
+            ${project.execution.map(step => `
+              <li class="flex items-start gap-3">
+                <span class="font-mono text-vermilion mt-0.5">→</span>
+                <span>${step}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+        <div class="p-4 bg-paper-surface dark:bg-paper-darkSurface border-l-2 border-vermilion">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted block mb-1">
+            OUTCOME &amp; TAKEAWAY
+          </span>
+          <p class="font-sans text-sm text-ink-light dark:text-ink-dark">
+            ${project.outcome}
+          </p>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // "Read my story" Modal
+    document.getElementById('openStoryBtn').addEventListener('click', () => {
+      modalEyebrow.textContent = 'BIOGRAPHY // EXTENDED NOTES';
+      modalBody.innerHTML = `
+        <h3 id="modalTitle" class="font-serif text-3xl sm:text-4xl leading-tight text-ink-light dark:text-ink-dark mb-5">
+          How I work &amp; what keeps me building.
+        </h3>
+        <div class="space-y-4 font-sans text-sm sm:text-base leading-relaxed text-ink-light dark:text-ink-dark">
+          <p>
+            My path started with a simple curiosity about how competitive gaming events and student communities actually run behind the curtain. While most people see the finals broadcast or the packed auditorium, I became fascinated by the scaffolding underneath: the rulebooks, the match schedules, the Discord channels, and the visual systems that hold everything together.
+          </p>
+          <p>
+            Alongside pursuing my Computer Science degree at SJBIT in Bengaluru, I've spent my time stepping into operational and creative roles where accountability matters. Studying systems in engineering naturally shapes how I run events—breaking complex workflows into predictable, human-friendly steps.
+          </p>
+          <div class="my-6 py-4 border-y border-rule-light dark:border-rule-dark grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+            <div>
+              <div class="text-vermilion mb-1">01 / CLARITY</div>
+              <div class="text-ink-muted dark:text-ink-darkMuted">Clear rules and honest timelines prevent 90% of event friction.</div>
+            </div>
+            <div>
+              <div class="text-vermilion mb-1">02 / OWNERSHIP</div>
+              <div class="text-ink-muted dark:text-ink-darkMuted">If a detail affects players or guests, it's worth double-checking.</div>
+            </div>
+            <div>
+              <div class="text-vermilion mb-1">03 / CRAFT</div>
+              <div class="text-ink-muted dark:text-ink-darkMuted">Good design isn't decoration—it makes information effortless to read.</div>
+            </div>
+          </div>
+          <p class="text-ink-muted dark:text-ink-darkMuted">
+            If you're organizing a tournament, building a community, or shipping a creative project and need someone who cares deeply about execution, feel free to reach out.
+          </p>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // 5. Night Edition / Warm Paper Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeLabel = document.getElementById('themeLabel');
+    const themeIndicator = document.getElementById('themeIndicator');
+
+    function setTheme(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        themeLabel.textContent = 'Day Ed.';
+        themeIndicator.classList.add('bg-current');
+      } else {
+        document.documentElement.classList.remove('dark');
+        themeLabel.textContent = 'Night Ed.';
+        themeIndicator.classList.remove('bg-current');
+      }
+    }
+
+    // Respect system preference initially
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark);
+
+    themeToggle.addEventListener('click', () => {
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      setTheme(!isCurrentlyDark);
+    });
+
+    // 6. Clipboard Copy (Iframe-safe execCommand fallback)
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const contactEmailText = document.getElementById('contactEmailText');
+    const copyFeedback = document.getElementById('copyFeedback');
+
+    copyEmailBtn.addEventListener('click', () => {
+      const email = contactEmailText.textContent.trim();
+      const tempInput = document.createElement('textarea');
+      tempInput.value = email;
+      tempInput.setAttribute('readonly', '');
+      tempInput.style.position = 'absolute';
+      tempInput.style.left = '-9999px';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+
+      try {
+        document.execCommand('copy');
+        copyFeedback.textContent = 'COPIED TO CLIPBOARD — READY TO PASTE.';
+        copyEmailBtn.textContent = 'Copied ✓';
+        setTimeout(() => {
+          copyFeedback.textContent = '';
+          copyEmailBtn.textContent = 'Copy Email';
+        }, 2600);
+      } catch (err) {
+        copyFeedback.textContent = 'SELECT ADDRESS ABOVE TO COPY.';
+      } finally {
+        document.body.removeChild(tempInput);
+      }
+    });
+
+    // 7. Editorial Note Composer (Constructs clean mailto dispatch)
+    const noteForm = document.getElementById('noteForm');
+    const noteStatus = document.getElementById('noteStatus');
+
+    noteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value.trim();
+      const email = document.getElementById('senderEmail').value.trim();
+      const note = document.getElementById('senderNote').value.trim();
+
+      const subject = encodeURIComponent(`Project / Collaboration Inquiry — ${name}`);
+      const body = encodeURIComponent(`Hi Vasanth,\n\n${note}\n\n— ${name}\nReply-to: ${email}`);
+
+      noteStatus.textContent = 'OPENING YOUR MAIL CLIENT WITH FORMATTED NOTE...';
+      window.location.href = `mailto:hello@ksvk.in?subject=${subject}&body=${body}`;
+    });
+
+    // Set current year
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

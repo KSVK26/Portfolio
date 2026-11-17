@@ -14,42 +14,96 @@
   <title>Ways of Working — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <section class="page-section">
-      <span class="section-tag">Ways of Working</span>
-      <h1 class="section-title">How I work with people</h1>
-      <p class="section-subtitle">The principles, tools, and rhythms that shape how I collaborate.</p>
+    <section class="page-section border-b border-rule-light dark:border-rule-dark">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-xs tracking-widest text-vermilion font-medium">WAYS OF WORKING</span>
+      </div>
+      <h1 class="font-serif text-4xl sm:text-5xl text-ink-light dark:text-ink-dark mb-4">
+        How I work with people
+      </h1>
+      <p class="font-sans text-base sm:text-lg leading-relaxed text-ink-muted dark:text-ink-darkMuted max-w-2xl">
+        The principles, tools, and rhythms that shape how I collaborate.
+      </p>
     </section>
 
-    <section class="page-section">
-      <h2 class="section-title" style="font-size:1.5rem;">Principles</h2>
-      <div class="cards-grid" style="margin-top:1.5rem;">
-        <div class="card">
-          <h3 class="card-title">Clarity over cleverness</h3>
-          <p class="card-desc">I'd rather write something a new teammate understands in five minutes than something impressive that needs decoding.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">Decide, then commit</h3>
-          <p class="card-desc">We debate ideas early and execute hard once a decision is made. No endless rework.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">Ship small, learn fast</h3>
-          <p class="card-desc">A working prototype beats a perfect plan. Iterate in public, learn from what breaks.</p>
-        </div>
+    <section class="page-section border-b border-rule-light dark:border-rule-dark py-16">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-xs tracking-widest text-vermilion font-medium">01</span>
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted">PRINCIPLES</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-ink-light dark:text-ink-dark mb-10">
+        The three principles I live by
+      </h2>
+      <div class="editorial-grid">
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag font-mono text-vermilion">01</span>
+            <h3 class="card-title">Clarity over cleverness</h3>
+            <p class="card-desc">I'd rather write something a new teammate understands in five minutes than something impressive that needs decoding.</p>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag font-mono text-vermilion">02</span>
+            <h3 class="card-title">Decide, then commit</h3>
+            <p class="card-desc">We debate ideas early and execute hard once a decision is made. No endless rework.</p>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag font-mono text-vermilion">03</span>
+            <h3 class="card-title">Ship small, learn fast</h3>
+            <p class="card-desc">A working prototype beats a perfect plan. Iterate in public, learn from what breaks.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="page-section">
-      <h2 class="section-title" style="font-size:1.5rem;">Tools</h2>
-      <div class="cards-grid" style="margin-top:1.5rem;">
-        <div class="card"><span class="card-tag">Design</span><h3 class="card-title">Figma, FigJam</h3></div>
-        <div class="card"><span class="card-tag">Build</span><h3 class="card-title">HTML, CSS, JS</h3></div>
-        <div class="card"><span class="card-tag">Docs</span><h3 class="card-title">Notion, Markdown</h3></div>
-        <div class="card"><span class="card-tag">Version</span><h3 class="card-title">Git, GitHub</h3></div>
+    <section class="page-section py-16">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-xs tracking-widest text-vermilion font-medium">02</span>
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-darkMuted">TOOLS</span>
+      </div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-ink-light dark:text-ink-dark mb-10">
+        Tools of the trade
+      </h2>
+      <div class="editorial-grid">
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Design</span>
+            <h3 class="card-title">Figma, FigJam</h3>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Build</span>
+            <h3 class="card-title">HTML, CSS, JS</h3>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Docs</span>
+            <h3 class="card-title">Notion, Markdown</h3>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Version</span>
+            <h3 class="card-title">Git, GitHub</h3>
+          </div>
+        </article>
       </div>
     </section>
   </main>

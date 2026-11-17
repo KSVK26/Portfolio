@@ -14,22 +14,37 @@
   <title>Search — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <section class="page-section">
-      <span class="section-tag">Search</span>
-      <h1 class="section-title">Search across the site</h1>
-      <p class="section-subtitle">Find projects, timeline events, and pages.</p>
-
-      <div class="search-input-wrapper" style="margin:1rem 0;">
-        <input type="text" class="search-input" id="global-search-input" placeholder="Type to search everything…" autofocus />
+    <section class="page-section border-b border-rule-light dark:border-rule-dark">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-xs tracking-widest text-vermilion font-medium">SEARCH</span>
       </div>
+      <h1 class="font-serif text-4xl sm:text-5xl text-ink-light dark:text-ink-dark mb-4">
+        Search across the site
+      </h1>
+      <p class="font-sans text-base sm:text-lg leading-relaxed text-ink-muted dark:text-ink-darkMuted max-w-2xl mb-8">
+        Find projects, timeline events, and pages.
+      </p>
 
-      <div id="search-status" style="margin-bottom:1.5rem;color:var(--text-secondary);font-size:0.95rem;"></div>
-      <div class="cards-grid" id="search-results-grid"></div>
+      <div class="search-input-wrapper" style="max-width: 480px;">
+        <input type="text" class="form-input" id="global-search-input" placeholder="Type to search everything…" autofocus />
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div id="search-status" class="font-mono text-xs text-ink-muted dark:text-ink-darkMuted mb-6 min-h-[1.5rem]"></div>
+      <div class="editorial-grid" id="search-results-grid"></div>
     </section>
   </main>
 

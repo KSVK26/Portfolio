@@ -14,44 +14,57 @@
   <title>K S Vasanth Karthik — Esports Operations, Events & Creative Work</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <!-- Header injected via components/header.html -->
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <!-- Hero Section -->
-    <section class="page-section" id="hero">
-      <div class="hero-layout">
-        <div class="hero-content">
-          <h1 class="section-title" style="font-size: 3.2rem;">
-            K S VASANTH KARTHIK
-          </h1>
-          <p class="section-subtitle" style="margin-bottom: 1.25rem; font-weight: 700; font-size: 1.5rem; color: var(--text-primary);">
-            I turn ideas into things that work.
-          </p>
-          <p class="section-subtitle" style="margin-bottom: 1.5rem;">
-            I'm Vasanth — working across esports operations, event management, creative projects and communities. I enjoy bringing people together, figuring out the details and turning ideas into experiences that work.
-          </p>
-          <p class="hero-discipline" style="margin-bottom: 2rem;">
-            ESPORTS OPERATIONS · EVENTS · CREATIVE WORK
-          </p>
-          <div class="hero-cta">
-            <a href="work.html" class="btn-primary">Explore my work</a>
-            <a href="about.html" class="btn-secondary">A little about me</a>
+    <!-- Hero — Asymmetric Editorial Grid -->
+    <section class="editorial-hero" id="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <span class="hero-eyebrow">00 — Home</span>
+          <h1 class="hero-headline">K S Vasanth Karthik</h1>
+          <p class="hero-subhead">I turn ideas into things that work.</p>
+          <p class="hero-bio">I'm Vasanth — working across esports operations, event management, creative projects and communities. I enjoy bringing people together, figuring out the details and turning ideas into experiences that work.</p>
+          <div class="hero-actions">
+            <a href="work.html" class="btn-editorial btn-primary-editorial">Explore work</a>
+            <a href="about.html" class="btn-editorial btn-secondary-editorial">About me</a>
           </div>
         </div>
-        <div class="hero-photo">
-          <img src="images/ksvk-black.png" alt="K S Vasanth Karthik" />
-        </div>
+        <aside class="hero-plate">
+          <div class="plate-header">
+            <span>BENGALURU</span>
+            <span>PORTFOLIO / ARCHIVE</span>
+          </div>
+          <div class="plate-center">
+            <span class="plate-monogram">KSVK</span>
+            <span class="plate-sub">Esports · Events · Creative</span>
+          </div>
+          <div class="plate-colophon">
+            <span class="plate-caption">Night Ed.</span>
+            <span class="plate-availability">Open for work</span>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- 00 — Proof -->
-    <section class="page-section" id="proof">
-      <span class="section-tag">00 — Proof</span>
-      <h2 class="section-title">Things I've been part of.</h2>
-      <div class="stats-grid" id="stats-grid">
+    <!-- 00 — Proof / Swiss Ledger Strip -->
+    <section class="proof-section" id="proof">
+      <div class="proof-header">
+        <span class="section-tag proof-number">00</span>
+        <h2 class="proof-title">Proof</h2>
+        <span class="proof-subtitle">Things I've been part of</span>
+      </div>
+      <div class="proof-grid" id="stats-grid">
         <!-- Populated by js/home.js -->
       </div>
     </section>
@@ -59,8 +72,8 @@
     <!-- 01 — Areas of Work -->
     <section class="page-section" id="areas-of-work">
       <span class="section-tag">01 — Areas of Work</span>
-      <h2 class="section-title">Disciplines &amp; core capabilities</h2>
-      <div class="cards-grid" id="areas-grid">
+      <h2 class="section-title">Disciplines & core capabilities</h2>
+      <div class="editorial-grid" id="areas-grid">
         <!-- Populated by js/home.js -->
       </div>
     </section>
@@ -68,8 +81,8 @@
     <!-- 02 — Featured Work -->
     <section class="page-section" id="selected-work">
       <span class="section-tag">02 — Featured Work</span>
-      <h2 class="section-title">Featured projects &amp; initiatives</h2>
-      <div class="cards-grid" id="selected-work-grid">
+      <h2 class="section-title">Featured projects & initiatives</h2>
+      <div class="editorial-grid" id="selected-work-grid">
         <!-- Populated by js/home.js -->
       </div>
     </section>
@@ -78,11 +91,11 @@
     <section class="page-section" id="about-preview">
       <span class="section-tag">03 — About</span>
       <h2 class="section-title">A little about me</h2>
-      <p class="section-subtitle" style="max-width: 720px; font-size: 1.15rem; line-height: 1.7;">
+      <p class="section-subtitle" style="max-width: 720px; margin-bottom: 2rem;">
         I'm Vasanth — a Computer Science student at SJBIT and someone who found his way into esports operations, event management, creative work and community building. I enjoy working behind the scenes, bringing people together and taking responsibility for making things happen.
       </p>
       <div style="margin-top: 2rem;">
-        <a href="about.html" class="btn-primary">Read my story</a>
+        <a href="about.html" class="btn-editorial btn-primary-editorial">Read my story</a>
       </div>
     </section>
 

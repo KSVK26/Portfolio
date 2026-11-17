@@ -14,48 +14,61 @@
   <title>Generator — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <section class="page-section">
-      <span class="section-tag">04 — Tools</span>
-      <h1 class="section-title">Content Generator</h1>
-      <p class="section-subtitle">
-        Fill in the blanks, copy the JSON that appears below, and paste it
-        into the matching <code>content/*.json</code> file. Nothing is saved
-        anywhere — this page only builds text for you to copy.
+    <section class="page-section border-b border-rule-light dark:border-rule-dark">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-xs tracking-widest text-vermilion font-medium">TOOLS</span>
+      </div>
+      <h1 class="font-serif text-4xl sm:text-5xl text-ink-light dark:text-ink-dark mb-4">
+        Content Generator
+      </h1>
+      <p class="font-sans text-base sm:text-lg leading-relaxed text-ink-muted dark:text-ink-darkMuted max-w-2xl">
+        Fill in the blanks, copy the JSON that appears below, and paste it into the matching <code class="font-mono bg-ink-light/10 dark:bg-ink-dark/10 px-1.5 py-0.5 rounded text-sm">content/*.json</code> file. Nothing is saved anywhere — this page only builds text for you to copy.
       </p>
     </section>
 
     <section class="page-section">
-      <div class="gen-layout">
-        <div class="gen-form">
-          <div class="gen-field">
-            <label for="gen-type">Type</label>
-            <select id="gen-type">
-              <option value="project">Project</option>
-              <option value="timeline">Timeline</option>
-              <option value="writing">Writing</option>
-            </select>
-          </div>
+      <div class="editorial-grid" style="grid-template-columns: 1fr;">
+        <article class="card-editorial">
+          <div class="card-body">
+            <div class="gen-field">
+              <label class="form-label" for="gen-type">Type</label>
+              <select id="gen-type" class="form-select">
+                <option value="project">Project</option>
+                <option value="timeline">Timeline</option>
+                <option value="writing">Writing</option>
+              </select>
+            </div>
 
-          <div id="gen-fields"></div>
+            <div id="gen-fields"></div>
 
-          <div class="gen-actions">
-            <button class="btn-primary" id="gen-copy">Copy JSON</button>
-            <button class="btn-secondary" id="gen-reset">Reset</button>
+            <div class="flex items-center gap-3 pt-4">
+              <button class="btn-primary" id="gen-copy">Copy JSON</button>
+              <button class="btn-secondary" id="gen-reset">Reset</button>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="gen-preview">
-          <div class="gen-preview-header">
-            <span>Paste this into</span>
-            <code id="gen-target-file">content/projects.json</code>
+        <article class="card-editorial">
+          <div class="card-body">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs text-ink-muted dark:text-ink-darkMuted">Paste this into</span>
+              <code id="gen-target-file" class="font-mono text-sm bg-ink-light/10 dark:bg-ink-dark/10 px-2 py-1 rounded">content/projects.json</code>
+            </div>
+            <pre id="gen-output" class="gen-output font-mono text-sm bg-ink-light/5 dark:bg-ink-dark/5 p-4 rounded overflow-auto max-h-[500px]"></pre>
           </div>
-          <pre id="gen-output" class="gen-output"></pre>
-        </div>
+        </article>
       </div>
     </section>
   </main>

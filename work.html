@@ -14,32 +14,42 @@
   <title>Work — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
     <section class="page-section">
       <span class="section-tag">02 — Work</span>
       <h1 class="section-title">Work</h1>
-      <p class="section-subtitle">
+      <p class="section-subtitle" style="margin-bottom: 2rem;">
         A collection of projects, events and initiatives I've been part of
         across esports, operations, creative work and communities.
       </p>
 
-      <div class="filter-bar" id="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="esports">Esports</button>
-        <button class="filter-btn" data-filter="operations">Operations</button>
-        <button class="filter-btn" data-filter="creative">Creative</button>
-        <button class="filter-btn" data-filter="community">Community</button>
+      <!-- Filter Bar -->
+      <div class="filter-bar" id="filter-bar" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="esports" role="tab" aria-selected="false">Esports</button>
+        <button class="filter-btn" data-filter="operations" role="tab" aria-selected="false">Operations</button>
+        <button class="filter-btn" data-filter="creative" role="tab" aria-selected="false">Creative</button>
+        <button class="filter-btn" data-filter="community" role="tab" aria-selected="false">Community</button>
       </div>
 
-      <div class="search-input-wrapper">
-        <input type="text" class="search-input" id="search-input" placeholder="Search projects by title, tag, or description…" />
+      <!-- Search Input -->
+      <div class="search-input-wrapper" style="margin-top: 1.5rem;">
+        <input type="text" class="form-input" id="search-input" placeholder="Search projects by title, tag, or description…" style="max-width: 480px;" />
       </div>
 
-      <div class="cards-grid" id="projects-grid">
+      <!-- Projects Grid -->
+      <div class="editorial-grid" id="projects-grid" style="margin-top: 2rem;">
         <!-- Populated by js/work.js -->
       </div>
     </section>

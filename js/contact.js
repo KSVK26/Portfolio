@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Contact Page — renders the "Find me elsewhere" links section
+   Contact Page — renders the "Find me elsewhere" links section (Editorial).
    ========================================================================== */
 
 (function () {
@@ -15,24 +15,15 @@
     ];
 
     container.innerHTML = `
-      <div style="margin-top: 1rem;">
-        <span class="section-tag" style="margin-bottom:0.75rem;">Find me elsewhere</span>
-        <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
-          ${elsewhere
-            .map(
-              (e) => `
-              <a href="${e.url}" class="card" style="text-decoration:none;color:inherit;" target="_blank" rel="noopener">
-                <div class="card-body">
-                  <h3 class="card-title">${e.name}</h3>
-                  <p class="card-desc">${e.desc}</p>
-                </div>
-                <div class="card-footer">
-                  <span style="color:var(--accent-blue);font-weight:600;">Visit →</span>
-                </div>
-              </a>`
-            )
-            .join("")}
-        </div>
+      <div class="social-links" style="margin-top: 1.5rem;">
+        ${elsewhere
+          .map(
+            (e) => `
+            <a href="${e.url}" class="social-link" target="_blank" rel="noopener">
+              ${e.name}
+            </a>`
+          )
+          .join("")}
       </div>`;
   }
 

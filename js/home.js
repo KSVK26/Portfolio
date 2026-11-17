@@ -1,6 +1,6 @@
 /* ==========================================================================
    Home Page — Dynamic rendering of Proof, Areas of Work, Featured Work,
-   and Contact sections.
+   and Contact sections using Editorial Design System.
    ========================================================================== */
 
 (function () {
@@ -20,9 +20,9 @@
       .map(
         (s) => `
         <div class="stat-card">
-          <div class="stat-number">${s.number}</div>
-          ${s.label ? `<div class="stat-label">${s.label}</div>` : ""}
-          <p style="font-size:0.88rem;color:var(--text-secondary);margin-top:0.4rem;line-height:1.5;">${s.description}</p>
+          <div class="stat-number">${escapeHtml(s.number)}</div>
+          ${s.label ? `<div class="stat-label">${escapeHtml(s.label)}</div>` : ""}
+          <p class="stat-desc">${escapeHtml(s.description)}</p>
         </div>`
       )
       .join("");
@@ -32,23 +32,18 @@
     if (!container || !data || !data.items) return;
     container.innerHTML = data.items
       .map(
-        (item) => {
-          const footer = (item.role || item.period)
-            ? `<div class="card-footer">
-            <span>${escapeHtml(item.role || "")}</span>
-            <span>${escapeHtml(item.period || "")}</span>
-          </div>`
-            : "";
-          return `
-        <div class="card">
+        (item) => `
+        <div class="card-editorial">
           <div class="card-body">
             <span class="card-tag">${escapeHtml(item.category || "")}</span>
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <p class="card-desc">${escapeHtml(item.description)}</p>
+            <div class="card-footer">
+              <span>${escapeHtml(item.role || "")}</span>
+              <span>${escapeHtml(item.period || "")}</span>
+            </div>
           </div>
-          ${footer}
-        </div>`;
-        }
+        </div>`
       )
       .join("");
 
@@ -61,7 +56,6 @@
 
   function renderSelectedWork(container, data) {
     if (!container || !data || !data.items) return;
-    // Hand-picked highlights, newest first.
     const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const sortKey = (p) => {
       const rt = (p.readTime || "").trim();
@@ -79,7 +73,7 @@
     container.innerHTML = items
       .map(
         (item) => `
-        <div class="card">
+        <div class="card-editorial" data-title="${escapeHtml(item.title)}" data-category="${escapeHtml(item.category || "")}">
           <div class="card-media">
             ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" />` : `<div class="card-media-placeholder">${escapeHtml(item.category || "")}</div>`}
           </div>
@@ -87,14 +81,40 @@
             <span class="card-tag">${escapeHtml(item.category || "")}</span>
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <p class="card-desc">${escapeHtml(item.description)}</p>
-          </div>
-          <div class="card-footer">
-            <span>${escapeHtml(item.org || item.year || "")}</span>
-            <span>${escapeHtml(item.year || "")}</span>
+            <div class="card-footer">
+              <span>${escapeHtml(item.org || item.year || "")}</span>
+              <span>${escapeHtml(item.year || "")}</span>
+            </div>
           </div>
         </div>`
       )
       .join("");
+
+    // Attach click handlers for modal on featured cards
+    container.querySelectorAll(".card-editorial").forEach((card) => {
+      card.style.cursor = "pointer";
+      card.addEventListener("click", function () {
+        const title = card.getAttribute("data-title");
+        const category = card.getAttribute("data-category");
+        const project = data.items.find((p) => p.title === title && p.category === category);
+        if (project && window.openProjectModal) {
+          const modalProject = {
+            ...project,
+            discipline: project.category || "Esports",
+            context: project.org || "—",
+            summary: project.description || "—",
+            execution: [
+              `Role: ${project.role || "Operations"}`,
+              `Organization: ${project.org || "—"}`,
+              `Timeline: ${project.readTime || project.year || "—"}`,
+              `Scope: Tournament administration, bracket management, live operations`,
+            ],
+            outcome: `Delivered ${project.description?.toLowerCase().replace(/^\w/, c => c.toUpperCase()) || "successful tournament operations"} across ${project.tags?.join(", ") || "multiple domains"}.`,
+          };
+          window.openProjectModal(modalProject);
+        }
+      });
+    });
 
     if (data.items.length > 4) {
       const viewAll = document.createElement("a");
@@ -131,13 +151,13 @@
     container.innerHTML = channels
       .map(
         (c) => `
-        <div class="card" style="max-width:320px;">
+        <div class="card-editorial" style="max-width: 320px;">
           <div class="card-body">
             <h3 class="card-title">${c.title}</h3>
             <p class="card-desc">${c.desc}</p>
           </div>
           <div class="card-footer">
-            <a href="${c.link}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue);font-weight:600;">${c.label} →</a>
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-vermilion-hover" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;">${c.label} →</a>
           </div>
         </div>`
       )

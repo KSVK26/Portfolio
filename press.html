@@ -14,37 +14,65 @@
   <title>Press — K S Vasanth Karthik</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="images/ksvk-black.png" />
+  <!-- Editorial Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
   <div data-include="components/header.html"></div>
 
   <main class="container">
-    <section class="page-section">
-      <span class="section-tag">Press</span>
-      <h1 class="section-title">Talks, media, and features</h1>
-      <p class="section-subtitle">Public appearances, keynotes, and press mentions.</p>
+    <section class="page-section border-b border-rule-light dark:border-rule-dark">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-xs tracking-widest text-vermilion font-medium">PRESS</span>
+      </div>
+      <h1 class="font-serif text-4xl sm:text-5xl text-ink-light dark:text-ink-dark mb-4">
+        Talks, media, and features
+      </h1>
+      <p class="font-sans text-base sm:text-lg leading-relaxed text-ink-muted dark:text-ink-darkMuted max-w-2xl">
+        Public appearances, keynotes, and press mentions.
+      </p>
     </section>
 
     <section class="page-section">
-      <div class="cards-grid">
-        <div class="card">
-          <span class="card-tag">Talk</span>
-          <h3 class="card-title">Prismatic — Design Strategy Keynote</h3>
-          <p class="card-desc">Presented at London Design Week on design-led venture creation.</p>
-          <div class="card-footer"><span>2025</span><span>London, UK</span></div>
-        </div>
-        <div class="card">
-          <span class="card-tag">Feature</span>
-          <h3 class="card-title">European Innovation Academy Spotlight</h3>
-          <p class="card-desc">Featured in the student entrepreneur spotlight series in Portugal.</p>
-          <div class="card-footer"><span>2024</span><span>Portugal</span></div>
-        </div>
-        <div class="card">
-          <span class="card-tag">Workshop</span>
-          <h3 class="card-title">Building Communities That Last</h3>
-          <p class="card-desc">Led a hands-on workshop for creative entrepreneurs on peer mentorship.</p>
-          <div class="card-footer"><span>2024</span><span>New Delhi, India</span></div>
-        </div>
+      <div class="editorial-grid" id="press-grid">
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Talk</span>
+            <h3 class="card-title">Prismatic — Design Strategy Keynote</h3>
+            <p class="card-desc">Presented at London Design Week on design-led venture creation.</p>
+            <div class="card-footer">
+              <span>2025</span>
+              <span>London, UK</span>
+            </div>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Feature</span>
+            <h3 class="card-title">European Innovation Academy Spotlight</h3>
+            <p class="card-desc">Featured in the student entrepreneur spotlight series in Portugal.</p>
+            <div class="card-footer">
+              <span>2024</span>
+              <span>Portugal</span>
+            </div>
+          </div>
+        </article>
+        <article class="card-editorial">
+          <div class="card-body">
+            <span class="card-tag">Workshop</span>
+            <h3 class="card-title">Building Communities That Last</h3>
+            <p class="card-desc">Led a hands-on workshop for creative entrepreneurs on peer mentorship.</p>
+            <div class="card-footer">
+              <span>2024</span>
+              <span>New Delhi, India</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </main>
