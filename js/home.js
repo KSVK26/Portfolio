@@ -17,14 +17,15 @@
   function renderStats(container, data) {
     if (!container || !data || !data.stats) return;
     container.innerHTML = data.stats
-      .map(
-        (s) => `
-        <div class="stat-card">
-          <div class="stat-number">${escapeHtml(s.number)}</div>
-          ${s.label ? `<div class="stat-label">${escapeHtml(s.label)}</div>` : ""}
-          <p class="stat-desc">${escapeHtml(s.description)}</p>
-        </div>`
-      )
+      .map((s, i) => {
+        const letter = String.fromCharCode(65 + i); // A, B, C, D
+        return `
+        <div class="ledger-column">
+          <div class="ledger-code">00.${letter} / ${escapeHtml(s.label).toUpperCase()}</div>
+          <h3 class="ledger-title">${escapeHtml(s.label)}</h3>
+          <p class="ledger-desc">${escapeHtml(s.description)}</p>
+        </div>`;
+      })
       .join("");
   }
 
