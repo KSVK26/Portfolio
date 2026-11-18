@@ -1413,7 +1413,7 @@ html.dark .plate-logo { filter: brightness(0) invert(1); }
 }
 .proof-header-left { display: flex; align-items: baseline; gap: 0.5rem; }
 .proof-number { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0; }
-.proof-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(2.35rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -0.02em; color: var(--text-ink); line-height: 0.98; }
+.proof-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(1.875rem, 3.5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; color: var(--text-ink); line-height: 1.05; }
 .proof-subtitle { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 .proof-grid {
   display: grid;
