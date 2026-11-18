@@ -153,6 +153,61 @@
     }
   }
 
+  function renderNowDossier(container, list, data) {
+    if (!list || !data || !data.items) return;
+    const items = data.items;
+
+    list.innerHTML = items
+      .map((p, i) => {
+        const n = String(i + 1).padStart(2, "0");
+        return `
+        <article
+          class="dossier-row"
+          data-now-title="${escapeHtml(p.title)}"
+          data-now-category="${escapeHtml(p.category || "")}"
+          tabindex="0"
+          role="button"
+          aria-label="Inspect dossier ${escapeHtml(p.title)}"
+        >
+          <div class="dossier-number">${n}</div>
+          <div>
+            <h3 class="dossier-title">${escapeHtml(p.title)}</h3>
+            <p class="dossier-summary">${escapeHtml(p.description)}</p>
+          </div>
+          <div class="dossier-discipline">${escapeHtml(p.category || "—")}</div>
+          <div class="dossier-context">${escapeHtml(p.role || "—")} · ${escapeHtml(p.period || "—")}</div>
+          <div></div>
+          <div class="dossier-action">Open ↗</div>
+        </article>`;
+      })
+      .join("");
+
+    list.querySelectorAll(".dossier-row").forEach((row) => {
+      const open = () => {
+        const title = row.getAttribute("data-now-title");
+        const category = row.getAttribute("data-now-category");
+        const item = items.find((p) => p.title === title && p.category === category);
+        if (item && window.openProjectModal) {
+          window.openProjectModal({
+            title: item.title,
+            discipline: item.category || "—",
+            context: item.role || "—",
+            summary: item.description || "—",
+            execution: item.period ? [`Timeline: ${item.period}`] : [],
+            outcome: "",
+          });
+        }
+      };
+      row.addEventListener("click", open);
+      row.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
+      });
+    });
+  }
+
   async function loadJSON(path) {
     try {
       const res = await fetch(path);
@@ -165,13 +220,19 @@
   }
 
   async function init() {
-    const [stats, areas, projects] = await Promise.all([
+    const [stats, areas, projects, now] = await Promise.all([
       loadJSON("content/stats.json"),
       loadJSON("content/areas.json"),
-      loadJSON("content/projects.json")
+      loadJSON("content/projects.json"),
+      loadJSON("content/now.json")
     ]);
 
     renderStats(document.getElementById("stats-grid"), stats);
+    renderNowDossier(
+      document.getElementById("now-dossier"),
+      document.getElementById("now-dossier-list"),
+      now
+    );
     renderAreasOfWork(document.getElementById("areas-grid"), areas);
     renderSelectedWork(document.getElementById("selected-work-grid"), projects);
   }
