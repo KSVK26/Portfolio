@@ -203,7 +203,7 @@ html.dark .paper-grain { opacity: 0.04; }
 
 .page-section > .section-title {
   /* max-width: 18ch; */
-  font-size: clamp(2.35rem, 5vw, 4.5rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 0.98;
   margin-bottom: 1.5rem;
 }
