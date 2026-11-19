@@ -77,7 +77,8 @@
 
     const viewAll = document.createElement("a");
     viewAll.href = "work.html";
-    viewAll.className = "view-all-link";
+    viewAll.className = "btn-editorial btn-secondary-editorial";
+    viewAll.style.fontSize = "0.875rem";
     viewAll.textContent = "Explore all work →";
     container.parentElement.appendChild(viewAll);
   }
@@ -147,7 +148,8 @@
     if (data.items.length > 4) {
       const viewAll = document.createElement("a");
       viewAll.href = "work.html";
-      viewAll.className = "view-all-link";
+      viewAll.className = "btn-editorial btn-secondary-editorial";
+      viewAll.style.fontSize = "0.875rem";
       viewAll.textContent = `Explore all work →`;
       container.parentElement.appendChild(viewAll);
     }

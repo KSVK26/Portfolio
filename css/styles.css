@@ -192,7 +192,7 @@ html.dark .paper-grain { opacity: 0.04; }
 
 /* Page Section */
 .page-section {
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(1rem, 8vw, 2rem) 0;
   border-bottom: 1px solid var(--border-rule);
 }
 
@@ -1294,7 +1294,7 @@ html.dark .theme-indicator { background-color: currentColor; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* padding: 2rem; */
+  padding: 1rem;
   margin: 4rem;
   background: var(--bg-surface);
   border: 1px solid var(--border-rule);
