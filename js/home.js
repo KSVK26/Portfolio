@@ -75,15 +75,6 @@
       });
     });
 
-    const viewAll = document.createElement("a");
-    viewAll.href = "work.html";
-    viewAll.className = "btn-editorial btn-secondary-editorial";
-    viewAll.style.fontSize = "0.875rem";
-    viewAll.textContent = "View all →";
-    const wrap = document.createElement("p");
-    wrap.style.cssText = "margin-top: 1.5rem; text-align: center;";
-    wrap.appendChild(viewAll);
-    container.parentElement.appendChild(wrap);
   }
 
   function renderSelectedWork(container, data) {
