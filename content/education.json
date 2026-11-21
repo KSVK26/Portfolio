@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "degree": "B.E. Computer Science (Data Science)",
+      "institution": "SJBIT, Bengaluru",
+      "period": "2022 — 2026",
+      "status": "Current",
+      "highlights": [
+        "Core: Data Structures, Algorithms, Database Systems, Machine Learning",
+        "Projects: Portfolio site, tournament management tools, data viz dashboards",
+        "Relevant: Statistics, Python, SQL, Web Technologies"
+      ]
+    },
+    {
+      "degree": "Higher Secondary (PCMC)",
+      "institution": "Bangalore, Karnataka",
+      "period": "2020 — 2022",
+      "status": "Completed",
+      "highlights": ["Focus: Physics, Chemistry, Mathematics, Computer Science"]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "categories": [
+    {
+      "type": "managerial",
+      "name": "Managerial & Operations",
+      "description": "Leading teams, coordinating stakeholders, and executing complex events",
+      "skills": [
+        { "name": "Tournament Administration", "level": "Expert", "years": 5 },
+        { "name": "League Operations & Scheduling", "level": "Expert", "years": 5 },
+        { "name": "Volunteer & Staff Coordination", "level": "Advanced", "years": 4 },
+        { "name": "Bracket & Match Management", "level": "Expert", "years": 5 },
+        { "name": "Rulebook Drafting & Enforcement", "level": "Advanced", "years": 3 },
+        { "name": "Crisis & Dispute Resolution", "level": "Advanced", "years": 4 },
+        { "name": "Multi-stakeholder Communication", "level": "Advanced", "years": 4 },
+        { "name": "Event Production Management", "level": "Advanced", "years": 3 }
+      ]
+    },
+    {
+      "type": "technical",
+      "name": "Technical & Analytical",
+      "description": "Data-driven decision making, tooling, and web systems",
+      "skills": [
+        { "name": "Match Statistics & Live Tracking", "level": "Expert", "years": 4 },
+        { "name": "Data Analysis & Reporting", "level": "Intermediate", "years": 2 },
+        { "name": "Python for Data Processing", "level": "Intermediate", "years": 1 },
+        { "name": "SQL & Database Querying", "level": "Learning", "years": 1 },
+        { "name": "Web Development (HTML/CSS/JS)", "level": "Intermediate", "years": 1 },
+        { "name": "Static Site Architecture", "level": "Intermediate", "years": 1 },
+        { "name": "Automation & Workflow Tooling", "level": "Learning", "years": 1 }
+      ]
+    },
+    {
+      "type": "creative",
+      "name": "Creative & Communication",
+      "description": "Visual storytelling, community building, and brand expression",
+      "skills": [
+        { "name": "Esports Graphics & Branding", "level": "Advanced", "years": 3 },
+        { "name": "Community Campaign Design", "level": "Advanced", "years": 2 },
+        { "name": "Video Editing & Announcements", "level": "Intermediate", "years": 2 },
+        { "name": "Social Media Strategy", "level": "Intermediate", "years": 2 },
+        { "name": "Signage & Print Design", "level": "Intermediate", "years": 2 },
+        { "name": "Presentation & Deck Design", "level": "Intermediate", "years": 2 },
+        { "name": "Copywriting & Documentation", "level": "Advanced", "years": 3 }
+      ]
+    }
+  ]
+}
