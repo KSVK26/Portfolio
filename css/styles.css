@@ -1528,68 +1528,6 @@ html.dark .plate-logo { filter: brightness(0) invert(1); }
 .colophon-row:last-child { border-bottom: none; }
 
 /* ==========================================================================
-   Home — About Preview (two-column magazine spread) + Now dossier
-   ========================================================================== */
-.about-preview-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-@media (min-width: 1024px) {
-  .about-preview-grid {
-    grid-template-columns: 7fr 5fr;
-    gap: 3rem;
-  }
-}
-.about-preview-narrative { display: flex; flex-direction: column; gap: 1.5rem; }
-.about-preview-colophon { display: flex; }
-.colophon-card {
-  width: 100%;
-  padding: 1.5rem;
-  border: 1px solid var(--border-rule);
-  background: color-mix(in srgb, var(--bg-surface) 35%, transparent);
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.colophon-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-rule);
-}
-.colophon-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-ink);
-}
-.colophon-dot { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--accent); }
-.colophon-dl { display: flex; flex-direction: column; gap: 0; }
-.colophon-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: 0.875rem 0;
-  border-bottom: 1px solid var(--border-rule);
-  font-size: 0.8rem;
-}
-.colophon-row dt {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.colophon-row dd { font-weight: 500; color: var(--text-ink); }
-.colophon-row:last-child { border-bottom: none; }
-
-/* ==========================================================================
    CONTACT SECTION
    ========================================================================== */
 .contact-section {
