@@ -335,11 +335,17 @@ html.dark .paper-grain { opacity: 0.04; }
   color: var(--accent);
 }
 
-/* Philosophy Accordion — Enhanced Visual Hierarchy */
-.philosophy-item {
-  border-bottom: 1px solid var(--border-rule);
+/* Philosophy Grid — Fully Visible Cards */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
-.philosophy-item .accordion-body {
+.philosophy-item {
+  padding: 1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-rule);
+  border-radius: 0.75rem;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -351,26 +357,41 @@ html.dark .paper-grain { opacity: 0.04; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-surface);
+  background: var(--bg-elevated);
   border: 1px solid var(--border-rule);
   border-radius: 0.5rem;
   color: var(--accent);
   margin-top: 0.125rem;
 }
-.philosophy-item .accordion-description {
+.philosophy-content {
+  flex: 1;
+}
+.philosophy-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.philosophy-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-ink);
+  margin: 0 0 0.5rem;
+}
+.philosophy-desc {
   font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--text-muted);
+  margin: 0;
 }
-@media (max-width: 639px) {
-  .philosophy-item .accordion-body {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  .philosophy-icon {
-    width: 36px;
-    height: 36px;
+@media (max-width: 1023px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
