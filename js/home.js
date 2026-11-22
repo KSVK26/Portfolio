@@ -6,13 +6,13 @@
 (function () {
   "use strict";
 
-  function escapeHtml(str) {
+  const escapeHtml = window.EscapeUtils?.escapeHtml || function(str) {
     return String(str)
       .replace(/&/g, "&")
       .replace(/</g, "<")
       .replace(/>/g, ">")
       .replace(/"/g, '"');
-  }
+  };
 
   function renderStats(container, data) {
     if (!container || !data || !data.stats) return;
@@ -33,48 +33,32 @@
 
     container.innerHTML = data.items
       .map((item, i) => {
-        const open = i === 0 ? "true" : "false";
-        const icon = i === 0 ? "[ − ]" : "[ + ]";
-        const numClass = i === 0 ? "accordion-number" : "accordion-number accordion-number-muted";
         const deliverables = Array.isArray(item.deliverables) ? item.deliverables : [];
         return `
-        <div class="accordion-item" data-open="${open}">
-          <button type="button" class="accordion-trigger" aria-expanded="${open}">
+        <div class="accordion-item" data-open="true">
+          <div class="accordion-trigger">
             <div class="accordion-trigger-row">
-              <span class="${numClass}">01.${i + 1}</span>
+              <span class="accordion-number">01.${i + 1}</span>
               <h3 class="accordion-title">${escapeHtml(item.title)}</h3>
             </div>
-            <span class="accordion-icon">${icon}</span>
-          </button>
+          </div>
           <div class="accordion-content">
             <div class="accordion-inner">
               <div class="accordion-body">
                 <p class="accordion-description">${escapeHtml(item.description)}</p>
+                ${deliverables.length > 0 ? `
                 <div class="accordion-deliverables">
                   <div class="accordion-deliverables-label">Key Deliverables</div>
                   <ul class="accordion-deliverables-list">
                     ${deliverables.map((d) => `<li>${escapeHtml(d)}</li>`).join("")}
                   </ul>
-                </div>
+                </div>` : ''}
               </div>
             </div>
           </div>
         </div>`;
       })
       .join("");
-
-    // Accordion toggle behaviour
-    container.querySelectorAll(".accordion-item").forEach((item) => {
-      const trigger = item.querySelector(".accordion-trigger");
-      const icon = item.querySelector(".accordion-icon");
-      trigger.addEventListener("click", () => {
-        const isOpen = item.getAttribute("data-open") === "true";
-        item.setAttribute("data-open", String(!isOpen));
-        trigger.setAttribute("aria-expanded", String(!isOpen));
-        icon.textContent = !isOpen ? "[ − ]" : "[ + ]";
-      });
-    });
-
   }
 
   function renderSelectedWork(container, data) {

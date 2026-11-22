@@ -5,13 +5,13 @@
 (function () {
   'use strict';
 
-  function escapeHtml(str) {
+  const escapeHtml = window.EscapeUtils?.escapeHtml || function(str) {
     return String(str)
       .replace(/&/g, "&")
       .replace(/</g, "<")
       .replace(/>/g, ">")
       .replace(/"/g, '"');
-  }
+  };
 
   function renderTimelineNode(item) {
     return `
